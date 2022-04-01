@@ -18,13 +18,10 @@
 
     <div class="wrapper">
         <header class="header container-fluid">
-            <div class="top-nav">
-
-            </div>
             <nav class="navbar navbar-expand-lg container">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">
-                        <i class='bx bxs-movie-play bx-tada' ></i>
+                        <i class='bx bx-movie-play bx-tada'></i>
                         <span>Bee</span>Film
                   </a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +32,7 @@
                       <li class="nav-item mx-1">
                         <a class="nav-link active" aria-current="page" href="#">
                             <i class='bx bxs-home bx-flip-horizontal' ></i>
+                            
                         </a>
                       </li>
                       <li class="nav-item mx-1">
@@ -80,27 +78,159 @@
                         </ul>
                       </li>
                     </ul>
-                    <form class="d-flex search-box" method="GET">
-                      <input class="form-control" name="search" type="search" placeholder="Tìm kiếm phim, diễn viên, đạo diễn" aria-label="Search">
-                      <button class="btn btn-dark" type="submit">Search</button>
+                    <form class="d-flex search-box flex-fill" method="GET">
+                      <input class="form-control" autocomplete="off" name="search" type="search" placeholder="Tìm kiếm phim, diễn viên, đạo diễn" aria-label="Search">
+                      <button class="btn btn-dark" type="submit">
+                        <i class='bx bx-search' ></i>
+                      </button>
                     </form>
-                    <div class="d-flex login-div">
-                        <a href="">
-                            <button class="btn">Đăng nhập</button>
+                    <div class="d-flex sign">
+                      <div class="login d-none">
+                        <label for="toggle-login-form" class="m-btn m-btn-hover">
+                            <span>Đăng nhập</span>
+                        </label>
+                        <input type="checkbox" id="toggle-login-form" class="d-none">
+                        <div class="login-form" id="login-form">
+                          <form action="login.php" class="p-2">
+                            <div class="mb-3 mt-3">
+                              <input type="text" placeholder="Tên đăng nhập" class="form-control p-3">
+                            </div>
+                            <div class="mb-3">
+                              <input type="password" placeholder="Mật khẩu" class="form-control p-3">
+                            </div>
+                            <div class="mb-3">
+                              <input type="checkbox" name="checkbox" checked>
+                              <label>Nhớ mật khẩu</label>
+                            </div>
+                            <button type="submit" class="btn btn-lg btn-primary">Đăng nhập</button>
+                          </form>
+                        </div>
+                        
+                        <a href="" class="m-btn m-btn-hover">
+                          <span>Đăng ký</span>
                         </a>
-                        <a href="">
-                            <button class="btn">Đăng ký</button>
+                      </div>
+                      <div class="logged">
+                        <a href="logout" name="logout" class="m-btn m-btn-warning m-btn-sm">
+                          Đăng xuất
                         </a>
+                        <a href="">Thay đổi thông tin</a>
+                        <span>Xin chào Locknight</span>
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </nav>
         </header>
+
+        <div style="color: #fff; font-size: 1.5rem;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum nequeorum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Loresam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+        </div>
+
+        <footer class="footer container-fluid">
+          <div class="row">
+            <div class="col-4 col-md-6 col-sm-12">
+              <div class="content">
+                  <a href="#" class="logo">
+                      <i class='bx bx-movie-play bx-tada main-color'></i>
+                      <span>Bee</span>Film
+                  </a>
+                  <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam, aperiam officia quia voluptatem voluptatum iure quasi ullam modi adipisci aut enim accusantium amet similique veritatis quidem facere, ex tenetur.
+                  </p>
+                  <div class="social-list">
+                      <a href="#" class="social-item">
+                          <i class="bx bxl-facebook"></i>
+                      </a>
+                      <a href="#" class="social-item">
+                          <i class="bx bxl-twitter"></i>
+                      </a>
+                      <a href="#" class="social-item">
+                          <i class="bx bxl-instagram"></i>
+                      </a>
+                  </div>
+              </div>
+            </div>
+            <div class="col-8 col-md-6 col-sm-12">
+              <div class="row">
+                  <div class="col-6 col-md-6 col-sm-12">
+                      <div class="content">
+                          <h3>BeeFilm</h3>
+                          <ul class="footer-menu">
+                              <li><a href="#">About us</a></li>
+                              <li><a href="#">My profile</a></li>
+                              <li><a href="#">Pricing plans</a></li>
+                              <li><a href="#">Contacts</a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-6 col-md-6 col-sm-12">
+                      <div class="content">
+                          <h3>Browse</h3>
+                          <ul class="footer-menu">
+                              <li><a href="#">About us</a></li>
+                              <li><a href="#">My profile</a></li>
+                              <li><a href="#">Pricing plans</a></li>
+                              <li><a href="#">Contacts</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </footer>
+
     </div>    
     
     <!-- Link to Jquery -->
     <script src="./assets/jquery-3.6.0/jquery-3.6.0.js"></script>
     <!-- Link to Bootstrap JS -->
     <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
+    <!-- Link to JS -->
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>
