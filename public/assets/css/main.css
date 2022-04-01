@@ -1,0 +1,90 @@
+body {
+    background-color: var(--bg-color);
+}
+
+/* HEADER */
+.header {
+    background-color: var(--bg-header-color);
+}
+
+.header a {
+    color: var(--text-color);
+    font-size: 1.4rem;
+}
+
+.header a i {
+    font-size: 1.4rem;
+}
+
+.header a:visited {
+    color: var(--text-color);
+}
+
+.header a:hover {
+    color: var(--main-color);
+}
+
+.header .nav-link.active {
+    color: var(--main-color);
+}
+
+.header input {
+    padding: 0;
+    max-width: 300px;
+}
+
+/* .header input::- {
+    background-color: var(--bg-header-color);
+} */
+
+.header form button {
+    font-size: 1.4rem;
+}
+
+.navbar-brand i {
+    color: var(--main-color);
+    font-size: 1.6rem;
+}
+
+.navbar-brand a {
+    color: var(--text-color);
+}
+
+.navbar-brand span {
+    color: var(--main-color);
+    font-size: 1.4rem;
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--bg-header-color);
+}
+
+.navbar .dropdown-menu a:hover {
+    color: var(--main-color);
+    background-color: var(--bg-header-color);
+}
+
+.navbar .dropdown-menu a {
+    color: var(--text-color);
+}
+
+.navbar-toggler {
+    color: var(--text-color);
+
+}
+
+.navbar-toggler i {
+    font-size: 2rem;
+}
+
+.header .login-div button {
+    margin-left: 8px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border-radius: 5px;
+}
+
+.header .login-div button:hover {
+    background-color: var(--bg-header-color);
+}

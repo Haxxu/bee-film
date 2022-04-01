@@ -1,0 +1,25 @@
+@import url('https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root {
+    --main-color: #FFE400;
+    --bg-color: #272727;
+    --text-color: #F7F4FF;
+    --bg-header-color: #121212;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
