@@ -128,16 +128,18 @@ body {
     margin-left: 5px;
 }
 
-.header .logged {
+
+
+.header .logged form {
     display: flex;
     align-items: center;
 }
 
-.header .logged a {
+.header .logged form a {
     font-size: 1.2rem;
 }
 
-.header .logged span {
+.header .logged form span {
     margin-left: 5px;
     padding-left: 5px;
     border-left: 1px solid var(--text-color);

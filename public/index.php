@@ -5,125 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee Film</title>
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <!-- Link to Bootstrap -->
-    <link rel="stylesheet" href="./assets/bootstrap-5.1.3-dist/css/bootstrap.css">
-    <!-- Link to base CSS -->
-    <link rel="stylesheet" href="./assets/css/base.css">
-    <!-- Link to main CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <!-- Link To CSS -->
+    <?php include_once('./linkCSS.php'); ?>
 </head>
 <body>
 
     <div class="wrapper">
-        <header class="header container-fluid">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="#">
-                        <i class='bx bx-movie-play bx-tada'></i>
-                        <span>Bee</span>Film
-                  </a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class='bx bx-menu bx-flip-horizontal' ></i>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                      <li class="nav-item mx-1">
-                        <a class="nav-link active" aria-current="page" href="#">
-                            <i class='bx bxs-home bx-flip-horizontal' ></i>
-                            Trang Chủ
-                        </a>
-                      </li>
-                      <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Phim lẻ</a>
-                      </li>
-                      <li class="nav-item mx-1">
-                        <a class="nav-link" href="#">Phim bộ</a>
-                      </li>
-                      <li class="nav-item mx-1 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Thể loại
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item mx-1 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Năm
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                      <li class="nav-item mx-1 dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Quốc gia
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="d-flex justify-content-lg-end search-box flex-fill" method="GET">
-                      <input class="form-control" autocomplete="off" name="search" type="search" placeholder="Tìm kiếm phim, diễn viên, đạo diễn" aria-label="Search">
-                      <button class="btn btn-dark" type="submit">
-                        <i class='bx bx-search' ></i>
-                      </button>
-                    </form>
-                    <div class="d-flex sign my-sm-4">
-                      <div class="login d-none">
-                        <label for="toggle-login-form" class="m-btn m-btn-hover">
-                            <span>Đăng nhập</span>
-                        </label>
-                        <input type="checkbox" id="toggle-login-form" class="d-none">
-                        <div class="login-form" id="login-form">
-                          <form action="login.php" class="p-2">
-                            <div class="mb-3 mt-3">
-                              <input type="text" placeholder="Tên đăng nhập" class="form-control p-3">
-                            </div>
-                            <div class="mb-3">
-                              <input type="password" placeholder="Mật khẩu" class="form-control p-3">
-                            </div>
-                            <div class="mb-3">
-                              <input type="checkbox" name="checkbox" checked>
-                              <label>Nhớ mật khẩu</label>
-                            </div>
-                            <button type="submit" class="btn btn-lg btn-primary">Đăng nhập</button>
-                          </form>
-                        </div>
-                        
-                        <a href="" class="m-btn m-btn-hover">
-                          <span>Đăng ký</span>
-                        </a>
-                      </div>
-                      <div class="logged">
-                        <a href="logout" name="logout" class="m-btn m-btn-warning m-btn-sm mx-2">
-                          Đăng xuất
-                        </a>
-                        <a href="">Thay đổi thông tin</a>
-                        <span>Xin chào Locknight</span>
-                      </div>
 
-                    </div>
-                  </div>
-                </div>
-              </nav>
-        </header>
+        <!-- Header -->
+        <?php include_once("./header.php"); ?>
 
+        <!-- Content -->
         <div style="color: #fff; font-size: 1.5rem;">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum nequeorum aliquid praesentium.
@@ -171,66 +63,12 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
         </div>
 
-        <footer class="footer container-fluid">
-          <div class="row">
-            <div class="col-4 col-md-6 col-sm-12">
-              <div class="content">
-                  <a href="#" class="logo">
-                      <i class='bx bx-movie-play bx-tada main-color'></i>
-                      <span>Bee</span>Film
-                  </a>
-                  <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam, aperiam officia quia voluptatem voluptatum iure quasi ullam modi adipisci aut enim accusantium amet similique veritatis quidem facere, ex tenetur.
-                  </p>
-                  <div class="social-list">
-                      <a href="#" class="social-item">
-                          <i class="bx bxl-facebook"></i>
-                      </a>
-                      <a href="#" class="social-item">
-                          <i class="bx bxl-twitter"></i>
-                      </a>
-                      <a href="#" class="social-item">
-                          <i class="bx bxl-instagram"></i>
-                      </a>
-                  </div>
-              </div>
-            </div>
-            <div class="col-8 col-md-6 col-sm-12">
-              <div class="row">
-                  <div class="col-6 col-md-6 col-sm-12">
-                      <div class="content">
-                          <h3>BeeFilm</h3>
-                          <ul class="footer-menu">
-                              <li><a href="#">About us</a></li>
-                              <li><a href="#">My profile</a></li>
-                              <li><a href="#">Pricing plans</a></li>
-                              <li><a href="#">Contacts</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-6 col-md-6 col-sm-12">
-                      <div class="content">
-                          <h3>Browse</h3>
-                          <ul class="footer-menu">
-                              <li><a href="#">About us</a></li>
-                              <li><a href="#">My profile</a></li>
-                              <li><a href="#">Pricing plans</a></li>
-                              <li><a href="#">Contacts</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-
-    </div>    
+        <!-- Footer -->
+        <?php include_once('./footer.php'); ?>
     
-    <!-- Link to Jquery -->
-    <script src="./assets/jquery-3.6.0/jquery-3.6.0.js"></script>
-    <!-- Link to Bootstrap JS -->
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.js"></script>
-    <!-- Link to JS -->
-    <script src="./assets/js/main.js"></script>
+      </div>    
+    
+    <!-- Link To JS -->
+    <?php include_once('./linkJS.php'); ?>
 </body>
 </html>
