@@ -216,3 +216,26 @@ body {
 
 
 /* END FOOTER */
+
+
+/* REGISTER */
+.register h1 {
+    color: var(--text-color);
+}
+
+.register label {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.register .invalid-feedback {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.register .is-invalid {
+    font-size: 1.5rem;
+    color: green;
+}
+
+/* END REGISTER */
