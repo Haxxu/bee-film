@@ -16,63 +16,63 @@
         <?php include_once('./header.php'); ?>
 
         <!-- Content -->
-        <div class="register container">
-            <h1>Đăng ký thành viên</h1>
-            <div class="">
+        <div class="register container my-5">
+            <h1 class="text-center">Đăng ký thành viên</h1>
+            <div class="mt-5">
                 <form id="form-register" method="post" class="form-register" action="">
 
-                    <div class="mb-4">
-                        <label class="form-label" for="username">Tài khoản</label>
-                        <div class="">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Nhận tài khoản" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label" for="password">Mật khẩu</label>
-                        <div class="">
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label" for="confirm_password">Nhập lại mật khẩu</label>
-                        <div class="">
-                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label" for="fullname">Họ tên</label>
-                        <div class="">
-                            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Nhập họ và tên" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4">
-                        <label class="form-label" for="birthday">Ngày sinh</label>
-                        <div class="">
-                            <input type="date" value="" class="form-control" id="birthday" name="birthday" placeholder="" />
+                    <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="username">Tài khoản: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Nhận tài khoản" />
                         </div>
                     </div>
 
                     <div class="mb-4 row">
-                        <label class="col-lg-3 label-control" for="">Giới tính</label>
-                        <div class="col-log-7">
-                            <label for="" class="d-inline">
-                                <input type="radio" name="gender" id="register-gender-male" value="male" checked>
-                                Nam
-                            </label>
-                            <label for="" class="d-inline">
-                                <input type="radio" name="gender" id="register-gender-female" value="female" checked>
-                                Nữ
-                            </label>
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="password">Mật khẩu: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Mật khẩu" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="confirm_password">Nhập lại mật khẩu: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="password" class="form-control form-control-lg" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="fullname">Họ tên: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="text" class="form-control form-control-lg" id="fullname" name="fullname" placeholder="Nhập họ và tên" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="birthday">Ngày sinh: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="date" value="" class="form-control form-control-lg" id="birthday" name="birthday" placeholder="" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
+                        <label class="col-12 col-lg-2 offset-lg-2" for="">Giới tính: </label>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-check-inline">
+                                <input type="radio" name="gender" id="register-gender-male" class="form-check-input" value="male" checked>
+                                <label for="register-gender-male" class="form-check-label ps-2">Nam</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input type="radio" name="gender" id="register-gender-female" class="form-check-input" value="female">
+                                <label for="register-gender-female" class="form-check-label ps-2">Nữ</label>
+                            </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-5 offset-sm-4">
-                            <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Đăng ký</button>
+                            <button type="submit" class="btn btn-primary btn-lg" name="signup" value="Sign up">Đăng ký</button>
                         </div>
                     </div>
 

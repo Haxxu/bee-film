@@ -98,7 +98,7 @@ body {
     font-size: 2rem;
 }
 
-/* Login / Register */
+/* Login / Register In Header */
 
 .header .login {
     position: relative;
@@ -128,7 +128,9 @@ body {
     margin-left: 5px;
 }
 
-
+.header .login .toggle-login-btn {
+    cursor: pointer;
+}
 
 .header .logged form {
     display: flex;
@@ -147,12 +149,10 @@ body {
     font-size: 1.2rem;
 }
 
-
 /* END HEADER */
 
 
 /* FOOTER */
-
 .footer {
     background-color: var(--bg-header-color);
 }
@@ -236,6 +236,10 @@ body {
 .register .is-invalid {
     font-size: 1.5rem;
     color: green;
+}
+
+.register input[type="radio"] {
+    font-size: 1.5rem;
 }
 
 /* END REGISTER */

@@ -66,10 +66,10 @@
 					</button>
 				</form>
 				<div class="d-flex sign my-sm-4">
-					<?php if (empty($_SESSION["username"])) { ?>
-						<div class="login d-flex">
-							<label for="toggle-login-form" class="m-btn m-btn-hover">
-									<span>Đăng nhập</span>
+					<?php if (!empty($_SESSION["username"])) { ?>
+						<div class="login d-flex mx-2">
+							<label for="toggle-login-form" class="m-btn m-btn-hover toggle-login-btn">
+								<span>Đăng nhập</span>
 							</label>
 							<input type="checkbox" id="toggle-login-form" class="d-none">
 							<div class="login-form" id="login-form">
@@ -80,9 +80,9 @@
 									<div class="mb-3">
 										<input type="password" name=password placeholder="Mật khẩu" class="form-control p-3">
 									</div>
-									<div class="mb-3">
-										<input type="checkbox" name="checkbox" checked>
-										<label>Nhớ mật khẩu</label>
+									<div class="mb-3 d-flex align-items-center">
+										<input type="checkbox" name="check-remember" id="check-remember" checked>
+										<label for="check-remember">Nhớ mật khẩu</label>
 									</div>
 									<button type="submit" class="btn btn-lg btn-primary">Đăng nhập</button>
 								</form>
@@ -95,9 +95,9 @@
 					
 					<?php } else { ?>
 
-						<div class="logged">
+						<div class="logged mx-2">
 							<form method="POST" action="">
-								<div onclick="this.parentNode.submit()" type="submit" name="log_out" class="m-btn m-btn-warning m-btn-sm mx-2">
+								<div onclick="this.parentNode.submit()" type="submit" name="log_out" class="m-btn m-btn-hover m-btn-warning m-btn-sm mx-2">
 									Đăng xuất
 								</div>
 								<a href="">Thay đổi thông tin</a>
