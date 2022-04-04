@@ -66,7 +66,7 @@
 					</button>
 				</form>
 				<div class="d-flex sign my-sm-4">
-					<?php if (!empty($_SESSION["username"])) { ?>
+					<?php if (empty($_SESSION["username"])) { ?>
 						<div class="login d-flex mx-2">
 							<label for="toggle-login-form" class="m-btn m-btn-hover toggle-login-btn">
 								<span>Đăng nhập</span>
