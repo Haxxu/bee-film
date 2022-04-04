@@ -50,6 +50,13 @@
                     </div>
 
                     <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="email">Email: </label>
+                        <div class="col-12 col-lg-6">
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Nhập email" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
                         <label class="form-label col-12 col-lg-2 offset-lg-2" for="birthday">Ngày sinh: </label>
                         <div class="col-12 col-lg-6">
                             <input type="date" value="" class="form-control form-control-lg" id="birthday" name="birthday" placeholder="" />
@@ -110,35 +117,40 @@
 					fullname: 'required',
 					password: {
 						required: true,
-						minlength: 5
+						minlength: 8
 					},
 					confirm_password: {
 						required: true,
-						minlength: 5,
+						minlength: 8,
 						equalTo: '#password'
 					},
 					email: {
 						required: true,
 						email: true
 					},
+                    birthday: {
+                        required: true,
+                        date: true
+                    }
 				},
 				messages: {
 					username: 'Bạn chưa nhập vào tài khoản của bạn', 
-					fullname: 'Bạn chưa nhập vào học của bạn',
+					fullname: 'Bạn chưa nhập vào họ tên của bạn',
 					username: {
 						required: 'Bạn chưa nhập vào tên đăng nhập',
-						minlength: 'Tên đăng nhập phải có ít nhất 2 ký tự'
+						minlength: 'Tên đăng nhập phải có ít nhất 5 ký tự'
 					},
 					password: {
 						required: 'Bạn chưa nhập vào mật khẩu',
-						minlength: 'Mật khẩu phải có íi nhất 5 ký tự'
+						minlength: 'Mật khẩu phải có íi nhất 8 ký tự'
 					},
 					confirm_password: {
 						required: 'Bạn chưa nhập vào mật khẩu',
-						minlength: 'Mật khẩu phải có íi nhất 5 ký tự',
+						minlength: 'Mật khẩu phải có íi nhất 8 ký tự',
 						equalTo: 'Mật khẩu không trùng khớp với mật khẩu đã nhập'
 					},
 					email: 'Hộp thư điện tử không hợp lệ',
+                    birthday: 'Ngày sinh không hợp lệ'
 				},
 				errorElement: 'div',
 				errorPlacement: function(error, element) {
