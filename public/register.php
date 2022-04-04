@@ -1,3 +1,35 @@
+<?php
+    require_once('../src/db.php');
+
+    if (isset($_POST['btn-register'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+        $email = $_POST['email'];
+        $fullname = $_POST['fullname'];
+        $birthday = $_POST['birthday'];
+        $gender = $_POST['gender'];
+
+        $sql = "SELECT * FROM `users` WHERE `username` = '$username'";
+        $result = mysqli_query($conn, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            echo "
+                <script>alert('Tài khoản đã tồn tại')</script>
+            ";
+            // echo "Tài khoản $username đã tồn tại";
+        } else {
+            $sql = "INSERT INTO `users`(`username`, `password`, `email`, `fullname`, `birthday`, `gender`, `user_type`) VALUES ('$username', '$hashPassword', '$email', '$fullname', '$birthday', '$gender', 2)";
+            mysqli_query($conn, $sql);
+            echo "
+                <script>alert('Đăng ký thành công')</script>
+            ";
+            header('Location: index.php');
+            die();
+        }
+    } 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,11 +111,14 @@
 
                     <div class="row">
                         <div class="col-sm-5 offset-sm-4">
-                            <button type="submit" class="btn btn-primary btn-lg" name="signup" value="Sign up">Đăng ký</button>
+                            <button type="submit" class="btn btn-primary btn-lg" name="btn-register" id="btn-register" value="Sign up">
+                                Đăng ký
+                            </button>
                         </div>
                     </div>
 
                 </form>
+
             </div>
 	    </div> 
         <!-- End Content -->
@@ -101,11 +136,13 @@
     <script src="./assets/jquery-3.6.0/jquery.validate.js"></script>
     <!-- Script to config form validate -->
     <script>
-        $.validator.setDefaults({
-			submitHandler: function() {
-				alert('submitted!');
-			}
-		});
+        // $.validator.setDefaults({
+		// 	submitHandler: function() {
+                
+		// 		alert('submitted!');
+        //         document.querySelector('#form-register').submit();
+		// 	}
+		// });
 
         $(document).ready(() => {
 			$('#form-register').validate({

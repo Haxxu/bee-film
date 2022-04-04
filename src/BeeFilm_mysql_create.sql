@@ -64,6 +64,7 @@ CREATE TABLE `film-actor` (
 CREATE TABLE `users` (
 	`user_id` INT(20) NOT NULL AUTO_INCREMENT,
 	`username` varchar(100) NOT NULL UNIQUE,
+	`fullname` varchar(50) NOT NULL,
 	`password` varchar(100) NOT NULL,
 	`email` varchar(150) NOT NULL UNIQUE,
 	`birthday` DATE,
