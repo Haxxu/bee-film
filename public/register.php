@@ -110,7 +110,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-5 offset-sm-4">
+                        <div class="col-lg-5 offset-lg-4">
                             <button type="submit" class="btn btn-primary btn-lg" name="btn-register" id="btn-register" value="Sign up">
                                 Đăng ký
                             </button>
