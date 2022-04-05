@@ -11,7 +11,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item mx-1">
-						<a class="nav-link active" aria-current="page" href="#">
+						<a class="nav-link active" aria-current="page" href="./index.php">
 								<i class='bx bxs-home bx-flip-horizontal' ></i>
 								Trang Chủ
 						</a>
