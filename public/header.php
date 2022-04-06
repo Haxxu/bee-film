@@ -1,7 +1,13 @@
+<?php
+  require_once('../src/db.php');
+  session_start();
+  error_reporting(E_ALL);
+?>
+
 <header class="header container-fluid">
 	<nav class="navbar navbar-expand-lg">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="./index.php">
 						<i class='bx bx-movie-play bx-tada'></i>
 						<span>Bee</span>Film
 			</a>
@@ -73,18 +79,18 @@
 							</label>
 							<input type="checkbox" id="toggle-login-form" class="d-none">
 							<div class="login-form" id="login-form">
-								<form action="login.php" class="p-2">
+								<form action="login.php" method="POST" class="p-2">
 									<div class="mb-3 mt-3">
-										<input type="text" name="username" placeholder="Tên đăng nhập" class="form-control p-3">
+										<input type="text" name="username" placeholder="Tên đăng nhập" class="form-control p-3" require>
 									</div>
 									<div class="mb-3">
-										<input type="password" name=password placeholder="Mật khẩu" class="form-control p-3">
+										<input type="password" name=password placeholder="Mật khẩu" class="form-control p-3" require>
 									</div>
-									<div class="mb-3 d-flex align-items-center">
-										<input type="checkbox" name="check-remember" id="check-remember" checked>
-										<label for="check-remember">Nhớ mật khẩu</label>
+									<div class="form-check mb-3 ms-4 d-flex align-items-center">
+										<input type="checkbox" name="check-remember" id="check-remember" class="form-check-input" checked>
+										<label for="check-remember" class="form-check-label">Nhớ mật khẩu</label>
 									</div>
-									<button type="submit" class="btn btn-lg btn-primary">Đăng nhập</button>
+									<button type="submit" class="btn btn-lg btn-primary" id="btn-login" name="btn-login">Đăng nhập</button>
 								</form>
 							</div>
 							
@@ -96,12 +102,13 @@
 					<?php } else { ?>
 
 						<div class="logged mx-2">
-							<form method="POST" action="">
-								<div onclick="this.parentNode.submit()" type="submit" name="log_out" class="m-btn m-btn-hover m-btn-warning m-btn-sm mx-2">
+							<form method="POST" action="./logout.php">
+								<div onclick="this.parentNode.submit()" class="m-btn m-btn-hover m-btn-warning m-btn-sm mx-2">
 									Đăng xuất
 								</div>
-								<a href="">Thay đổi thông tin</a>
-								<span>Xin chào Locknight</span>
+								<input type="text" class="d-none" name = btn-logout>
+								<a href="./info_account.php">Thay đổi thông tin</a>
+								<span>Xin chào <?= $_SESSION["username"]; ?></span>
 							</form>
 						</div>
 
@@ -112,17 +119,3 @@
 		</div>
 	</nav>
 </header>
-
-
-<!-- LOG OUT -->
-<?php if (isset($_POST['log_out'])) { ?>
-<!-- js to show logout notify success -->
-
-<?php 
-unset($_SESSION['username']);
-session_unset();
-session_destroy();
-header('Location: index.php');
-die();
-}
-?>
