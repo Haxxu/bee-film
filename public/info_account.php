@@ -32,12 +32,13 @@
         $gender = $_POST['gender'];
 
         $sql = "UPDATE users SET
-                    username = ?,
-                    password = ?,
-                    email = ?,
-                    fullname = ?,
-                    birthday = ?,
-                    gender = ?
+                    `username` = ?,
+                    `password` = ?,
+                    `email` = ?,
+                    `fullname` = ?,
+                    `birthday` = ?,
+                    `gender` = ?,
+                    `updated_at` = now()
                 WHERE user_id = '$id';
         ";
 

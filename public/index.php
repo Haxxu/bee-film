@@ -19,50 +19,22 @@
 
         <!-- Content -->
         <div style="color: #fff; font-size: 1.5rem;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum nequeorum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Loresam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, soluta laboriosam non nisi consequatur, maxime deleniti illum neque voluptatem itaque repellat ad. Exercitationem id error laboriosam consequuntur laborum aliquid praesentium.
+        <div>
+          <?php
+            if (isset($_SESSION['message'])) {
+              echo "<h1>" . $_SESSION['message']['body'] . "</h1>";
+              unset($_SESSION['message']);
+            }
+          ?>
+        </div>
+        
+        </div>
+        
+        <div class="home">
+          <!-- Slider -->
+          <section>
+
+          </section>
         </div>
 
         <!-- Footer -->

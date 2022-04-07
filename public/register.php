@@ -22,10 +22,19 @@
             ";
             // echo "Tài khoản $username đã tồn tại";
         } else {
-            $sql = "INSERT INTO `users`(`username`, `password`, `email`, `fullname`, `birthday`, `gender`, `user_type`) VALUES ('$username', '$hashPassword', '$email', '$fullname', '$birthday', '$gender', 2)";
 
-            $sql = "INSERT INTO `users`(`username`, `password`, `email`, `fullname`, `birthday`, `gender`, `user_type`) 
-                    VALUES (?, ?, ?, ?, ?, ?, 2)";
+
+            $sql = "INSERT INTO `users`(
+                                        `username`, 
+                                        `password`, 
+                                        `email`, 
+                                        `fullname`, 
+                                        `birthday`, 
+                                        `gender`, 
+                                        `user_type`,
+                                        `created_at`,
+                                        `updated_at`) 
+                                VALUES (?, ?, ?, ?, ?, ?, 2, now(), now())";
 
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);

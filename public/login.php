@@ -36,6 +36,7 @@
                 </script>
                 
             <?php
+            $_SESSION['message'] = ['body' => 'Username không tồn tại', 'type' => 'warning'];
             header('Location: index.php');
             die();
             }

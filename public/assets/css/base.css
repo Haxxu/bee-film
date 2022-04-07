@@ -47,6 +47,10 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    color: var(--text-color);
+}
+
 .wrapper {
     padding-top: 100px;
 }
