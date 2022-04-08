@@ -21,6 +21,8 @@
                 <script>alert('Tài khoản đã tồn tại')</script>
             ";
             // echo "Tài khoản $username đã tồn tại";
+            
+            // $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
         } else {
 
 
@@ -41,8 +43,8 @@
             mysqli_stmt_execute($stmt);
 
             mysqli_close($conn);
+            $_SESSION['message'] = ['body' => 'Tài khoản đã được tạo', 'type' => 'success'];
             header('Location: index.php');
-
             die();
         }
     } 

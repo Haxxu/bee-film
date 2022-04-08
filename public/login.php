@@ -22,6 +22,7 @@
                 alert('Username và password của bạn không được để trống')
             </script>
         <?php 
+            $_SESSION['message'] = ['body' => 'Username và password của bạn không được để trống', 'type' => 'danger'];
             header('Location: ./index.php');
             die();
         } else {
@@ -36,8 +37,8 @@
                 </script>
                 
             <?php
-            $_SESSION['message'] = ['body' => 'Username không tồn tại', 'type' => 'warning'];
-            header('Location: index.php');
+            $_SESSION['message'] = ['body' => 'Username không tồn tại', 'type' => 'danger'];
+            header('Location: ./index.php');
             die();
             }
             
@@ -54,13 +55,15 @@
                 } else {
                     // Member
                     header('Location: index.php');
+                    $_SESSION['message'] = ['body' => 'Đăng nhập thành công', 'type' => 'success'];
+                    die();
                 }
             } else { ?>
                 <script>
                     alert('Password không đúng');
                 </script>
             <?php
-            
+                $_SESSION['message'] = ['body' => 'Mật khẩu không đúng', 'type' => 'danger'];
                 header('Location: index.php');
                 die();
             }

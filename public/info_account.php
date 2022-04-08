@@ -46,9 +46,9 @@
         mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);
         mysqli_stmt_execute($stmt);
 
-        mysqli_close($conn);    
-        header('Location: ' . $_SERVER['PHP_SELF']);
-        die();   
+        mysqli_close($conn);   
+        $_SESSION['message'] = ['body' => 'Cập nhật thông tin thành công', 'type' => 'success']; 
+        header('Location: ' . $_SERVER['PHP_SELF']); 
     } 
 ?>
 

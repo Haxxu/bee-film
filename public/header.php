@@ -1,15 +1,33 @@
 <?php
+
+use function PHPSTORM_META\type;
+
   require_once('../src/db.php');
   session_start();
   error_reporting(E_ALL);
 ?>
 
+<?php if (isset($_SESSION['message'])) { ?>
+	<div id="toast-message" class="toast bg-<?= $_SESSION['message']['type'] ?>" role="alert" aria-live="assertive" aria-atomic="true">
+		<div class="toast-header">
+			<strong class="me-auto">Thông báo</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body">
+			<?= $_SESSION['message']['body'] ?>
+		</div>
+	</div>
+<?php
+	unset($_SESSION['message']);
+} ?>
+
+
 <header class="header container-fluid">
 	<nav class="navbar navbar-expand-lg">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="./index.php">
-						<i class='bx bx-movie-play bx-tada'></i>
-						<span>Bee</span>Film
+				<i class='bx bx-movie-play bx-tada'></i>
+				<span>Bee</span>Film
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<i class='bx bx-menu bx-flip-horizontal' ></i>

@@ -1,5 +1,5 @@
 
-    
+// Home
 var swiper = new Swiper(".hero-slide", {
     loop: true,
     slidesPerView: 1,
@@ -35,3 +35,13 @@ var swiper2 = new Swiper(".films-slide", {
         },
     }
 });
+
+// End Home
+
+
+// Toast Message
+var toastMessage = document.getElementById('toast-message')
+if (toastMessage) {
+    var toast = new bootstrap.Toast(toastMessage)
+    toast.show()
+}
