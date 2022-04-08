@@ -1,6 +1,6 @@
 <footer class="footer container-fluid">
     <div class="row">
-        <div class="col-4 col-md-6 col-sm-12">
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="content">
                 <a href="#" class="logo">
                     <i class='bx bx-movie-play bx-tada main-color'></i>
@@ -22,7 +22,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-8 col-md-6 col-sm-12">
+        <div class="col-lg-8 col-md-6 col-sm-12">
             <div class="row">
                 <div class="col-6 col-md-6 col-sm-12">
                     <div class="content">
@@ -35,7 +35,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-6 col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <div class="content">
                         <h3>Browse</h3>
                         <ul class="footer-menu">

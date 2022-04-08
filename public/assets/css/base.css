@@ -9,6 +9,8 @@
     --text-color: #F7F4FF;
     --bg-header-color: #121212;
     --box-color: #ccc;
+
+    --space-top: 30px;
 }
 
 /* Custom Scroll Bar */
@@ -101,3 +103,8 @@ a:visited {
 .m-btn.m-btn-sm {
     font-size: 1.1rem;
 }
+
+.m-btn.m-btn-lg {
+    font-size: 1.8rem;
+}
+
