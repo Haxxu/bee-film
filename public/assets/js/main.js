@@ -5,10 +5,10 @@ var swiper = new Swiper(".hero-slide", {
     slidesPerView: 1,
     spaceBetween: 30,
     centeredSlides: true,
-    // autoplay: {
-    //   delay: 8000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 8000,
+      disableOnInteraction: false,
+    },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
