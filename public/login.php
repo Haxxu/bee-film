@@ -45,7 +45,7 @@
 
             if (password_verify($password, $dbarray['password'])) {
                 $_SESSION['username'] = $username;
-                $_SESSION['password'] = $password;
+                // $_SESSION['password'] = $password;
 
                 // Phân quyền
                 if ($dbarray['user_type'] == 1) {
