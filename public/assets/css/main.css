@@ -594,7 +594,7 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
 }
 
 .film-img-poster {
@@ -605,42 +605,135 @@ body {
     border: 1px solid var(--text-color);
 }
 
-.film-info-text {
+.film-detail-main-text {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
     margin-left: 30px;
 }
 
-.film-info-text .film-title {
+.film-detail-main-text .film-title {
     font-size: 3rem;
     font-weight: 600;
     color: var(--text-color);
 }
 
-.film-info-text .film-title-2 {
+.film-detail-main-text .film-title-2 {
     font-size: 2rem;
     font-weight: 60;
     color: var(--text-color);
 
 }
 
-.film-info-text .film-action a {
+.film-detail-main-text .film-action a {
     display: inline-block;
     padding: 10px;
     margin-right: 10px;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
     color: var(--text-color);
 }
 
-.film-info-text .film-action a:hover {
+.film-detail-main-text .film-action a:hover {
     color: var(--main-color);
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
-.film-info-text .film-action i {
-    font-size: 2rem;
+.film-detail-main-text .film-action i {
+    font-size: 1.8rem;
 }
+
+/* detail film */
+
+/* Rating */
+.film-detail-box {
+    margin-top: 20px;
+    background-color: var(--bg-box-color);
+}
+
+.film-detail-box hr {
+    margin-top: 20px;
+    color: var(--main-color);
+}
+
+.film-detail-title {
+    padding-top: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.film-rating {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.film-rating-star i {
+    font-size: 2.5rem;
+    color: var(--main-color);
+}
+
+.film-rating-score {
+    margin-left: 10px;
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.film-detail-text {
+    background-color: var(--bg-box-color);
+    font-size: 2rem;
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film-genre,  
+.film-status,  
+.film-time,  
+.film-year,  
+.film-nation,  
+.film-imdb,  
+.film-director,  
+.film-actor {
+    margin-top: 10px;
+}
+
+.film-genre strong,  
+.film-status strong,  
+.film-time strong,  
+.film-year strong,  
+.film-nation strong,  
+.film-imdb strong,  
+.film-director strong,  
+.film-actor strong {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+
+.film-genre a,  
+.film-status span,  
+.film-time span,  
+.film-year a,  
+.film-nation a,  
+.film-imdb span,  
+.film-director a,  
+.film-actor a {
+    padding: 8px 0;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--text-color-dark);
+}
+
+.film-description-text p {
+    margin-top: 10px;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
 
 /* END FILM DETAIL */
