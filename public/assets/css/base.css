@@ -111,3 +111,6 @@ a:visited {
     font-size: 1.8rem;
 }
 
+.bg-box-color {
+    background-color: var(--bg-box-color);
+}

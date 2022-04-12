@@ -598,8 +598,8 @@ body {
 }
 
 .film-img-poster {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
     object-position: center;
     border: 1px solid var(--text-color);
@@ -643,7 +643,45 @@ body {
     font-size: 1.8rem;
 }
 
-/* detail film */
+/* End detail film */
+
+/* Film episode */
+.film-episode-list-box {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--bg-box-color);
+}
+
+.film-episode-list {
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.film-episode-list li {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.film-episode {
+    
+}
+
+.film-episode a {
+    white-space: nowrap;
+    text-align: center;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--bg-header-color);
+    color: var(--text-color-dark);
+    font-size: 2rem;
+}
+
+.film-episode a:hover {
+    color: var(--main-color);
+}
+/* End Film episode */
 
 /* Rating */
 .film-detail-box {
@@ -657,7 +695,7 @@ body {
 }
 
 .film-detail-title {
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 2rem;
     font-weight: 600;
     color: var(--main-color);
@@ -729,6 +767,18 @@ body {
     color: var(--text-color-dark);
 }
 
+.film-genre a:hover, 
+.film-year a:hover,
+.film-nation a:hover, 
+.film-director a:hover, 
+.film-actor a:hover {
+    color: var(--main-color);
+}
+
+.film-description {
+    padding-bottom: 10px;
+}
+
 .film-description-text p {
     margin-top: 10px;
     font-size: 1.8rem;
@@ -737,3 +787,10 @@ body {
 
 
 /* END FILM DETAIL */
+
+
+/* WATCH FILM  */
+.film-box video {
+    width: 100%;
+}
+/* END WATCH FILM  */

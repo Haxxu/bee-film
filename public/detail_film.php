@@ -26,7 +26,7 @@
                 </div>  
                 <!-- End Breadcumb -->
 
-                <!-- Main Info -->
+                <!-- Main Banner Info -->
                 <div class="film-detail-main">
                     <a href="#trailer" class="play-film">
                         <i class='bx bx-play' ></i>
@@ -56,7 +56,183 @@
                         </div>
                     </div>
                 </div>
-                <!-- End Main Info -->
+                <!-- End Main Banner Info -->
+
+                <!-- Film Episode List -->
+                <div class="film-episode-list-box">
+                    <div class="film-detail-title">
+                        Danh sách tập phim
+                    </div>
+                    <ul class="film-episode-list">
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 4</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 5</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 6</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 7</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 8</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 9</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 10</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 11</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 1</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 12</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 123 232 233</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 2</a>
+                        </li>
+                        <li class="film-episode">
+                            <a href="#">Tập 3</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- End Film Episode List -->
 
                 <!-- Film Info -->
                 <div class="film-detail-box container">
@@ -147,7 +323,7 @@
                             Trailer
                         </div>
                         <div class="film-trailer-box">
-                            <iframe id="trailer" width="100%" height="600px" src="https://www.youtube.com/embed/TEd1012DT0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe id="trailer" width="100%" height="640px" src="https://www.youtube.com/embed/TEd1012DT0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <!-- End Trailer -->
