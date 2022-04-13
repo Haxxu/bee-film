@@ -7,8 +7,9 @@ CREATE TABLE `films` (
 	`trailer` varchar(300),
 	`IMDb` FLOAT(3),
 	`release_date` DATE,
-	`description` varchar(1000) NOT NULL,
-	`episode_number` INT(10) NOT NULL,
+	`description` varchar(1000),
+	`episode_number` INT(10),
+	`duration` INT(10),
 	`nation_id` INT(5) NOT NULL,
 	`created_at` TIMESTAMP NOT NULL,
 	`updated_at` TIMESTAMP NOT NULL,
@@ -43,7 +44,7 @@ CREATE TABLE `film-genre` (
 CREATE TABLE `episodes` (
 	`ep_id` INT(25) NOT NULL AUTO_INCREMENT,
 	`ep_name` varchar(50),
-	`ep_video` varchar(300) NOT NULL,
+	`ep_video` varchar(300),
 	`ep_order` INT(10) NOT NULL,
 	`film_id` INT(20) NOT NULL,
 	PRIMARY KEY (`ep_id`)
@@ -64,7 +65,7 @@ CREATE TABLE `film-actor` (
 CREATE TABLE `users` (
 	`user_id` INT(20) NOT NULL AUTO_INCREMENT,
 	`username` varchar(100) NOT NULL UNIQUE,
-	`fullname` varchar(50) NOT NULL,
+	`fullname` varchar(50),
 	`password` varchar(100) NOT NULL,
 	`email` varchar(150) NOT NULL UNIQUE,
 	`birthday` DATE,
