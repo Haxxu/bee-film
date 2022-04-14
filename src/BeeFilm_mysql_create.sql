@@ -247,7 +247,24 @@ INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trail
 
 INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('37', 'NHÓM NHẠC CỦA NHỮNG ƯỚC MƠ', 'BanG Dream!', 'p35.png', 'p35_banner.jpg', 'https://www.youtube.com/embed/msPbP1EzPpI', '6.6', '2017', 'Cô nàng yêu ca hát Nino Arisugawa đã trải qua một cuộc chia tay buồn với người bạn yêu quý Momo sau khi cậu chuyển nhà. Một thời gian sau, Nino kết bạn với Yuzu, một nhà soạn nhạc, nhưng họ cũng sớm phải rời xa nhau. Âm nhạc là mối liên kết duy nhất giữa họ. Cả hai người con trai hứa với Nino rằng họ sẽ tìm ra cô nhờ giọng hát của cô. Nino vẫn ôm ấp hi vọng đó, và luôn nỗ lực để đưa giọng hát của mình đến mọi người. Khi lên cao trung, Nino may mắn hội ngộ với Yuzu, nhưng cô cũng rất mong gặp lại Momo lần nữa...', '40', '24', '15960', '4', '2022-04-12 21:38:06', '2022-04-12 21:38:06', '2');
 
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('38', 'HOÀNG TỬ HÀO HOA', 'Charming', 'p36.png', 'p36_banner.webp', 'https://www.youtube.com/embed/ztsbgEUzVpc', '5.6', '2018', 'Charming - Hoàng Tử Hào Hoa mang đến cho khán giả một câu chuyện mới, một góc nhìn cực kỳ thú vị, sáng tạo và chưa bao giờ được kể của ba cô gái xinh đẹp trong xứ sở thần tiên nổi tiếng: Bạch Tuyết, Lọ Lem và Công Chúa Ngủ Trong Rừng. Một ngày nọ cả ba khám phá ra rằng những vị hôn phu mà các cô đính hôn thật ra đều là cùng một người đó là Hoàng Tử Charming. Bên cạnh đó còn có hàng triệu cô gái trong vương quốc thầm thương trộm nhớ muốn trở thành vợ của Hoàng Tử.', '1', '90', '12160', '1', '2022-04-12 21:38:08', '2022-04-12 21:38:08', '1');
 
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('39', 'DỰ ÁN Q', 'Pop In Q', 'p37.png', 'p37_banner.webp', 'https://www.youtube.com/embed/cgnYwH32Ogs', '5.2', '2016', 'Câu chuyện bắt đầu một ngày trước khi lễ tốt nghiệp. Năm cô gái trung học mỗi bận tâm với cuộc sống hàng ngày thực sự của họ. Những cô gái gặp nhau trong một thế giới tưởng tượng sau khi được gửi ở đó thông qua một sự xuất hiện đột ngột. Ở đó, họ tìm hiểu về cuộc khủng hoảng sắp xảy ra rằng thế giới này đang phải đối mặt. Các cách để ngăn chặn cuộc khủng hoảng này là cho năm hợp tác và mang lại lăm trái tim của họ với nhau như một thông qua khiêu vũ. Tuy nhiên, năm không thể đi đến tình yêu trên thế giới, và không thể nói cảm xúc thật của họ với nhau, vì vậy trái tim của họ không thể đoàn kết. Thời hạn đang đến rất nhanh. điệu nhảy của năm cô gái có thể cứu thế giới? Và họ sẽ có thể tốt nghiệp?', '1', '95', '16700', '4', '2022-04-12 21:38:10', '2022-04-12 21:38:10', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('40', 'NHỮNG CÔ NÀNG ÂM NHẠC', 'Ongaku shoujo', 'p38.png', 'p38_banner.jpg', 'https://www.youtube.com/embed/s6D1CJjkXWE', '5.6', '2018', 'Bộ anime dựa trên anime ngắn do studio DEEN sản xuất trong dự án Anime Mirai 2015. Câu chuyện kể về cô bé Hanako Yamadaki và cuộc gặp gỡ định mệnh của cô với nhóm idol Ongaku Shoujo - một nhóm nhạc nhỏ bé, vô danh gồm 11 thành viên. Nhà sản xuất Ikehashi nghĩ rằng nhóm cần một thành viên mới. Thế là cô bé Hanako đã gia nhập vào showbiz như thế. Cùng với nhau, nhóm nhạc Ongaku Shoujo nỗ lực từng ngày để gặt hái thành công trong thế giới âm nhạc.', '26', '24', '17700', '4', '2022-04-12 21:38:12', '2022-04-12 21:38:12', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('41', 'Người dơi', 'The Batman', 'p39.jpg', 'p39_banner.jpg', 'https://www.youtube.com/embed/mqqft2x_Aa4', '8.3', '2022', 'Trong năm thứ hai chiến đấu với tội phạm, Batman phát hiện ra tham nhũng ở thành phố Gotham , nơi kết nối với gia đình của chính anh ta trong khi đối mặt với một kẻ giết người hàng loạt được gọi là Riddler.', '1', '176', '27700', '1', '2022-04-12 21:38:14', '2022-04-12 21:38:14', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('41', 'Người dơi', 'The Batman', 'p39.jpg', 'p39_banner.jpg', 'https://www.youtube.com/embed/mqqft2x_Aa4', '8.3', '2022', 'Trong năm thứ hai chiến đấu với tội phạm, Batman phát hiện ra tham nhũng ở thành phố Gotham , nơi kết nối với gia đình của chính anh ta trong khi đối mặt với một kẻ giết người hàng loạt được gọi là Riddler.', '1', '176', '27700', '1', '2022-04-12 21:38:14', '2022-04-12 21:38:14', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('42', 'BẬC THẦY CẦU LÔNG', 'The Badminton play of Ayano Hanesaki', 'p40.jpg', 'p40_banner.jpg', 'https://www.youtube.com/embed/kkwZpVqHiaM', '6.3', '2018', 'Một người chơi BFB luẩn quẩn với một bao phủ quá khứ những người nắm giữ một mối thù với Dan. Kỹ năng chụp lâu rồi, anh đánh bại kẻ thù của mình bằng cách ném quả bóng về phía họ với tốc độ nghiền. Ông đeo kính và có đôi mắt màu đỏ sẫm. Chơi trò chơi man rợ của mình trái ngược với tính cách bao la của mình ra khỏi Big Foots, là một người mát mẻ và lịch sự.', '13', '24', '18700', '4', '2022-04-12 21:38:16', '2022-04-12 21:38:16', '2');
+
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('43', 'NGÔI NHÀ HOA (PHẦN 2)', 'The House of Flowers (Season 2)', 'p13.png', 'p13_banner.jpg', 'https://www.youtube.com/embed/BsveRzh4qTU', '7.6', '2018', 'Ngôi nhà của Hoa là một bộ phim truyền hình hài kịch truyền hình Mexico được tạo ra bởi Manolo Caro. Nó mô tả một gia đình người Mexico cao cấp rối loạn chức năng sở hữu một cửa hàng hoa uy tín. Mùa 13 tập đầu tiên được phát hành vào ngày 10 tháng 8 năm 2018.', '13', '60', '11925', '3', '2022-04-12 21:38:18', '2022-04-12 21:38:18', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('44', 'DAE JANG GEUM ĐANG DÕI THEO', 'Dae Jang-Geum Is Watching', 'p42.png', 'p42_banner.webp', 'https://www.youtube.com/embed/fvb4KgcHRTg', '8.2', '2018', 'Bộ phim kể về cuộc sống của hai anh em và một em gái là hậu duệ của Dae Jang Geum. Họ đều là những người đam mê ẩm thực. San Hae là anh cả và có một vị giác tuyệt vời. Anh ta làm việc cho một công ty và có dây dưa với một nhân viên mới là Bok Seung A. Jin Mi là chị thứ hai và có thính giác tuyệt diệu. Jung Sik là em út và có kỹ năng nấu nướng xuất sắc. Anh ta là một vlogger trên YouTube.', '16', '60', '19925', '5', '2022-04-12 21:38:20', '2022-04-12 21:38:20', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('45', 'SỔ TAY LÀM BẢO MẪU CỦA TÔI', "Hi! I\'m Saori", 'p43.png', 'p43_banner.jpg', 'https://www.youtube.com/embed/2Bd3fZFf2mQ', '', '2018', 'Thiếu nữ Saori đánh bại tất cả, giành được chức nghiệp bảo mẫu của ngôi sao nổi tiếng Tô Đạt Hạo, giúp đỡ Tô Đạt Hạo duy trì danh tiếng, sau thời gian chung đụng, Tô Đạt Hạo dần dần nảy sinh tình cảm với cô...', '40', '25', '19995', '7', '2022-04-12 21:38:22', '2022-04-12 21:38:22', '2');
 
 
 -- film-genre
@@ -288,6 +305,17 @@ INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('34', '2'), ('34', '21'
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('35', '2'), ('35', '6'), ('35', '10'), ('35', '9'), ('35', '11');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('36', '2'), ('36', '4'), ('36', '6');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('37', '2'), ('37', '4'), ('37', '6');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('38', '2'), ('38', '10'), ('38', '6'), ('38', '20');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('39', '6'), ('39', '10'), ('39', '11');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('40', '2'), ('40', '4'), ('40', '6');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('41', '2'), ('41', '4'), ('41', '6');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('42', '2'), ('42', '6'), ('42', '21');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('43', '2'), ('43', '17'), ('43', '20'), ('43', '1');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('44', '2'), ('44', '20');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('45', '11'), ('45', '20');
+
+
+
 
 
 
@@ -493,6 +521,47 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('125', 'Aimi Terakawa');
 INSERT INTO `actors` (`id`, `name`) VALUES ('126', 'Sae Ootsuka');
 INSERT INTO `actors` (`id`, `name`) VALUES ('127', 'Ayaka Ohashi');
 
+/* 38 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('128', 'Ross Venokur');
+INSERT INTO `actors` (`id`, `name`) VALUES ('129', 'Demi Lovato');
+INSERT INTO `actors` (`id`, `name`) VALUES ('130', 'Wilmer Valderrama');
+INSERT INTO `actors` (`id`, `name`) VALUES ('131', 'Sia');
+
+/* 39 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('132', 'Naoki Miyahara');
+INSERT INTO `actors` (`id`, `name`) VALUES ('133', 'Asami Seto');
+INSERT INTO `actors` (`id`, `name`) VALUES ('134', 'Shiori Izawa');
+INSERT INTO `actors` (`id`, `name`) VALUES ('135', 'Atsumi Tanezaki');
+
+/* 40 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('136', 'Yukio Nishimoto');
+INSERT INTO `actors` (`id`, `name`) VALUES ('137', 'Lynn');
+INSERT INTO `actors` (`id`, `name`) VALUES ('138', 'Manami Numakura');
+INSERT INTO `actors` (`id`, `name`) VALUES ('139', 'Miho Okasaki');
+
+/* 41 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('140', 'Matt Reeves');
+INSERT INTO `actors` (`id`, `name`) VALUES ('141', 'Robert Pattinson');
+INSERT INTO `actors` (`id`, `name`) VALUES ('142', 'Zoë Kravitz');
+INSERT INTO `actors` (`id`, `name`) VALUES ('143', 'Colin Farrell');
+INSERT INTO `actors` (`id`, `name`) VALUES ('144', 'Paul Dano Riddler');
+
+/* 42 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('145', 'Hitomi Ôwada');
+INSERT INTO `actors` (`id`, `name`) VALUES ('146', 'Miyuri Shimabukuro');
+INSERT INTO `actors` (`id`, `name`) VALUES ('147', 'Yûna Mimura');
+
+/* 43 */
+
+/* 44 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('148', 'Sun Hye-Yoon');
+INSERT INTO `actors` (`id`, `name`) VALUES ('149', 'Sin Dong-Wook');
+INSERT INTO `actors` (`id`, `name`) VALUES ('150', 'Yuri Kwon');
+INSERT INTO `actors` (`id`, `name`) VALUES ('151', 'Yul-Eum Lee');
+
+/* 45 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('152', 'Trịnh Sảng');
+INSERT INTO `actors` (`id`, `name`) VALUES ('153', 'Ngu Y Kiệt');
 
 
 -- film-actor
@@ -672,6 +741,45 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('37', '1
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('37', '125', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('37', '126', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('37', '127', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('38', '128', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('38', '129', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('38', '130', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('38', '131', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('39', '132', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('39', '133', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('39', '134', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('39', '135', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('40', '136', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('40', '137', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('40', '138', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('40', '139', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('41', '140', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('41', '141', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('41', '142', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('41', '143', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('41', '144', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('42', '145', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('42', '146', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('42', '147', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('43', '47', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('43', '48', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('43', '49', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('43', '50', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '148', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '149', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '150', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '151', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '152', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '153', '0')
+
 
 -- episodes
 
