@@ -382,7 +382,7 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('74', 'Kaori Mizuhashi');
 /* 22 */
 INSERT INTO `actors` (`id`, `name`) VALUES ('75', 'Masako Sato');
 INSERT INTO `actors` (`id`, `name`) VALUES ('76', 'Yuka Ozaki');
-INSERT INTO `actors` (`id`, `name`) VALUES ('77', 'Yuina Yamada');\
+INSERT INTO `actors` (`id`, `name`) VALUES ('77', 'Yuina Yamada');
 
 /* 23 */
 INSERT INTO `actors` (`id`, `name`) VALUES ('78', 'Hei Ding');
@@ -409,11 +409,6 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('92', 'Eliza Butterworth');
 INSERT INTO `actors` (`id`, `name`) VALUES ('93', 'Arnas Fedaravicius');
 
 /* 27 */
-INSERT INTO `actors` (`id`, `name`) VALUES ('89', 'Jon East');
-INSERT INTO `actors` (`id`, `name`) VALUES ('90', 'Edward Bazalgette');
-INSERT INTO `actors` (`id`, `name`) VALUES ('91', 'Alexander Dreymon');
-INSERT INTO `actors` (`id`, `name`) VALUES ('92', 'Eliza Butterworth');
-INSERT INTO `actors` (`id`, `name`) VALUES ('93', 'Arnas Fedaravicius');
 
 /* 28 */
 INSERT INTO `actors` (`id`, `name`) VALUES ('94', 'Joo-Ho Kim');
