@@ -201,6 +201,23 @@ INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trail
 
 INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('15', 'NGÔI NHÀ HOA (PHẦN 1)', 'The House of Flowers (Season 1)', 'p13.png', 'p13_banner.jpg', 'https://www.youtube.com/embed/BsveRzh4qTU', '7.6', '2018', 'Ngôi nhà của Hoa là một bộ phim truyền hình hài kịch truyền hình Mexico được tạo ra bởi Manolo Caro. Nó mô tả một gia đình người Mexico cao cấp rối loạn chức năng sở hữu một cửa hàng hoa uy tín. Mùa 13 tập đầu tiên được phát hành vào ngày 10 tháng 8 năm 2018.', '13', '60', '5925', '3', '2022-04-12 21:37:22', '2022-04-12 21:37:22', '2');
 
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('16', 'KÊ LONG TIÊN NỮ TRUYỆN', 'Mama Fairy and the Woodcutter / Tale of Gyeryong Fairy', 'p14.png', 'p14_banner.jpg', 'https://www.youtube.com/embed/yJsZEdHZqH4', '5.4', '2018', 'Vào thời Goryeo, có một nàng tiên tên là Sun Ok Nam, trong một lần xuống trần gian để tắm trên đỉnh suối nước nóng thì nàng đã bị chàng tiều phu giấu đi bộ quần áo thần tiên của mình khiến cho nàng không thể quay về trời. Sau đó, nàng đã kết hôn với chàng tiều phu và sinh ra 2 đứa con, nhưng trong một lần chồng nàng đã mất vì một tai nạn rơi khỏi vách núi. Sun Ok-Nam đã tiếp tục tìm bộ quần áo của mình nhưng không thể tìm ra, cho nên nàng đã quyết định chờ chồng nàng tái sinh để có thể hỏi vị trí cất giấu quần áo của mình ở đâu.', '16', '60', '3377', '5', '2022-04-12 21:37:24', '2022-04-12 21:37:24', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('17', 'THẾ GIỚI PHÉP MÀU', 'Black Clover', 'p15.png', 'p15_banner.jpg', 'https://www.youtube.com/embed/MH4pWlX4LqI', '8.4', '2017', 'Aster và Yuno là hai đứa trẻ bị bỏ rơi ở nhà thờ và cùng nhau lớn lên tại đó. Khi còn nhỏ, chúng đã hứa với nhau xem ai sẽ trở thành Ma pháp vương tiếp theo. Thế nhưng, khi cả hai lớn lên, mọi sô chuyện đã thay đổi. Yuno là thiên tài ma pháp với sức mạnh tuyệt đỉnh trong khi Aster lại không thể sử dụng ma pháp và cố gắng bù đắp bằng thể lực.', '170', '25', '6377', '4', '2022-04-12 21:37:26', '2022-04-12 21:37:26', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('18', 'HÓA RA ANH VẪN Ở ĐÂY (BẢN TRUYỀN HÌNH)', 'Never Gone', 'p16.png', 'p16_banner.jpg', 'https://www.youtube.com/embed/ZAoQbNMp_do', '7.3', '2018', 'Bộ phim Hóa Ra Anh Vẫn Ở Đây (Bản truyền hình) xoay quanh tình yêu trắc trở của Tô Cẩm Vận, một thiếu nữ thôn quê không mấy xuất sắc nhưng tính tình vô cùng thẳng thắn và Trình Tranh, một chàng trai giàu có, gia thế hoành tráng, đẹp trai học giỏi, mọi mặt đều xuất sắc.Bộ phim Hóa Ra Anh Vẫn Ở Đây (Bản truyền hình) xoay quanh tình yêu trắc trở của Tô Cẩm Vận, một thiếu nữ thôn quê không mấy xuất sắc nhưng tính tình vô cùng thẳng thắn và Trình Tranh, một chàng trai giàu có, gia thế hoành tráng, đẹp trai học giỏi, mọi mặt đều xuất sắc.', '3', '45', '4317', '7', '2022-04-12 21:37:28', '2022-04-12 21:37:28', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('19', 'TÌNH ANH EM', 'Race Gurram', 'p17.png', 'p17_banner.jpg', 'https://www.youtube.com/embed/nda6eGtu8DI', '7.3', '2014', 'Bộ phim kể về hai anh em Ram (Shaam) và Lucky (Allu Arjun). Ram là một anh chàng chân thành đã lớn lên với ước mơ trở thành một cảnh sát trung thực phục vụ người dân của mình. Lucky lại là một chàng trai hạnh phúc may mắn được hưởng cuộc sống với những niềm vui riêng của anh ấy.', '1', '163', '2317', '8', '2022-04-12 21:37:30', '2022-04-12 21:37:30', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('20', 'SLIME CHUYỂN SINH', 'That Time I Got Reincarnated as a Slime', 'p18.png', 'p18_banner.jpg', 'https://www.youtube.com/embed/MfmV1iQlRFg', '8.2', '2018', 'Câu chuyện bắt đầu với anh chàng Satoru Mikami, một nhân viên 37 tuổi sống cuộc sống chán chường và không vui vẻ gì. Trong một lần gặp cướp, anh đã bị mất mạng. Tưởng chừng cuộc sống chán ngắt ấy đã kết thúc, nhưng không! Ấy lại chính là sự khởi đầu của một cuộc sống mới. Mikami thức dậy, thấy mình đang ở trong một thế giới kì lạ. Và điều quái dị là anh không còn hình dạng người nữa, mà anh đã trở thành quái vật slime dẻo quẹo và không có mắt. Khi dần quen với hình dáng mới này, anh bắt đầu khám phá thế giới cùng với những quái vật khác, và công cuộc thay đổi thế giới mới đã bắt đầu.', '56', '25', '8120', '4', '2022-04-12 21:37:32', '2022-04-12 21:37:32', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('21', 'NGŨ NỮ NHẪN GIẢ (PHẦN 2)', 'Senran Kagura 2nd Season', 'p19.png', 'p19_banner.jpg', 'https://www.youtube.com/embed/LCdBVxuX5Yw', '6.1', '2018', 'Học viện Hanzo là một ngôi trường danh tiếng, nơi đây ẩn chứa một bí mật mà ít ai được biết. Đằng sau bức tường của ngôi trường ấy là lò luyện nhẫn giả (shinobi) - họ đóng vai trò là gián điệp và là sát thủ dưới trướng của những tướng quân thời xa xưa. Ngày nay, nhẫn giả vẫn được lưu truyền trong học viện Hanzo. Senran Kagura theo chân 5 cô gái và hành trình đầy gian nan của họ nhằm kết thúc khoá học đào tạo nhẫn giả và những đối thủ nguy hiểm mà họ phải đối đầu.', '18', '25', '8620', '4', '2022-04-12 21:37:34', '2022-04-12 21:37:34', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('22', 'NHỮNG CÔ NÀNG CHEERLEADER', 'Anima Yell!', 'p20.png', 'p20_banner.jpg', 'https://www.youtube.com/embed/WworJiQGWPU', '7.8', '2018', 'Câu chuyện kể về cô bé Kohane Hatoya - một cô nàng thích giúp đỡ người khác. Sau khi cô chuyển cấp từ sơ trung lên cao trung, cô bị hấp dẫn bởi bộ môn cổ vũ, và cô đã bắt đầu hoạt động của mình tại câu lạc bộ cổ vũ tại trường mình. Bên cạnh cô còn có cô bạn thời thơ ấu Uki và senpai giàu kinh nghiệm Hizume.', '12', '24', '9620', '4', '2022-04-12 21:37:36', '2022-04-12 21:37:36', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('22', 'NHỮNG CÔ NÀNG CHEERLEADER', 'Anima Yell!', 'p20.png', 'p20_banner.jpg', 'https://www.youtube.com/embed/WworJiQGWPU', '7.8', '2018', 'Câu chuyện kể về cô bé Kohane Hatoya - một cô nàng thích giúp đỡ người khác. Sau khi cô chuyển cấp từ sơ trung lên cao trung, cô bị hấp dẫn bởi bộ môn cổ vũ, và cô đã bắt đầu hoạt động của mình tại câu lạc bộ cổ vũ tại trường mình. Bên cạnh cô còn có cô bạn thời thơ ấu Uki và senpai giàu kinh nghiệm Hizume.', '12', '24', '9620', '4', '2022-04-12 21:37:36', '2022-04-12 21:37:36', '2');
+
+
 
 
 
@@ -220,6 +237,14 @@ INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('12', '9'), ('12', '10'
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('13', '2'), ('13', '20'), ('13', '17'), ('13', '1');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('14', '3'), ('14', '18'), ('14', '19'), ('14', '12');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('15', '2'), ('15', '17'), ('15', '20'), ('15', '1');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('16', '2'), ('16', '11'), ('16', '20'), ('16', '1');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('17', '2'), ('17', '9'), ('17', '10'), ('17', '11');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('18', '20'), ('18', '17');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('19', '2'), ('19', '9');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('20', '2'), ('20', '9'), ('20', '6'), ('20', '10');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('21', '2'), ('21', '9'), ('21', '6'), ('21', '10');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('22', '2'), ('22', '21'), ('22', '6');
+
 
 
 -- actors
@@ -303,6 +328,48 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('48', 'Cecilia Suárez');
 INSERT INTO `actors` (`id`, `name`) VALUES ('49', 'Claudette Maillé');
 INSERT INTO `actors` (`id`, `name`) VALUES ('50', 'Dario Yazbek Bernal');
 
+/* 16 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('51', 'Mi-na Kang');
+INSERT INTO `actors` (`id`, `name`) VALUES ('52', 'Seo Ji-Hoon');
+INSERT INTO `actors` (`id`, `name`) VALUES ('53', 'Jun Soo Jin');
+INSERT INTO `actors` (`id`, `name`) VALUES ('54', 'Jung Kyung-ho');
+
+/* 17 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('55', 'Tatsuya Yoshihara');
+INSERT INTO `actors` (`id`, `name`) VALUES ('56', 'Dallas Reid');
+INSERT INTO `actors` (`id`, `name`) VALUES ('57', 'Cris George');
+INSERT INTO `actors` (`id`, `name`) VALUES ('58', 'Jill Harris');
+
+/* 18 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('59', 'Yuk-Fan Lam');
+INSERT INTO `actors` (`id`, `name`) VALUES ('60', 'Cheng Bian');
+INSERT INTO `actors` (`id`, `name`) VALUES ('61', 'Xianxu Hu');
+INSERT INTO `actors` (`id`, `name`) VALUES ('62', 'Xiaofei Ji');
+
+/* 19 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('63', 'Surender Reddy');
+INSERT INTO `actors` (`id`, `name`) VALUES ('64', 'Allu Arjun');
+INSERT INTO `actors` (`id`, `name`) VALUES ('65', 'Shruti Haasan');
+INSERT INTO `actors` (`id`, `name`) VALUES ('66', 'Shaam');
+
+/* 20 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('67', 'Yasuhito Kikuchi');
+INSERT INTO `actors` (`id`, `name`) VALUES ('68', 'Miho Okasaki');
+INSERT INTO `actors` (`id`, `name`) VALUES ('69', 'Megumi Toyoguchi');
+INSERT INTO `actors` (`id`, `name`) VALUES ('70', 'Brittney Karbowski');
+
+/* 21 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('71', 'Takashi Watanabe');
+INSERT INTO `actors` (`id`, `name`) VALUES ('72', 'Hitomi Harada');
+INSERT INTO `actors` (`id`, `name`) VALUES ('73', 'Asami Imai');
+INSERT INTO `actors` (`id`, `name`) VALUES ('74', 'Kaori Mizuhashi');
+
+/* 22 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('75', 'Masako Sato');
+INSERT INTO `actors` (`id`, `name`) VALUES ('76', 'Yuka Ozaki');
+INSERT INTO `actors` (`id`, `name`) VALUES ('77', 'Yuina Yamada');
+
+
 -- film-actor
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('1', '1', '1');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('1', '2', '0');
@@ -373,6 +440,39 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '4
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '49', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '50', '0');
 
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('16', '51', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('16', '52', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('16', '53', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('16', '54', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('17', '55', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('17', '56', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('17', '57', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('17', '58', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('18', '59', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('18', '60', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('18', '61', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('18', '62', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('19', '63', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('19', '64', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('19', '65', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('19', '66', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('20', '67', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('20', '68', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('20', '69', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('20', '70', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('21', '71', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('21', '72', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('21', '73', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('21', '74', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '75', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '76', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '77', '0');
 
 -- episodes
 
