@@ -155,7 +155,7 @@ INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('8', 'Phim TV Show');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('9', 'Phim Hành Động');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('10', 'Phim Phiêu Lưu');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('11', 'Phim Viễn Tưởng');
-INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('12', 'Phim Bí Mật Điện Ảnh');
+INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('12', 'Phim Lịch Sử');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('13', 'Phim Võ Thuật ');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('14', 'Phim Kinh Dị');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('15', 'Phim Hài Việt');
@@ -215,8 +215,17 @@ INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trail
 
 INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('22', 'NHỮNG CÔ NÀNG CHEERLEADER', 'Anima Yell!', 'p20.png', 'p20_banner.jpg', 'https://www.youtube.com/embed/WworJiQGWPU', '7.8', '2018', 'Câu chuyện kể về cô bé Kohane Hatoya - một cô nàng thích giúp đỡ người khác. Sau khi cô chuyển cấp từ sơ trung lên cao trung, cô bị hấp dẫn bởi bộ môn cổ vũ, và cô đã bắt đầu hoạt động của mình tại câu lạc bộ cổ vũ tại trường mình. Bên cạnh cô còn có cô bạn thời thơ ấu Uki và senpai giàu kinh nghiệm Hizume.', '12', '24', '9620', '4', '2022-04-12 21:37:36', '2022-04-12 21:37:36', '2');
 
-INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('22', 'NHỮNG CÔ NÀNG CHEERLEADER', 'Anima Yell!', 'p20.png', 'p20_banner.jpg', 'https://www.youtube.com/embed/WworJiQGWPU', '7.8', '2018', 'Câu chuyện kể về cô bé Kohane Hatoya - một cô nàng thích giúp đỡ người khác. Sau khi cô chuyển cấp từ sơ trung lên cao trung, cô bị hấp dẫn bởi bộ môn cổ vũ, và cô đã bắt đầu hoạt động của mình tại câu lạc bộ cổ vũ tại trường mình. Bên cạnh cô còn có cô bạn thời thơ ấu Uki và senpai giàu kinh nghiệm Hizume.', '12', '24', '9620', '4', '2022-04-12 21:37:36', '2022-04-12 21:37:36', '2');
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('23', 'ĐẠI TẦN ĐẾ QUỐC 2: CHÍ THIÊN HẠ', 'The Qin Empire 2', 'p21.png', 'p21_banner.jpg', 'https://www.youtube.com/embed/GwqWLhbmYfA', '8.0', '2012', 'Sau khi cải cách Thương Ưởng, nhà Tần bước vào một kỷ nguyên mới. Nhà Tần ngày càng mạnh mẽ hơn và trở thành mối đe dọa cho 6 nước còn lại. Chiến lược của 6 nước Hàn, Ngụy, Triệu, Sở, Tề, Yên là kết minh “Hợp Tung” nhằm chống lại Tần. Huệ Văn Vương, vị vua trẻ nhà Tần đã quyết định trọng dụng chính trị gia tài giỏi Trương Nghi. Trương Nghi hiến kế, lập ra chiến lược “Liên Hoành”, giúp nhà Tần hết lần này tới lần khác phá giải được tình huống nguy hiểm. Trong thời kỳ do mình cai trị, Huệ Văn Vương chủ trương binh nông hợp nhất, về đối ngoại thì thực hiện liên kết để chia rẽ, vì vậy nhà Tần tuy gặp nguy hiểm nhưng khi giao chiến luôn giành được phần thắng.', '5', '54', '5220', '7', '2022-04-12 21:37:38', '2022-04-12 21:37:38', '2');
 
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('24', 'TÀO THÁO', 'Souten Kouro', 'p22.png', 'p22_banner.jpg', 'https://www.youtube.com/embed/gtfl_QEaFsc', '7.0', '2009', '\'Souten Kouro\' là series anime của Nhật Bản năm 2009, được chuyển thể từ manga cùng tên kể về cuộc đời của Tào Tháo của tác giả King Gonta. Manga được phát hành định kỳ trên tạp chí truyện tranh Weekly Morning của Kodansha từ năm 1994 đến năm 2005. Tổng cộng 409 chap truyện đã được phát hành, tập hợp thành 36 vol. Năm 1998, manga giành giải Manga Kodansha lần thứ 22. Phim do studio Madhouse chuyển thể, được đạo diễn bởi Toyoo Ashida và được phát sóng tại Nhật Bản từ tháng 4 đến tháng 9 năm 2009.', '2', '23', '1220', '4', '2022-04-12 21:37:40', '2022-04-12 21:37:40', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('25', 'VỊ VUA TRÁI PHÁP', 'Outlaw King', 'p23.png', 'p23_banner.jpg', 'https://www.youtube.com/embed/Q-G1BME8FKw', '6.9', '2018', 'Outlaw King dựa trên sự kiện cuộc chiến giữa Scotland và Anh Quốc, một thiên anh hùng ca về Robert the Bruce - vị vua huyền thoại của Scotlands và cuộc chiến giành lại quyền kiểm soát Scotland sau khi ông bị tuyên bố là một người ngoài vòng pháp luật của Vương quốc Anh vì đã giành vương miện Scotland và tạo ra cuộc nội chiến.', '1', '121', '10120', '1', '2022-04-12 21:37:42', '2022-04-12 21:37:42', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('26', 'VƯƠNG TRIỀU CUỐI CÙNG (PHẦN 3)', 'The Last Kingdom (Season 3)', 'p24.png', 'p24_banner.jpg', 'https://www.youtube.com/embed/9Za_bQYuL1w', '8.5', '2018', 'The Last Kingdom kể về câu chuyện của Uhtred vùng Bebbanburg, từ một cậu bé bị chiếm mất quyền thừa kế, lớn lên cùng với người vikings sau đó chiến đấu cho Vua Alfred Đại Đế và con trai của ông, Edward. Đây là câu chuyện về những cái khiên chắn, máu, trả thù và sự trui rèn từ nhiều vương quốc, về một giấc mơ lớn mà vua Alfred gọi là Anh Quốc.', '10', '60', '10820', '6', '2022-04-12 21:37:44', '2022-04-12 21:37:44', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('27', 'VƯƠNG TRIỀU CUỐI CÙNG (PHẦN 2)', 'The Last Kingdom (Season 2)', 'p25.png', 'p25_banner.jpg', 'https://www.youtube.com/embed/fGNMxLe7ERI', '8.5', '2018', 'The Last Kingdom kể về câu chuyện của Uhtred vùng Bebbanburg, từ một cậu bé bị chiếm mất quyền thừa kế, lớn lên cùng với người vikings sau đó chiến đấu cho Vua Alfred Đại Đế và con trai của ông, Edward. Đây là câu chuyện về những cái khiên chắn, máu, trả thù và sự trui rèn từ nhiều vương quốc, về một giấc mơ lớn mà vua Alfred gọi là Anh Quốc.', '8', '60', '10820', '6', '2022-04-12 21:37:46', '2022-04-12 21:37:46', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('28', 'SIÊU TRỘM HOÀNG CUNG', 'The Grand Heist / Gone With The Wind', 'p26.png', 'p26_banner.jpg', 'https://www.youtube.com/embed/5oZfiHFiYZ4', '6.3', '2012', 'Duk Moo là con trai của một nhà quý tộc, nhưng đồng thời cũng là con của người vợ lẽ. Theo luật và tục lệ vương triều Joseon, Lee Duk Moo không thể có được địa vị trong triều do xuất thân của mẹ.', '1', '121', '9820', '5', '2022-04-12 21:37:48', '2022-04-12 21:37:48', '1');
 
 
 
@@ -244,6 +253,12 @@ INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('19', '2'), ('19', '9')
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('20', '2'), ('20', '9'), ('20', '6'), ('20', '10');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('21', '2'), ('21', '9'), ('21', '6'), ('21', '10');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('22', '2'), ('22', '21'), ('22', '6');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('23', '3'), ('23', '7'), ('23', '9'), ('23', '16');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('24', '3'), ('24', '6'), ('24', '9'), ('24', '16');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('25', '3'), ('25', '9'), ('25', '10'), ('25', '7'), ('25', '12');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('26', '3'), ('26', '9'), ('26', '10'), ('26', '7'), ('26', '12');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('27', '3'), ('27', '9'), ('27', '10'), ('27', '7'), ('27', '12');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('28', '2'), ('28', '9'), ('28', '10'), ('28', '12');
 
 
 
@@ -367,7 +382,44 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('74', 'Kaori Mizuhashi');
 /* 22 */
 INSERT INTO `actors` (`id`, `name`) VALUES ('75', 'Masako Sato');
 INSERT INTO `actors` (`id`, `name`) VALUES ('76', 'Yuka Ozaki');
-INSERT INTO `actors` (`id`, `name`) VALUES ('77', 'Yuina Yamada');
+INSERT INTO `actors` (`id`, `name`) VALUES ('77', 'Yuina Yamada');\
+
+/* 23 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('78', 'Hei Ding');
+INSERT INTO `actors` (`id`, `name`) VALUES ('79', 'Zhifei Wang');
+INSERT INTO `actors` (`id`, `name`) VALUES ('80', 'Yong Hou');
+
+/* 24 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('81', 'Tsuneo Tominaga');
+INSERT INTO `actors` (`id`, `name`) VALUES ('82', 'Mamoru Miyano');
+INSERT INTO `actors` (`id`, `name`) VALUES ('83', 'Tomokazu Seki');
+INSERT INTO `actors` (`id`, `name`) VALUES ('84', 'Rikiya Koyama');
+
+/* 25 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('85', 'David Mackenzie');
+INSERT INTO `actors` (`id`, `name`) VALUES ('86', 'Chris Pine');
+INSERT INTO `actors` (`id`, `name`) VALUES ('87', 'Stephen Dillane');
+INSERT INTO `actors` (`id`, `name`) VALUES ('88', 'Rebecca Robin');
+
+/* 26 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('89', 'Jon East');
+INSERT INTO `actors` (`id`, `name`) VALUES ('90', 'Edward Bazalgette');
+INSERT INTO `actors` (`id`, `name`) VALUES ('91', 'Alexander Dreymon');
+INSERT INTO `actors` (`id`, `name`) VALUES ('92', 'Eliza Butterworth');
+INSERT INTO `actors` (`id`, `name`) VALUES ('93', 'Arnas Fedaravicius');
+
+/* 27 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('89', 'Jon East');
+INSERT INTO `actors` (`id`, `name`) VALUES ('90', 'Edward Bazalgette');
+INSERT INTO `actors` (`id`, `name`) VALUES ('91', 'Alexander Dreymon');
+INSERT INTO `actors` (`id`, `name`) VALUES ('92', 'Eliza Butterworth');
+INSERT INTO `actors` (`id`, `name`) VALUES ('93', 'Arnas Fedaravicius');
+
+/* 28 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('94', 'Joo-Ho Kim');
+INSERT INTO `actors` (`id`, `name`) VALUES ('95', 'Tae-Hyun Cha');
+INSERT INTO `actors` (`id`, `name`) VALUES ('96', 'Ji-Ho Oh');
+INSERT INTO `actors` (`id`, `name`) VALUES ('97', 'Hyo-Rin Min');
 
 
 -- film-actor
@@ -473,6 +525,38 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('21', '7
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '75', '1');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '76', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('22', '77', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('23', '78', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('23', '79', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('23', '80', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('24', '81', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('24', '82', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('24', '83', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('24', '84', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('25', '85', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('25', '86', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('25', '87', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('25', '88', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('26', '89', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('26', '90', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('26', '91', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('26', '92', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('26', '93', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('27', '89', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('27', '90', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('27', '91', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('27', '92', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('27', '93', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('28', '94', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('28', '95', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('28', '96', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('28', '97', '0');
+
 
 -- episodes
 
