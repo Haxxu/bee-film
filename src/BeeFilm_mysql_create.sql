@@ -163,7 +163,7 @@ INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('16', 'Phim Cổ Trang')
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('17', 'Phim Tâm Lý');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('18', 'Phim Hình Sự');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('19', 'Phim Khoa học Tài liệu');
-INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('20', 'Phim Phiêu Lưu');
+INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('20', 'Phim Tình Cảm');
 INSERT INTO `genres` (`genre_id`, `genre_name`) VALUES ('21', 'Phim Thể Thao');
 
 
@@ -191,21 +191,35 @@ INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trail
 
 INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('10', 'MỐC 22', 'Mile 22', 'p8.png', 'p8_banner.jpg', 'https://www.youtube.com/embed/eJU6S5KOsNI', '6.1', '2018', 'Nhóm đặc biệt Ground Branch nhận được nhiệm vụ phải đưa một tình báo nước ngoài từ Đại sứ quán Mỹ tại Đông Nam Á đến một sân bay để về lại Mỹ - cách đó 22 dặm. Khó khăn ở đây chính là kiện hàng này cũng bị truy đuổi bởi một loạt lực lượng hoạt động trong sáng lẫn tối.', '1', '94', '3665', '1', '2022-04-12 21:37:12', '2022-04-12 21:37:12', '1');
 
-INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('11', 'ĐẶC VỤ BẤT CHẤP', 'Agent Mr. Chan', 'p9.png', 'p9_banner.jpg', 'https://www.youtube.com/embed/WkUO2RfOyQw', '4.4', '2018', 'Hào hoa và lịch lãm chẳng kém gì James Bond, Mr.Chan là một điệp viên đẳng cấp hàng đầu. Anh chàng được một nữ cảnh sát ngỏ lời giúp đỡ cô trong một vụ án đầy gian nan. Trong suốt hành trình truy tìm ra câu trả lời, cả hai đã gặp phải vô số những pha đụng độ nguy hiểm nhưng cũng không kém phần hài hước', '1', '101', '4117', '7', '2022-04-12 21:37:14', '2022-04-12 21:37:14', '1');
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('11', 'ĐẶC VỤ BẤT CHẤP', 'Agent Mr. Chan', 'p9.png', 'p9_banner.jpg', 'https://www.youtube.com/embed/WkUO2RfOyQw', '4.4', '2018', 'Hào hoa và lịch lãm chẳng kém gì James Bond, Mr.Chan là một điệp viên đẳng cấp hàng đầu. Anh chàng được một nữ cảnh sát ngỏ lời giúp đỡ cô trong một vụ án đầy gian nan. Trong suốt hành trình truy tìm ra câu trả lời, cả hai đã gặp phải vô số những pha đụng độ nguy hiểm nhưng cũng không kém phần hài hước.', '1', '101', '4117', '7', '2022-04-12 21:37:14', '2022-04-12 21:37:14', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('12', 'QUÁI VẬT VENOM', 'Venom', 'p10.png', 'p10_banner.jpg', 'https://www.youtube.com/embed/u9Mv98Gr5pY', '6.6', '2018', 'Quái Vật Venom là một kẻ thù nguy hiểm và nặng ký của Người nhện trong loạt series của Marvel. Chàng phóng viên Eddie Brock (do Tom Hardy thủ vai) bí mật theo dõi âm mưu xấu xa của một tổ chức và đã không may mắn khi nhiễm phải loại cộng sinh trùng ngoài hành tinh (Symbiote) và từ đó đã không còn làm chủ bản thân về thể chất lẫn tinh thần. Điều này đã dần biến anh thành quái vật đen tối và nguy hiểm nhất chống lại người Nhện - Venom.', '1', '112', '4567', '1', '2022-04-12 21:37:16', '2022-04-12 21:37:16', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('13', 'CÔ TIÊN DỌN DẸP', 'Clean With Passion For Now', 'p11.png', 'p11_banner.jpg', 'https://www.youtube.com/embed/CVywAZZ8v9g', '6.9', '2018', 'Jang Sun Gyeol bị hội chứng sợ vi trùng và đang điều hành một công ty dọn dẹp. Anh ta đã gặp Gil O Sol. Đó là một người con gái có tính cách tươi sáng và không ngại vương bụi bẩn. Với sự giúp đỡ của Gil O Sol, Jang Sun Gyeol đã có thể đối mặt với hội chứng của mình và rơi vào lưới tình với Gil O Sol.', '16', '70', '5021', '5', '2022-04-12 21:37:18', '2022-04-12 21:37:18', '2');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('14', 'Anh Em Nhà Grimsby', 'Grimsby', 'p1.png', 'p1_banner.jpg', 'https://www.youtube.com/embed/_YtclB_02wA', '6.2', '2016', 'The Brothers Grimsby (Anh Em Nhà Grimsby) kể về cuộc phối hợp đầy mạo hiểm và các tình tiết vui nhộn của 2 anh em Hooligan nhà Grimsby và đội điệp viên cao cấp', '1', '83', '532', '1', '2022-04-12 21:37:20', '2022-04-12 21:37:20', '1');
+
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `year`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('15', 'NGÔI NHÀ HOA (PHẦN 1)', 'The House of Flowers (Season 1)', 'p13.png', 'p13_banner.jpg', 'https://www.youtube.com/embed/BsveRzh4qTU', '7.6', '2018', 'Ngôi nhà của Hoa là một bộ phim truyền hình hài kịch truyền hình Mexico được tạo ra bởi Manolo Caro. Nó mô tả một gia đình người Mexico cao cấp rối loạn chức năng sở hữu một cửa hàng hoa uy tín. Mùa 13 tập đầu tiên được phát hành vào ngày 10 tháng 8 năm 2018.', '13', '60', '5925', '3', '2022-04-12 21:37:22', '2022-04-12 21:37:22', '2');
+
+
 
 
 -- film-genre
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('1', '15'), ('1', '2');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('2', '2'), ('2', '6'), ('2', '10');
-INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('3', '9'), ('3', '2'), ('3', '20');
-INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('4', '6'), ('4', '9'), ('4', '20');
-INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('5', '6'), ('5', '9'), ('5', '20'), ('5', '2');
-INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('6', '6'), ('6', '10');
-INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('7', '6'), ('7', '9'), ('7', '20'), ('7', '2'), ('7', '11');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('3', '9'), ('3', '2'), ('3', '10');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('4', '6'), ('4', '9'), ('4', '10');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('5', '6'), ('5', '9'), ('5', '10'), ('5', '2');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('6', '6'), ('6', '21');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('7', '6'), ('7', '9'), ('7', '10'), ('7', '2'), ('7', '11');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('8', '9'), ('8', '14'), ('8', '10'), ('8', '16');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('9', '9'), ('9', '10'), ('9', '16'), ('9', '2');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('10', '9'), ('10', '18'), ('10', '1'), ('10', '3');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('11', '9'), ('11', '18'), ('11', '2'), ('11', '10'), ('11', '1');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('12', '9'), ('12', '10'), ('12', '11'), ('12', '1'), ('12', '14');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('13', '2'), ('13', '20'), ('13', '17'), ('13', '1');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('14', '3'), ('14', '18'), ('14', '19'), ('14', '12');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('15', '2'), ('15', '17'), ('15', '20'), ('15', '1');
 
 
 -- actors
@@ -269,6 +283,26 @@ INSERT INTO `actors` (`id`, `name`) VALUES ('36', 'Chi Wah Wong');
 INSERT INTO `actors` (`id`, `name`) VALUES ('37', 'Charmaine Sheh');
 INSERT INTO `actors` (`id`, `name`) VALUES ('38', 'Cecilia So');
 
+/* 12 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('39', 'Ruben Fleischer');
+INSERT INTO `actors` (`id`, `name`) VALUES ('40', 'Tom Hardy');
+INSERT INTO `actors` (`id`, `name`) VALUES ('41', 'Michelle Williams');
+INSERT INTO `actors` (`id`, `name`) VALUES ('42', 'Riz Ahmed');
+
+/* 13 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('43', 'Jong-chan No');
+INSERT INTO `actors` (`id`, `name`) VALUES ('44', 'Yoon Kyun-Sang');
+INSERT INTO `actors` (`id`, `name`) VALUES ('45', 'Kim Yoo-jeong');
+INSERT INTO `actors` (`id`, `name`) VALUES ('46', 'Jae-rim Song');
+
+/* 14 */
+
+/* 15 */
+INSERT INTO `actors` (`id`, `name`) VALUES ('47', 'Manolo Caro');
+INSERT INTO `actors` (`id`, `name`) VALUES ('48', 'Cecilia Suárez');
+INSERT INTO `actors` (`id`, `name`) VALUES ('49', 'Claudette Maillé');
+INSERT INTO `actors` (`id`, `name`) VALUES ('50', 'Dario Yazbek Bernal');
+
 -- film-actor
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('1', '1', '1');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('1', '2', '0');
@@ -318,6 +352,26 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('11', '3
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('11', '36', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('11', '37', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('11', '38', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('12', '39', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('12', '40', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('12', '41', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('12', '42', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('13', '43', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('13', '44', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('13', '45', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('13', '46', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('14', '10', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('14', '11', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('14', '12', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('14', '13', '0');
+
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '47', '1');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '48', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '49', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('15', '50', '0');
 
 
 -- episodes
