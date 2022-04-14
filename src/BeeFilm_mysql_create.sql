@@ -183,7 +183,7 @@ INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trail
 INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `release_date`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('6', 'ĐỘI TRƯỞNG TSUBASA', 'Captain Tsubasa', 'p4.png', 'p4_banner.jpg', 'https://www.youtube.com/embed/XlT2pRNW2i8', '8.3', '2018-04-03', 'Thuyền trưởng Tsubasa là câu chuyện đam mê của một học sinh trường tiểu học có những suy nghĩ và ước mơ xoay quanh hầu hết tình yêu bóng đá. Tsubasa Oozora 11 tuổi bắt đầu chơi bóng ở độ tuổi rất trẻ, và trong khi đó nó chỉ là một môn thể thao giải trí cho bạn bè của mình, đối với anh, nó đã phát triển thành một cái gì đó ám ảnh.', '52', '22', '1857', '4', '2022-04-12 21:37:04', '2022-04-12 21:37:04', '2');
 
 
-INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `release_date`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('7', 'ĐẤU LA ĐẠI LỤC', 'Soul Land', 'p5.png', 'p5_banner.jpg', 'https://www.youtube.com/embed/XlT2pRNW2i8', '8.3', '2018-04-03', 'Thuyền trưởng Tsubasa là câu chuyện đam mê của một học sinh trường tiểu học có những suy nghĩ và ước mơ xoay quanh hầu hết tình yêu bóng đá. Tsubasa Oozora 11 tuổi bắt đầu chơi bóng ở độ tuổi rất trẻ, và trong khi đó nó chỉ là một môn thể thao giải trí cho bạn bè của mình, đối với anh, nó đã phát triển thành một cái gì đó ám ảnh.', '52', '24', '1857', '4', '2022-04-12 21:37:04', '2022-04-12 21:37:04', '2');
+INSERT INTO `films` (`film_id`, `name`, `name2`, `image`, `image_banner`, `trailer`, `IMDb`, `release_date`, `description`, `episode_number`, `duration`, `num_view`, `nation_id`, `created_at`, `updated_at`, `film_type`) VALUES ('7', 'ĐẤU LA ĐẠI LỤC', 'Soul Land', 'p5.jpeg', 'p5_banner.jpg', 'https://www.youtube.com/embed/VMdoVHU1yxI', '9.1', '2018-01-20', 'Một đại lục không hề yên bình, một cuộc sống đầy hiểm nguy, phiêu lưu nhưng cũng không kém phần lãng mạn. tình yêu, thù hận, trách nhiệm… Tiếp bước những tiền bối đi trước, Hoắc Vũ Hạo và đời sau sử lai khắc thất quái, bằng niềm tin nhiệt huyết tuổi trẻ đã gây dựng lại đường môn tái lập những huy hoàng xưa kia của các tiền bối đi trước...', '119', '20', '2839', '7', '2022-04-12 21:37:06', '2022-04-12 21:37:06', '2');
 
 
 
@@ -194,6 +194,7 @@ INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('3', '9'), ('3', '2'), 
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('4', '6'), ('4', '9'), ('4', '20');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('5', '6'), ('5', '9'), ('5', '20'), ('5', '2');
 INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('6', '6'), ('6', '21');
+INSERT INTO `film-genre` (`film_id`, `genre_id`) VALUES ('7', '6'), ('7', '9'), ('7', '20'), ('7', '2'), ('7', '11');
 
 
 
@@ -264,6 +265,7 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('5', '20
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('6', '14', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('6', '21', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('6', '22', '0');
+
 
 
 -- episodes
