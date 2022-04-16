@@ -9,7 +9,6 @@
                 $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 5";
                 $result = mysqli_query($conn, $sql);
                 while ($r = mysqli_fetch_assoc($result)) {
-                    
             ?>
                 <!-- Box 2 -->
                 <div class="swiper-slide">
@@ -22,7 +21,20 @@
                                     <span><?= $r['name'] ?></span>
                                 </div>
                                 <div class="item-status top-down delay-4">
-                                    <span>Hoàn tất</span>
+                                    <span>
+                                        <?php 
+                                            $sql2 = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+                                                     WHERE film_id = '" . $r['film_id'] . "'       
+                                                    ";
+                                            $result2 = mysqli_query($conn, $sql2);
+                                            $r2 = mysqli_fetch_assoc($result2);
+                                            if ($r2['latestEp'] == null) {
+                                                echo 'Sắp chiếu';
+                                            } else {
+                                                echo 'Tập ' . $r2['latestEp'] . ' / ' . $r['episode_number'];
+                                            }
+                                        ?>
+                                    </span>
                                 </div>
                                 <div class="item-action top-down delay-6">
                                     <a href="" class="m-btn m-btn-hover">
