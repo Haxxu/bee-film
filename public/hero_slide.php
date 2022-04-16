@@ -23,19 +23,19 @@
                                 <div class="item-status top-down delay-4">
                                     <span>
                                         <?php 
-                                            $sql2 = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+                                            $sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
                                                      WHERE film_id = '" . $r['film_id'] . "'       
                                                     ";
-                                            $result2 = mysqli_query($conn, $sql2);
-                                            $r2 = mysqli_fetch_assoc($result2);
-                                            if ($r2['latestEp'] == null) {
+                                            $result2 = mysqli_query($conn, $sql_ep_status);
+                                            $r_ep_status = mysqli_fetch_assoc($result2);
+                                            if ($r_ep_status['latestEp'] == null) {
                                                 echo 'Sắp chiếu';
-                                            } else if ($r2['latestEp'] == 1 && $r['episode_number'] == 1) {
+                                            } else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
                                                 echo 'Hoàn tất';
-                                            } else if ($r2['latestEp'] <  $r['episode_number']) {
-                                                echo 'Tập ' . $r2['latestEp'] . ' / ' . $r['episode_number'];
+                                            } else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+                                                echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
                                             } else {
-                                                echo 'Full ('. $r2['latestEp'] . '/' . $r['episode_number'] . ')';
+                                                echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
                                             }
                                         ?>
                                     </span>

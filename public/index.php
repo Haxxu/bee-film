@@ -22,6 +22,26 @@
 
 			<?php include_once('./hero_slide.php') ?>
 
+			<?php 
+				require_once('../src/db.php');
+				require_once('../src/functions.php');
+				$sql_top_view = "SELECT * FROM `films` ORDER BY `num_view` DESC LIMIT 10";
+				$sql_latest_single = "SELECT * FROM `films` WHERE `film_type` = 1 ORDER BY `updated_at` DESC LIMIT 10";
+				$sql_latest_series = "SELECT * FROM `films` WHERE `film_type` = 2 ORDER BY `updated_at` DESC LIMIT 10";
+				$sql_latest_anime = "
+					SELECT * 
+					FROM `films` AS f, `film-genre` AS fg, `genres` AS g
+					WHERE f.film_id = fg.film_id AND fg.genre_id = g.genre_id AND g.genre_name = 'Phim Hoạt Hình'
+					ORDER BY `updated_at` DESC LIMIT 10
+				";
+				$sql_latest_action = "
+					SELECT * 
+					FROM `films` AS f, `film-genre` AS fg, `genres` AS g
+					WHERE f.film_id = fg.film_id AND fg.genre_id = g.genre_id AND g.genre_name = 'Phim Hành Động'
+					ORDER BY `updated_at` DESC LIMIT 10
+				";
+			?>
+
 			<section class="section container top-view-section">
 				<div class="section-header">
 					<div class="section-heading">
@@ -34,387 +54,50 @@
 				</div>
 				<div class="films-slide swiper">
 					<div class="swiper-wrapper">
-						<!-- FILM ITEM 1 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
+						<?php 
+							$result = mysqli_query($conn, $sql_top_view);
+							while ($r = mysqli_fetch_assoc($result)) {
+						?>
+							<!-- FILM ITEM -->
+							<div class="swiper-slide">
+								<a href="#" class="film-item">
+									<div class="film-item-status">
+										<span>
+											<?php 
+												$sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+														WHERE film_id = '" . $r['film_id'] . "'       
+														";
+												$result2 = mysqli_query($conn, $sql_ep_status);
+												$r_ep_status = mysqli_fetch_assoc($result2);
+												if ($r_ep_status['latestEp'] == null) {
+													echo 'Sắp chiếu';
+												} else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+													echo 'Hoàn tất';
+												} else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+													echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+												} else {
+													echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+												}
+											?>
+										</span>
 									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
+									<img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+									<div class="film-item-content">
+										<div class="film-item-title">
+											<?= $r['name'] ?>
+										</div>
+										<div class="film-item-title-2">
+											<?= $r['name2'] ?> (<?= $r['year'] ?>)
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						
-						<!-- FILM ITEM 2 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 3 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 4 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 5 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 6 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 7 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 8 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 9 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 10 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-						
+								</a>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</section>
 
-			<section class="section container top-view-section">
-				<div class="section-header">
-					<div class="section-heading">
-						Phim bộ mới cập nhật
-					</div>
-					<a href="" class="section-link">
-						Xem tất cả
-						<i class='bx bxs-chevron-right'></i>
-					</a>
-				</div>
-				<div class="films-slide swiper">
-					<div class="swiper-wrapper">
-						<!-- FILM ITEM 1 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-						
-						<!-- FILM ITEM 2 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 3 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 4 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 5 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 6 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 7 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 8 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 9 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 10 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-						
-					</div>
-				</div>
-			</section>
-
-			<section class="section container top-view-section">
+			<section class="section container latest-single-film-section">
 				<div class="section-header">
 					<div class="section-heading">
 						Phim lẻ mới cập nhật
@@ -426,189 +109,215 @@
 				</div>
 				<div class="films-slide swiper">
 					<div class="swiper-wrapper">
-						<!-- FILM ITEM 1 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
+					<?php 
+							$result = mysqli_query($conn, $sql_latest_single);
+							while ($r = mysqli_fetch_assoc($result)) {
+						?>
+							<!-- FILM ITEM -->
+							<div class="swiper-slide">
+								<a href="#" class="film-item">
+									<div class="film-item-status">
+										<span>
+											<?php 
+												$sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+														WHERE film_id = '" . $r['film_id'] . "'       
+														";
+												$result2 = mysqli_query($conn, $sql_ep_status);
+												$r_ep_status = mysqli_fetch_assoc($result2);
+												if ($r_ep_status['latestEp'] == null) {
+													echo 'Sắp chiếu';
+												} else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+													echo 'Hoàn tất';
+												} else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+													echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+												} else {
+													echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+												}
+											?>
+										</span>
 									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
+									<img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+									<div class="film-item-content">
+										<div class="film-item-title">
+											<?= $r['name'] ?>
+										</div>
+										<div class="film-item-title-2">
+											<?= $r['name2'] ?> (<?= $r['year'] ?>)
+										</div>
 									</div>
-								</div>
-							</a>
-						</div>
-						
-						<!-- FILM ITEM 2 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 3 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 4 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 5 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018)
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 6 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 7 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 8 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 9 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-
-						<!-- FILM ITEM 10 -->
-						<div class="swiper-slide">
-							<a href="#" class="film-item">
-								<div class="film-item-status">
-									<span>Hoàn thành</span>
-								</div>
-								<img src="./assets/images/bat-man.jpg" alt="">
-								<div class="film-item-content">
-									<div class="film-item-title">
-										Batman 
-									</div>
-									<div class="film-item-title-2">
-										Người dơi (2018) 
-									</div>
-								</div>
-							</a>
-						</div>
-						
+								</a>
+							</div>
+						<?php } ?>
 					</div>
 				</div>
 			</section>
+
+			<section class="section container latest-series-film-section">
+				<div class="section-header">
+					<div class="section-heading">
+						Phim bộ mới cập nhật
+					</div>
+					<a href="" class="section-link">
+						Xem tất cả
+						<i class='bx bxs-chevron-right'></i>
+					</a>
+				</div>
+				<div class="films-slide swiper">
+					<div class="swiper-wrapper">
+					<?php 
+							$result = mysqli_query($conn, $sql_latest_series);
+							while ($r = mysqli_fetch_assoc($result)) {
+						?>
+							<!-- FILM ITEM 1 -->
+							<div class="swiper-slide">
+								<a href="#" class="film-item">
+									<div class="film-item-status">
+										<span>
+											<?php 
+												$sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+														WHERE film_id = '" . $r['film_id'] . "'       
+														";
+												$result2 = mysqli_query($conn, $sql_ep_status);
+												$r_ep_status = mysqli_fetch_assoc($result2);
+												if ($r_ep_status['latestEp'] == null) {
+													echo 'Sắp chiếu';
+												} else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+													echo 'Hoàn tất';
+												} else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+													echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+												} else {
+													echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+												}
+											?>
+										</span>
+									</div>
+									<img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+									<div class="film-item-content">
+										<div class="film-item-title">
+											<?= $r['name'] ?>
+										</div>
+										<div class="film-item-title-2">
+											<?= $r['name2'] ?> (<?= $r['year'] ?>)
+										</div>
+									</div>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</section>
+		
+			<section class="section container latest-anime-film-section">
+				<div class="section-header">
+					<div class="section-heading">
+						Phim Hoạt Hình mới cập nhật
+					</div>
+					<a href="" class="section-link">
+						Xem tất cả
+						<i class='bx bxs-chevron-right'></i>
+					</a>
+				</div>
+				<div class="films-slide swiper">
+					<div class="swiper-wrapper">
+					<?php 
+							$result = mysqli_query($conn, $sql_latest_anime);
+							while ($r = mysqli_fetch_assoc($result)) {
+						?>
+							<!-- FILM ITEM 1 -->
+							<div class="swiper-slide">
+								<a href="#" class="film-item">
+									<div class="film-item-status">
+										<span>
+											<?php 
+												$sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+														WHERE film_id = '" . $r['film_id'] . "'       
+														";
+												$result2 = mysqli_query($conn, $sql_ep_status);
+												$r_ep_status = mysqli_fetch_assoc($result2);
+												if ($r_ep_status['latestEp'] == null) {
+													echo 'Sắp chiếu';
+												} else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+													echo 'Hoàn tất';
+												} else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+													echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+												} else {
+													echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+												}
+											?>
+										</span>
+									</div>
+									<img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+									<div class="film-item-content">
+										<div class="film-item-title">
+											<?= $r['name'] ?>
+										</div>
+										<div class="film-item-title-2">
+											<?= $r['name2'] ?> (<?= $r['year'] ?>)
+										</div>
+									</div>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</section>
+
+			<section class="section container latest-action-film-section">
+				<div class="section-header">
+					<div class="section-heading">
+						Phim hành động mới cập nhật
+					</div>
+					<a href="" class="section-link">
+						Xem tất cả
+						<i class='bx bxs-chevron-right'></i>
+					</a>
+				</div>
+				<div class="films-slide swiper">
+					<div class="swiper-wrapper">
+					<?php 
+							$result = mysqli_query($conn, $sql_latest_action);
+							while ($r = mysqli_fetch_assoc($result)) {
+						?>
+							<!-- FILM ITEM 1 -->
+							<div class="swiper-slide">
+								<a href="#" class="film-item">
+									<div class="film-item-status">
+										<span>
+											<?php 
+												$sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+														WHERE film_id = '" . $r['film_id'] . "'       
+														";
+												$result2 = mysqli_query($conn, $sql_ep_status);
+												$r_ep_status = mysqli_fetch_assoc($result2);
+												if ($r_ep_status['latestEp'] == null) {
+													echo 'Sắp chiếu';
+												} else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+													echo 'Hoàn tất';
+												} else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+													echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+												} else {
+													echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+												}
+											?>
+										</span>
+									</div>
+									<img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+									<div class="film-item-content">
+										<div class="film-item-title">
+											<?= $r['name'] ?>
+										</div>
+										<div class="film-item-title-2">
+											<?= $r['name2'] ?> (<?= $r['year'] ?>)
+										</div>
+									</div>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</section>
+
+
 
 		</div>
 
