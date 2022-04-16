@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,235 +16,96 @@
         <?php include_once('./header.php') ?>
         
         <div class="container">
-            <?php include_once('./hero_slide.php') ?>
 
+            <!-- LOAD CAC PHIM CAN THIET  -->
+            <?php 
+                require_once('../src/db.php');
+                require_once('../src/functions.php');
+
+                if (isset($_GET['film_type'])) {
+                    $sql = "SELECT * 
+                            FROM `films`
+                            WHERE `film_type` = ?
+                            ORDER BY `updated_at` DESC";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param('i', $_GET['film_type']);
+                    $list_film_title = getFilmTypeName($_GET['film_type'], $conn);
+                } else if (isset($_GET['genre_id'])) {
+                    $sql = "SELECT * 
+                            FROM `films` AS f, `film-genre` AS fg
+                            WHERE f.film_id = fg.film_id  AND fg.genre_id = ?
+                            ORDER BY f.updated_at DESC";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param('i', $_GET['genre_id']);
+                    $list_film_title = "Thể Loại: " . getGenreName($_GET['genre_id'], $conn);
+                } else if (isset($_GET['nation_id'])) {
+                    $sql = "SELECT * 
+                            FROM `films` AS f, `nations` AS n
+                            WHERE  f.nation_id = n.nation_id AND n.nation_id = ?
+                            ORDER BY f.updated_at DESC";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param('i', $_GET['nation_id']);
+                    $list_film_title = "Quốc gia: " . getNationName($_GET['nation_id'], $conn);
+                } else if (isset($_GET['year'])) {
+                    $sql = "SELECT * 
+                            FROM `films`
+                            WHERE `year` = ?
+                            ORDER BY `updated_at` DESC";
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param('i', $_GET['year']);
+                    $list_film_title = "Năm: " . $_GET['year'];
+                } 
+                
+
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+            ?>
             <section class="section container list">
                 <div class="section-header">
-                        <div class="section-heading">
-                            PHIM BỘ MỚI
-                        </div>
+                    <div class="section-heading">
+                        <?= $list_film_title ?>
                     </div>
+                </div>
                 <div class="film-list row row-cols-xl-5">
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    <?php
 
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
+                        while($r = $result->fetch_assoc()) {
+                    ?>
+                        <div class="col-lg-3 col-md-4 col-6 mt-4">
+                            <a href="#" class="film-item">
+                                <div class="film-item-status">
+                                    <span>
+                                        <?php 
+                                            $sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
+                                                    WHERE film_id = '" . $r['film_id'] . "'       
+                                                    ";
+                                            $result2 = mysqli_query($conn, $sql_ep_status);
+                                            $r_ep_status = mysqli_fetch_assoc($result2);
+                                            if ($r_ep_status['latestEp'] == null) {
+                                                echo 'Sắp chiếu';
+                                            } else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
+                                                echo 'Hoàn tất';
+                                            } else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
+                                                echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
+                                            } else {
+                                                echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
+                                            }
+										?>
+                                    </span>
                                 </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
+                                <img src="<?= getUrlOfImage($r['image']) ?>" alt="">
+                                <div class="film-item-content">
+                                    <div class="film-item-title">
+                                        <?= $r['name'] ?>
+                                    </div>
+                                    <div class="film-item-title-2">
+                                        <?= $r['name2'] ?> (<?= $r['year'] ?>)
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-6 mt-4">
-                        <a href="#" class="film-item">
-                            <div class="film-item-status">
-                                <span>Hoàn thành</span>
-                            </div>
-                            <img src="./assets/images/bat-man.jpg" alt="">
-                            <div class="film-item-content">
-                                <div class="film-item-title">
-                                    Batman Lorem ipsum dolor sit amet, consectetur adipisicing elit. At id sed, eum doloremque dolorem in cumque dolor laboriosam dolore numquam vero obcaecati reiciendis ullam totam asperiores fugit voluptates similique velit.
-                                </div>
-                                <div class="film-item-title-2">
-                                    Người dơi (2018)
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                            </a>
+                        </div>
+                    <?php } ?>
                 </div>
             </section>
         </div>

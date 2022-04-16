@@ -36,30 +36,28 @@ use function PHPSTORM_META\type;
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item mx-1">
 						<a class="nav-link active" aria-current="page" href="./index.php">
-								<i class='bx bxs-home bx-flip-horizontal' ></i>
-								Trang Chủ
+							<i class='bx bxs-home bx-flip-horizontal' ></i>
+							Trang Chủ
 						</a>
 					</li>
 					<li class="nav-item mx-1">
-						<a class="nav-link" href="#">Phim lẻ</a>
+						<a class="nav-link" href="./list_film.php?film_type=1">Phim lẻ</a>
 					</li>
 					<li class="nav-item mx-1">
-						<a class="nav-link" href="#">Phim bộ</a>
+						<a class="nav-link" href="./list_film.php?film_type=2">Phim bộ</a>
 					</li>
 					<li class="nav-item mx-1 dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Thể loại
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<?php
+								$sql = "SELECT * FROM `genres`";
+								$result = $conn->query($sql);
+								while ($row = $result->fetch_assoc()) {
+									echo "<li><a class='dropdown-item' href='./list_film.php?genre_id={$row['genre_id']}'>{$row['genre_name']}</a></li>";
+								}
+							?>
 						</ul>
 					</li>
 					<li class="nav-item mx-1 dropdown">
@@ -67,9 +65,11 @@ use function PHPSTORM_META\type;
 							Năm
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<?php
+								for ($i = 2012; $i <= 2022; $i++) {
+									echo "<li><a class='dropdown-item' href='./list_film.php?year={$i}'>{$i}</a></li>";
+								}
+							?>
 						</ul>
 					</li>
 					<li class="nav-item mx-1 dropdown">
@@ -77,13 +77,17 @@ use function PHPSTORM_META\type;
 							Quốc gia
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
+							<?php
+								$sql = "SELECT * FROM `nations`";
+								$result = $conn->query($sql);
+								while ($row = $result->fetch_assoc()) {
+									echo "<li><a class='dropdown-item' href='./list_film.php?nation_id={$row['nation_id']}'>{$row['nation_name']}</a></li>";
+								}
+							?>
 						</ul>
 					</li>
 				</ul>
-				<form class="d-flex justify-content-lg-end search-box flex-fill" method="GET">
+				<form action="./list_film.php" class="d-flex justify-content-lg-end search-box flex-fill" method="GET">
 					<input class="form-control" autocomplete="off" name="search" type="search" placeholder="Tìm kiếm phim, diễn viên, đạo diễn" aria-label="Search">
 					<button class="btn btn-dark" type="submit">
 						<i class='bx bx-search' ></i>
