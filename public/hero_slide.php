@@ -6,7 +6,7 @@
                 require_once('../src/db.php');
                 require_once('../src/functions.php');
                 
-                $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 5";
+                $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 8";
                 $result = mysqli_query($conn, $sql);
                 while ($r = mysqli_fetch_assoc($result)) {
             ?>
@@ -30,8 +30,12 @@
                                             $r2 = mysqli_fetch_assoc($result2);
                                             if ($r2['latestEp'] == null) {
                                                 echo 'Sắp chiếu';
-                                            } else {
+                                            } else if ($r2['latestEp'] == 1 && $r['episode_number'] == 1) {
+                                                echo 'Hoàn tất';
+                                            } else if ($r2['latestEp'] <  $r['episode_number']) {
                                                 echo 'Tập ' . $r2['latestEp'] . ' / ' . $r['episode_number'];
+                                            } else {
+                                                echo 'Full ('. $r2['latestEp'] . '/' . $r['episode_number'] . ')';
                                             }
                                         ?>
                                     </span>
