@@ -295,6 +295,7 @@ body {
     font-size: 5rem;
     line-height: 5rem;
     font-weight: 900;
+    text-transform: uppercase;
 }
 
 /* .item-content-title-2 {
