@@ -52,9 +52,9 @@ use function PHPSTORM_META\type;
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<?php
-								$sql = "SELECT * FROM `genres`";
-								$result = $conn->query($sql);
-								while ($row = $result->fetch_assoc()) {
+								$sql_header = "SELECT * FROM `genres`";
+								$result_header = $conn->query($sql_header);
+								while ($row = $result_header->fetch_assoc()) {
 									echo "<li><a class='dropdown-item' href='./list_film.php?genre_id={$row['genre_id']}'>{$row['genre_name']}</a></li>";
 								}
 							?>
@@ -78,9 +78,9 @@ use function PHPSTORM_META\type;
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<?php
-								$sql = "SELECT * FROM `nations`";
-								$result = $conn->query($sql);
-								while ($row = $result->fetch_assoc()) {
+								$sql_header = "SELECT * FROM `nations`";
+								$result_header = $conn->query($sql_header);
+								while ($row = $result_header->fetch_assoc()) {
 									echo "<li><a class='dropdown-item' href='./list_film.php?nation_id={$row['nation_id']}'>{$row['nation_name']}</a></li>";
 								}
 							?>

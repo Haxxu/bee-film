@@ -1,4 +1,77 @@
+<!-- LOAD CAC PHIM CAN THIET  -->
+<?php 
+    require_once('../src/db.php');
+    require_once('../src/functions.php');
 
+    if (isset($_GET['film_type'])) {
+        $sql = "SELECT * 
+                FROM `films`
+                WHERE `film_type` = ?
+                ORDER BY `updated_at` DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['film_type']);
+        $list_film_title = getFilmTypeName($_GET['film_type'], $conn);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } 
+    else if (isset($_GET['genre_id'])) {
+        $sql = "SELECT * 
+                FROM `films` AS f, `film-genre` AS fg
+                WHERE f.film_id = fg.film_id  AND fg.genre_id = ?
+                ORDER BY f.updated_at DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['genre_id']);
+        $list_film_title = "Thể Loại: " . getGenreName($_GET['genre_id'], $conn);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } 
+    else if (isset($_GET['nation_id'])) {
+        $sql = "SELECT * 
+                FROM `films` AS f, `nations` AS n
+                WHERE  f.nation_id = n.nation_id AND n.nation_id = ?
+                ORDER BY f.updated_at DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['nation_id']);
+        $list_film_title = "Quốc gia: " . getNationName($_GET['nation_id'], $conn);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } 
+    else if (isset($_GET['year'])) {
+        $sql = "SELECT * 
+                FROM `films`
+                WHERE `year` = ?
+                ORDER BY `updated_at` DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['year']);
+        $list_film_title = "Năm: " . $_GET['year'];
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } 
+    else if (isset($_GET['director_id'])) {
+        $sql = "SELECT * 
+                FROM `films` as f, `film-actor` as fa
+                WHERE f.film_id = fa.film_id AND fa.actor_id = ?
+                ORDER BY `updated_at` DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['director_id']);
+        $list_film_title = "Đạo diễn: " . getActorName($_GET['director_id'], $conn);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } 
+    else if (isset($_GET['actor_id'])) {
+        $sql = "SELECT * 
+                FROM `films` as f, `film-actor` as fa
+                WHERE f.film_id = fa.film_id AND fa.actor_id = ?
+                ORDER BY `updated_at` DESC";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $_GET['actor_id']);
+        $list_film_title = "Diễn Viên: " . getActorName($_GET['actor_id'], $conn);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    }
+
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,50 +90,7 @@
         
         <div class="container">
 
-            <!-- LOAD CAC PHIM CAN THIET  -->
-            <?php 
-                require_once('../src/db.php');
-                require_once('../src/functions.php');
 
-                if (isset($_GET['film_type'])) {
-                    $sql = "SELECT * 
-                            FROM `films`
-                            WHERE `film_type` = ?
-                            ORDER BY `updated_at` DESC";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('i', $_GET['film_type']);
-                    $list_film_title = getFilmTypeName($_GET['film_type'], $conn);
-                } else if (isset($_GET['genre_id'])) {
-                    $sql = "SELECT * 
-                            FROM `films` AS f, `film-genre` AS fg
-                            WHERE f.film_id = fg.film_id  AND fg.genre_id = ?
-                            ORDER BY f.updated_at DESC";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('i', $_GET['genre_id']);
-                    $list_film_title = "Thể Loại: " . getGenreName($_GET['genre_id'], $conn);
-                } else if (isset($_GET['nation_id'])) {
-                    $sql = "SELECT * 
-                            FROM `films` AS f, `nations` AS n
-                            WHERE  f.nation_id = n.nation_id AND n.nation_id = ?
-                            ORDER BY f.updated_at DESC";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('i', $_GET['nation_id']);
-                    $list_film_title = "Quốc gia: " . getNationName($_GET['nation_id'], $conn);
-                } else if (isset($_GET['year'])) {
-                    $sql = "SELECT * 
-                            FROM `films`
-                            WHERE `year` = ?
-                            ORDER BY `updated_at` DESC";
-                    $stmt = $conn->prepare($sql);
-                    $stmt->bind_param('i', $_GET['year']);
-                    $list_film_title = "Năm: " . $_GET['year'];
-                } 
-                
-
-                $stmt->execute();
-                $result = $stmt->get_result();
-                
-            ?>
             <section class="section container list">
                 <div class="section-header">
                     <div class="section-heading">
@@ -69,19 +99,18 @@
                 </div>
                 <div class="film-list row row-cols-xl-5">
                     <?php
-
                         while($r = $result->fetch_assoc()) {
                     ?>
                         <div class="col-lg-3 col-md-4 col-6 mt-4">
-                            <a href="#" class="film-item">
+                            <a href="./detail_film.php?film_id=<?= $r['film_id'] ?>" class="film-item">
                                 <div class="film-item-status">
                                     <span>
                                         <?php 
                                             $sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
                                                     WHERE film_id = '" . $r['film_id'] . "'       
                                                     ";
-                                            $result2 = mysqli_query($conn, $sql_ep_status);
-                                            $r_ep_status = mysqli_fetch_assoc($result2);
+                                            $result_ep_status = mysqli_query($conn, $sql_ep_status);
+                                            $r_ep_status = mysqli_fetch_assoc($result_ep_status);
                                             if ($r_ep_status['latestEp'] == null) {
                                                 echo 'Sắp chiếu';
                                             } else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
