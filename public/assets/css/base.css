@@ -37,6 +37,10 @@ html::-webkit-scrollbar-thumb {
     color: var(--main-color);
 }
 
+.bg-main-color {
+    background-color: var(--main-color);
+}
+
 * {
     padding: 0;
     margin: 0;

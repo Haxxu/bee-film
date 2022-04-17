@@ -25,7 +25,22 @@
         $film_trailer = $r['trailer'];
         $film_duration = $r['duration'];
         $film_ep_num = $r['episode_number'];
+
+
+
+        $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` DESC LIMIT 5";
+        $stmt_ep = $conn->prepare($sql_ep);
+        $stmt_ep->bind_param('i', $film_id);
+        $stmt_ep->execute();
+        $result_ep = $stmt_ep->get_result();
+        $ep_quantiy = $result_ep->num_rows;
+
     }
+
+
+    
+    
+?>
 
 ?>
 <!DOCTYPE html>
@@ -58,9 +73,16 @@
 
                 <!-- Main Banner Info -->
                 <div class="film-detail-main">
-                    <a href="#trailer" class="play-film">
-                        <i class='bx bx-play' ></i>
-                    </a>
+                    <?php if ($ep_quantiy > 0) { ?>
+                        <a href="./watch_film.php?film_id=<?= $film_id ?>&ep_order=1" class="play-film">
+                            <i class='bx bx-play' ></i>
+                        </a>
+                    <?php } else { ?>
+                        <a href="#trailer" class="play-film">
+                            <i class='bx bx-play' ></i>
+                        </a>
+                    <?php } ?>
+                    
                     <img src="<?= getUrlOfImage($film_banner) ?>" alt="" class="film-img-banner">
                     <div class="film-detail-main-box">
                         <div class="film-img-poster-box">
@@ -74,14 +96,17 @@
                                 <?= $film_name2 ?>
                             </div>
                             <div class="film-action">
-                                <a href="#trailer" class="bg-primary">
+                                <a href="#trailer" class="bg-danger">
                                     <i class='bx bxl-youtube'></i>
                                     Trailer
                                 </a>
-                                <a href="#" class="bg-danger">
-                                    <i class='bx bx-film' ></i>
-                                    Xem Phim
-                                </a>
+                                <?php if ($ep_quantiy > 0) { ?>
+                                    <a href="./watch_film.php?film_id=<?= $film_id ?>&ep_order=1" class="bg-success">
+                                        <i class='bx bx-film' ></i>
+                                        Xem Phim 
+                                    </a>
+                                <?php } ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -105,159 +130,6 @@
                         </li>
                         <li class="film-episode">
                             <a href="#">Tập 4</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 5</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 6</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 7</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 8</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 9</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 10</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 11</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 12</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 123 232 233</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
                         </li>
                         
                     </ul>
@@ -292,13 +164,15 @@
                     <div class="film-detail-text row">
                         <div class="col-12 col-md-4 align-self-start">
                             <div class="film-genre">
-                                <strong>Thể Loại:</strong> 
-                                <a href="">Phim hành động,</a>
-                                <a href="">Phim viễn tưởng,</a>
-                                <a href="">Phim viễn tưởng,</a>
-                                <a href="">Phim viễn tưởng,</a>
-                                <a href="">Phim viễn tưởng,</a>
-                                <a href="">Phim viễn tưởng,</a>  
+                                <strong>Thể Loại:</strong>
+                                <?php 
+                                    $sql_genre = "SELECT * FROM `genres` as g, `film-genre` as fg
+                                                  WHERE g.genre_id = fg.genre_id AND fg.film_id = '" . $film_id . "'";
+                                    $result_genre = mysqli_query($conn, $sql_genre);
+                                    while ($r_genre = mysqli_fetch_assoc($result_genre)) {
+                                        echo '<a href="./list_film.php?genre_id='. $r_genre['genre_id'] . '">' . $r_genre['genre_name'] . '</a>, ';
+                                    }
+                                ?>
                             </div>
                             <div class="film-status">
                                 <strong>Trạng thái: </strong>

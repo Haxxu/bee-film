@@ -68,6 +68,14 @@
         $list_film_title = "Diễn Viên: " . getActorName($_GET['actor_id'], $conn);
         $stmt->execute();
         $result = $stmt->get_result();
+    } else if (isset($_GET['top_view'])) {
+        $sql = "SELECT * 
+                FROM `films`
+                ORDER BY `num_view` DESC";
+        $stmt = $conn->prepare($sql);
+        $list_film_title = 'TOP LƯỢT XEM';
+        $stmt->execute();
+        $result = $stmt->get_result();
     }
 
     

@@ -18,7 +18,7 @@
 		ORDER BY `updated_at` DESC LIMIT 10
 	";
 
-	$sectionArray[0] = ['title' => 'Top Lượt Xem', 'sql' => $sql_top_view, 'a' => ''];
+	$sectionArray[0] = ['title' => 'Top Lượt Xem', 'sql' => $sql_top_view, 'a' => './list_film.php?top_view'];
 	$sectionArray[1] = ['title' => 'Phim Lẻ Mới Cập Nhật', 'sql' => $sql_latest_single, 'a' => './list_film.php?film_type=1'];
 	$sectionArray[2] = ['title' => 'Phim Bộ Mới Cập Nhật', 'sql' => $sql_latest_series, 'a' => './list_film.php?film_type=2'];
 	$sectionArray[3] = ['title' => 'Phim Hoạt Hình Mới Cập Nhật', 'sql' => $sql_latest_anime, 'a' => './list_film.php?genre_id=6'];

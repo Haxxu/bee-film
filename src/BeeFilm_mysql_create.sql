@@ -778,7 +778,7 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '1
 
 
 -- episodes
-
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('1', 'Full', 'film_test.mp4', '1', '41');
 
 
 
