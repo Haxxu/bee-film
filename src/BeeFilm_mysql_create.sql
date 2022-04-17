@@ -779,7 +779,13 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '1
 
 -- episodes
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('1', 'Full', 'film_test.mp4', '1', '41');
-
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('2', 'Tập 1', 'film_test.mp4', '1', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('3', 'Tập 2', 'film_test.mp4', '2', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('4', 'Tập 3', 'film_test.mp4', '3', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('5', 'Tập 4', 'film_test.mp4', '4', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('6', 'Tập 5', 'film_test.mp4', '5', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('7', 'Tập 6', 'film_test.mp4', '6', '45');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('8', 'Tập 7', 'film_test.mp4', '7', '45');
 
 
 -- users

@@ -28,7 +28,7 @@
 
 
 
-        $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` DESC LIMIT 5";
+        $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` DESC LIMIT 10";
         $stmt_ep = $conn->prepare($sql_ep);
         $stmt_ep->bind_param('i', $film_id);
         $stmt_ep->execute();
@@ -113,28 +113,26 @@
                 </div>
                 <!-- End Main Banner Info -->
 
-                <!-- Film Episode List -->
-                <div class="film-episode-list-box">
-                    <div class="film-detail-title">
-                        Danh sách tập phim
+                
+                <?php if ($ep_quantiy > 0) { ?>
+                    <!-- Film Episode List -->
+                    <div class="film-episode-list-box">
+                        <div class="film-detail-title">
+                            Danh sách tập phim
+                        </div>
+                        <ul class="film-episode-list">
+                            <?php
+                                while ($r_ep = $result_ep->fetch_assoc()) {
+                            ?>
+                                <li class="film-episode">
+                                    <a href="./watch_film.php?film_id=<?= $film_id ?>&ep_order=<?= $r_ep['ep_order'] ?>"><?=$r_ep['ep_name'] ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
                     </div>
-                    <ul class="film-episode-list">
-                        <li class="film-episode">
-                            <a href="#">Tập 1</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 2</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 3</a>
-                        </li>
-                        <li class="film-episode">
-                            <a href="#">Tập 4</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-                <!-- End Film Episode List -->
+                    <!-- End Film Episode List -->
+                <?php } ?>
+                
 
                 <!-- Film Info -->
                 <div class="film-detail-box container">
