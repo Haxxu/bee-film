@@ -6,9 +6,9 @@
                 require_once('../src/db.php');
                 require_once('../src/functions.php');
                 
-                $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 8";
-                $result = mysqli_query($conn, $sql);
-                while ($r = mysqli_fetch_assoc($result)) {
+                $sql_hs = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 8";
+                $result_hs = mysqli_query($conn, $sql_hs);
+                while ($r = mysqli_fetch_assoc($result_hs)) {
             ?>
                 <!-- Box 2 -->
                 <div class="swiper-slide">
@@ -41,7 +41,7 @@
                                     </span>
                                 </div>
                                 <div class="item-action top-down delay-6">
-                                    <a href="" class="m-btn m-btn-hover">
+                                    <a href="./detail_film.php?film_id=<?= $r['film_id'] ?>" class="m-btn m-btn-hover">
                                         <i class="bx bxs-right-arrow"></i>
                                         <span>Xem Ngay</span>
                                     </a>
