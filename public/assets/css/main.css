@@ -525,11 +525,17 @@ body {
 
 
 /* FILM DETAIL */
-
-.film-detail-breadcrumb li {
+.film-detail-breadcrumb li,
+.film-detail-breadcrumb li a {
     font-size: 2rem;
     color: var(--text-color);
 }
+
+.film-detail-breadcrumb li a:hover,
+.film-detail-breadcrumb li a.active {
+    color: var(--main-color);
+}
+
 
 .film-detail-main {
     position: relative;
@@ -679,9 +685,13 @@ body {
     font-size: 2rem;
 }
 
-.film-episode a:hover {
+.film-episode a:hover, 
+.film-episode.active a {
     color: var(--main-color);
 }
+
+
+
 /* End Film episode */
 
 /* Rating */

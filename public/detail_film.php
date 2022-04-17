@@ -12,6 +12,7 @@
         $result = $stmt->get_result();
         $r = $result->fetch_assoc();
 
+        // Thông tin phim
         $film_id = $r['film_id'];
         $film_name = $r['name'];
         $film_name2 = $r['name2'];
@@ -26,8 +27,7 @@
         $film_duration = $r['duration'];
         $film_ep_num = $r['episode_number'];
 
-
-
+        // Danh sách tập
         $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` DESC LIMIT 10";
         $stmt_ep = $conn->prepare($sql_ep);
         $stmt_ep->bind_param('i', $film_id);
@@ -61,14 +61,27 @@
         <div class="container">
             <div class="film-detail">
                 <!-- Breadcumb -->
-                <!-- <div class="film-detail-breadcrumb">
-                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <div class="film-detail-breadcrumb">
+                    <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            <li class="breadcrumb-item">
+                                <a href="./index.php">
+                                    Trang chủ
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="./list_film.php?film_type=<?= $r['film_type'] ?>">
+                                    <?= getFilmTypeName($r['film_type'], $conn) ?>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item" aria-current="page">
+                                <a href="./detail_film.php?film_id=<?= $film_id ?>" class="active">
+                                    <?= $film_name ?>
+                                </a>
+                            </li>
                         </ol>
                     </nav>
-                </div>   -->
+                </div>
                 <!-- End Breadcumb -->
 
                 <!-- Main Banner Info -->
@@ -118,7 +131,7 @@
                     <!-- Film Episode List -->
                     <div class="film-episode-list-box">
                         <div class="film-detail-title">
-                            Danh sách tập phim
+                            Danh sách tập phim mới nhất
                         </div>
                         <ul class="film-episode-list">
                             <?php
@@ -175,22 +188,9 @@
                             <div class="film-status">
                                 <strong>Trạng thái: </strong>
                                 <span>
-                                    <?php 
-                                        $sql_ep_status = "SELECT MAX(ep_order) AS latestEp FROM `episodes` 
-                                                WHERE film_id = '" . $r['film_id'] . "'       
-                                                ";
-                                        $result_ep_status = mysqli_query($conn, $sql_ep_status);
-                                        $r_ep_status = mysqli_fetch_assoc($result_ep_status);
-                                        if ($r_ep_status['latestEp'] == null) {
-                                            echo 'Sắp chiếu';
-                                        } else if ($r_ep_status['latestEp'] == 1 && $r['episode_number'] == 1) {
-                                            echo 'Hoàn tất';
-                                        } else if ($r_ep_status['latestEp'] <  $r['episode_number']) {
-                                            echo 'Tập ' . $r_ep_status['latestEp'] . ' / ' . $r['episode_number'];
-                                        } else {
-                                            echo 'Full ('. $r_ep_status['latestEp'] . '/' . $r['episode_number'] . ')';
-                                        }
-                                    ?>
+                                    <?php include('./ep_status.php') ?>
+                                    
+                                    <?php if ($ep_quantiy < 1) { echo '(gồm ' . $film_ep_num . ' tập)'; } ?>
                                 </span>
                             </div>
                             <div class="film-time">
