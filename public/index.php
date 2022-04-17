@@ -102,7 +102,7 @@
 					<div class="section-heading">
 						Phim lẻ mới cập nhật
 					</div>
-					<a href="" class="section-link">
+					<a href="./list_film.php?film_type=1" class="section-link">
 						Xem tất cả
 						<i class='bx bxs-chevron-right'></i>
 					</a>
@@ -157,7 +157,7 @@
 					<div class="section-heading">
 						Phim bộ mới cập nhật
 					</div>
-					<a href="" class="section-link">
+					<a href="./list_film.php?film_type=2" class="section-link">
 						Xem tất cả
 						<i class='bx bxs-chevron-right'></i>
 					</a>
@@ -212,7 +212,7 @@
 					<div class="section-heading">
 						Phim Hoạt Hình mới cập nhật
 					</div>
-					<a href="" class="section-link">
+					<a href="./list_film.php?genre_id=6" class="section-link">
 						Xem tất cả
 						<i class='bx bxs-chevron-right'></i>
 					</a>
@@ -267,7 +267,7 @@
 					<div class="section-heading">
 						Phim hành động mới cập nhật
 					</div>
-					<a href="" class="section-link">
+					<a href="./list_film.php?genre_id=9" class="section-link">
 						Xem tất cả
 						<i class='bx bxs-chevron-right'></i>
 					</a>
