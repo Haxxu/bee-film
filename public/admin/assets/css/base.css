@@ -7,7 +7,7 @@
 
 :root {
     --main-color: #ffe600;
-    --bg-color: #272727;
+    --bg-color: #222222;
     --text-color: #F7F4FF;
     --text-color-dark: #828276;
     --bg-header-color: #121212;
@@ -64,10 +64,6 @@ a:visited {
 }
 
 .wrapper {
-    position: relative;
-    padding-top: 100px;
-    padding-bottom: 50px;
-    min-height: calc(100vh - 100px);
 }
 
 .m-btn {
