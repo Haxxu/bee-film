@@ -106,7 +106,7 @@
                                 <?= $film_name ?>
                             </div>
                             <div class="film-title-2">
-                                <?= $film_name2 ?>
+                                <?= $film_name2 ?> (<?= $film_year ?>)
                             </div>
                             <div class="film-action">
                                 <a href="#trailer" class="bg-danger">

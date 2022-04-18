@@ -53,9 +53,15 @@ body {
 .header form.search-box {
 }
 
+.header form.search-box input {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.4rem;
+}
+
 .header form.search-box button i {
-    padding: 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.3rem;
+    font-size: 1.8rem;
 }
 
 .header form.search-box button i:hover {

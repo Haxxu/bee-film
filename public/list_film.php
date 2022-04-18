@@ -76,6 +76,21 @@
         $list_film_title = 'TOP LƯỢT XEM';
         $stmt->execute();
         $result = $stmt->get_result();
+    } else if(isset($_GET['search'])) {
+        $searchTxt = $_GET['search'];
+        $sql = "SELECT f.* 
+                FROM `films` as f, `film-actor` as fa, `actors` as a
+                WHERE f.film_id = fa.film_id 
+                    AND fa.actor_id = a.id 
+                    AND (f.name LIKE '%$searchTxt%' 
+                        OR f.name2 LIKE '%$searchTxt%'
+                        OR a.name LIKE '%$searchTxt%')
+                ORDER BY `updated_at` DESC";
+        $stmt = $conn->prepare($sql);
+        $list_film_title = 'KẾT QUẢ TÌM KIẾM CHO: "' . $searchTxt . '"';
+        $stmt->execute();
+        $result = $stmt->get_result();
+
     }
 
     
