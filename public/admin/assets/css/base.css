@@ -8,7 +8,7 @@
 :root {
     --main-color: #ffe600;
     --bg-color: #000;
-    --bg-box-color: #333;
+    --bg-box-color: #233;
     --text-color: #f3f3f3;
 }
 
@@ -45,6 +45,10 @@ html::-webkit-scrollbar-thumb {
     font-family: 'Roboto', sans-serif;
 }
 
+ul {
+    padding-left: 0;
+}
+
 li {
     list-style: none;
 }
@@ -61,10 +65,10 @@ a:visited {
 .wrapper {
 }
 
-.conatiner,
+/* .conatiner,
 .container-fluid {
     padding: 0;
-}
+} */
 
 .m-btn {
     display: block;

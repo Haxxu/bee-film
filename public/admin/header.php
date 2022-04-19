@@ -1,6 +1,6 @@
 <?php 
     require_once('../../src/db.php');
-    session_start();
+    // session_start();
     error_reporting(E_ALL);
 
     if (isset($_SESSION['username'])) {
@@ -12,12 +12,12 @@
         if (!$result || (mysqli_num_rows($result) < 1)) {
             header('Location: ../index.php');
             die();
-        }
+    }
 ?>
     <div class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Admin</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class='bx bx-menu bx-flip-horizontal' ></i>
                 </button>
@@ -33,12 +33,18 @@
                             <i class='bx bxs-up-arrow'></i>
                         </div>
                         <div class="user-info-menu">
-                            <ul>
-                                <li>
-                                    <a href="">Profile</a>
+                            <ul class="user-info-menu-list">
+                                <li class="user-info-menu-item">
+                                    <a href="./info_account.php">
+                                        <i class='bx bxs-user'></i>
+                                        Profile
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="">Đăng xuất</a>
+                                    <a href="">
+                                        <i class='bx bx-log-out' ></i>
+                                        Đăng xuất
+                                    </a>
                                 </li>
                             </ul>
                         </div>

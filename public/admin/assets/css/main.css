@@ -23,30 +23,126 @@ body {
 }
 
 .user-info {
-    position: relative;
-    margin: 0 20px;
     display: flex;
-    font-size: 2rem;
+    justify-content: flex-end;
+    position: relative;
+    min-width: 140px;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 6px;
+    font-size: 2.5rem;
     color: var(--text-color);
-    min-width: 120px;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.user-info.active {
+    color: var(--main-color);
+}
+
+.user-info .bxs-up-arrow {
+    display: none;
+}
+
+.user-info.active .bxs-up-arrow {
+    display: inline-block;
+}
+
+.user-info.active .bxs-down-arrow {
+    display: none;
 }
 
 .user-info .user-info-menu {
+    display: none;
+    justify-content: flex-end;
     position: absolute;
     top: 100%;
     left: 0;
+    min-width: 140px;
+    background-color: var(--bg-box-color);
+}
+
+.user-info .user-info-menu.show {
+    display: flex;
 }
 
 .user-info .user-info-menu ul {
     padding-left: 0;
+    margin-bottom: 0;
 }
 
 .user-info .user-info-menu a {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-width: 140px;
+    padding: 5px 10px;
     font-size: 1.4rem;
     color: var(--text-color);
 }
 
+.user-info .user-info-menu a i {
+    font-size: 1.6rem;
+    padding-right: 5px;
+}
+
 .user-info .user-info-menu a:hover {
     background-color: var(--bg-color);
+    color: var(--main-color)
 }
+/* End Header */
+
+/* Sidebar menu */
+.sidebar-menu {
+    /* height: 100vh; */
+    background-color: var(--bg-box-color);
+}
+
+.sidebar-menu .sidebar-menu-item a {
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+.sidebar-menu .sidebar-menu-item a i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.sidebar-menu .sidebar-menu-item a:hover,
+.sidebar-menu .sidebar-menu-item a.active {
+    background-color: var(--bg-color);
+    color: var(--main-color)
+}
+/* End Sidebar menu */
+
+
+/* REGISTER */
+h1 {
+    color: var(--text-color);
+}
+
+label {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.invalid-feedback {
+    font-size: 1.5rem;
+    color: red;
+}
+
+.is-invalid {
+    font-size: 1.5rem;
+    color: green;
+}
+
+input[type="radio"] {
+    font-size: 1.5rem;
+}
+
+/* END REGISTER */
