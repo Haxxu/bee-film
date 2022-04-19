@@ -150,6 +150,11 @@ input[type="radio"] {
     font-size: 1.5rem;
 }
 
+.genre-box .genre-list .genre-item {
+    font-size: 1.4rem;
+    color: var(--text-color)
+}
+
 /* END REGISTER */
 
 /* Toast Message */

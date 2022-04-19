@@ -215,6 +215,35 @@
                                 </div>
                             </div>
 
+                            <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="nation">Thể loại: </label>
+                                <div class="col-12 col-lg-6">
+                                    <input type="text" hidden name="genre" id="genre" class="form-control form-control-lg">
+                                    <div  class="genre-box">
+                                        <ul class="genre-list">
+                                        </ul>
+                                    </div>
+                                    <select name="genre-add" id="genre-add" class="form-control form-control-lg">
+                                        <?php 
+                                            $sql_nation = "SELECT * FROM `genres`";
+                                            $result_nation = $conn->query($sql_nation);
+                                            if ($result_nation->num_rows > 0) {
+                                                while ($row_nation = $result_nation->fetch_assoc()) {
+                                        ?>
+                                            <option value="<?= $row_nation['genre_id'] ?>" class="form-control form-control-lg">
+                                                <?= $row_nation['genre_name'] ?>
+                                            </option>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
+                                    </select>
+                                    <div>
+                                        <div class="btn btn-success mt-2" onclick="addGenre()">Thêm thể loại</div>
+                                    </div>
+                                </div>
+                            </div>
+
                             
 
                             <div class="row">
