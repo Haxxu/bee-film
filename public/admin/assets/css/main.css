@@ -5,6 +5,10 @@ body {
 /* Header */
 .header {
     background-color: var(--bg-box-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 .header a {
@@ -96,6 +100,7 @@ body {
 /* Sidebar menu */
 .sidebar-menu {
     /* height: 100vh; */
+
     background-color: var(--bg-box-color);
 }
 
@@ -166,3 +171,42 @@ input[type="radio"] {
     color: #000;
 }
 /* EndToast Message */
+
+/* TABLE OF MANAGE FILM */
+.manage-film .add-section a {
+    font-size: 2rem;
+    color: var(--text-color)
+}
+
+.manage-film .add-section a i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.manage-film .table {
+    width: 100%;
+    color: var(--text-color);
+}
+
+.manage-film .table tr {
+}
+
+.manage-film .table th {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.manage-film .table td {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.manage-film .table td img {
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* END TABLE */

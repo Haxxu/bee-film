@@ -1,9 +1,9 @@
 <div class="sidebar-menu">
     <ul class="sidebar-menu-list">
         <li class="sidebar-menu-item">
-            <a href="./add_film.php">
-                <i class='bx bx-plus' ></i>
-                Thêm Phim
+            <a href="./manage_film.php">
+                <i class='bx bxs-data'></i>
+                Quản lý phim
             </a>
         </li>
         <li class="sidebar-menu-item">

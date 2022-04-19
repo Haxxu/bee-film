@@ -1,5 +1,5 @@
 <?php
-    // session_start();
+    session_start();
     require_once('../../src/db.php');
     require_once('../../src/functions.php');
 ?>
@@ -85,7 +85,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard: Admin</title>
+    <title>Admin: Add Film</title>
     <?php include('./link_css.php') ?>
 </head>
 <body>
@@ -155,7 +155,7 @@
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="description">Mô tả: </label>
                                 <div class="col-12 col-lg-6">
-                                    <textarea name="description" id="description" cols="30" rows="10" class="form-control form-control-lg"></textarea>
+                                    <textarea name="description" id="description" cols="30" rows="8" class="form-control form-control-lg"></textarea>
                                 </div>
                             </div>
 
@@ -163,6 +163,13 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="episode_number">Số tập phim: </label>
                                 <div class="col-12 col-lg-6">
                                     <input type="number" step="any" min="0" class="form-control form-control-lg" id="episode_number" name="episode_number" placeholder="Nhập số tập phim" />
+                                </div>
+                            </div>
+
+                            <div class="mb-4 row">
+                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="duration">Thời lượng phim: </label>
+                                <div class="col-12 col-lg-6">
+                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="duration" name="duration" placeholder="Nhập thời lượng phim (tính theo phút)" />
                                 </div>
                             </div>
 
@@ -184,13 +191,6 @@
                                             }
                                         ?>
                                     </select>
-                                </div>
-                            </div>
-
-                            <div class="mb-4 row">
-                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="duration">Thời lượng phim: </label>
-                                <div class="col-12 col-lg-6">
-                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="duration" name="duration" placeholder="Nhập thời lượng phim (tính theo phút)" />
                                 </div>
                             </div>
 

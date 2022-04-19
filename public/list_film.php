@@ -78,18 +78,20 @@
         $result = $stmt->get_result();
     } else if(isset($_GET['search'])) {
         $searchTxt = $_GET['search'];
+        $list_film_title = 'KẾT QUẢ TÌM KIẾM CHO: "' . $searchTxt . '"';
+        $searchTxt = "%$searchTxt%";
         $sql = "SELECT f.* 
                 FROM `films` as f, `film-actor` as fa, `actors` as a
                 WHERE f.film_id = fa.film_id 
                     AND fa.actor_id = a.id 
-                    AND (f.name LIKE '%$searchTxt%' 
-                        OR f.name2 LIKE '%$searchTxt%'
-                        OR a.name LIKE '%$searchTxt%')
+                    AND (f.name LIKE ? 
+                        OR f.name2 LIKE ?
+                        OR a.name LIKE ?)
                 GROUP BY f.film_id
                 ORDER BY `updated_at` DESC";
                 ; 
         $stmt = $conn->prepare($sql);
-        $list_film_title = 'KẾT QUẢ TÌM KIẾM CHO: "' . $searchTxt . '"';
+        $stmt->bind_param('sss', $searchTxt, $searchTxt, $searchTxt);
         $stmt->execute();
         $result = $stmt->get_result();
 

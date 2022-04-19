@@ -1,6 +1,5 @@
 <?php 
     require_once('../../src/db.php');
-    session_start();
     // session_start();
     error_reporting(E_ALL);
 
@@ -34,16 +33,16 @@
     <div class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Admin</a>
+                <a class="navbar-brand" href="./index.php">Admin</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class='bx bx-menu bx-flip-horizontal' ></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex ms-auto">
+                    <!-- <form class="d-flex ms-auto">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    <div class="user-info">
+                    </form> -->
+                    <div class="user-info d-flex ms-auto">
                         <div class="username-info">
                             Locknight 
                             <i class='bx bxs-down-arrow'></i>
@@ -69,6 +68,7 @@
                 </div>
             </div>
         </nav>
+        
     </div>
 <?php 
 } else {
