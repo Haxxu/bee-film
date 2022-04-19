@@ -6,4 +6,12 @@ $(document).ready(function() {
         $('.user-info .bxs-down-arrow').toggleClass('show');
     })
 
+    
 });
+
+// Toast Message
+var toastMessage = document.getElementById('toast-message')
+if (toastMessage) {
+    var toast = new bootstrap.Toast(toastMessage)
+    toast.show()
+}

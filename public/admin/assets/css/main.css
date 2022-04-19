@@ -146,3 +146,23 @@ input[type="radio"] {
 }
 
 /* END REGISTER */
+
+/* Toast Message */
+.toast {
+    max-width: 200px;
+    z-index: 100;
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    font-size: 2.5rem;
+}
+
+.toast-header {
+    font-size: 2rem;
+}
+
+.toast-body {
+    font-size: 1.6rem;
+    color: #000;
+}
+/* EndToast Message */

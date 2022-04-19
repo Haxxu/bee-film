@@ -1,5 +1,82 @@
 <?php
-    session_start();
+    // session_start();
+    require_once('../../src/db.php');
+    require_once('../../src/functions.php');
+?>
+
+<?php 
+
+    if (isset($_POST['btn-add-film'])) {
+        $name = $_POST['name'];
+        $name2 = $_POST['name2'];
+        $trailer = $_POST['trailer'];
+        $imdb = $_POST['imdb'];
+        $year = $_POST['year'];
+        $description = $_POST['description'];
+        $episode_number = $_POST['episode_number'];
+        $film_type = $_POST['film_type'];
+        $duration = $_POST['duration'];
+        $nation = $_POST['nation'];
+
+        if (isset($_FILES['image_poster'])) {
+            if ($_FILES['image_poster']['error'] == 0) {
+                $film_poster_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_poster']['name'];
+    
+                $film_poster_name = str_replace(" ", "_", $film_poster_name);
+    
+                $source = $_FILES['image_poster']['tmp_name'];
+                $destination = getUrlOfImageFromAdmin($film_poster_name);
+    
+                if (move_uploaded_file($source, $destination)) {
+                } else {
+                    $film_poster_name = "";
+                }
+            }
+        }
+
+        if (isset($_FILES['image_banner'])) {
+            if ($_FILES['image_banner']['error'] == 0) {
+                $film_banner_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_banner']['name'];
+    
+                $film_banner_name = str_replace(" ", "_", $film_banner_name);
+    
+                $source = $_FILES['image_banner']['tmp_name'];
+                $destination = getUrlOfImageFromAdmin($film_banner_name);
+    
+                if (move_uploaded_file($source, $destination)) {
+                    // echo "Upload success";
+                } else {
+                    $film_poster_name = "";
+                }
+            }
+        }
+
+
+
+        $sql = "INSERT INTO `films` (`film_id`,
+                                     `name`, 
+                                     `name2`, 
+                                     `image`, 
+                                     `image_banner`, 
+                                     `trailer`, 
+                                     `IMDb`, 
+                                     `year`, 
+                                     `description`, 
+                                     `episode_number`, 
+                                     `duration`, 
+                                     `num_view`, 
+                                     `nation_id`, 
+                                     `created_at`, 
+                                     `updated_at`, 
+                                     `film_type`) 
+                VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '0', ?, now(), now(), ?);";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('sssssdisiiii', $name, $name2, $film_poster_name, $film_banner_name, $trailer, $imdb, $year, $description, $episode_number, $duration, $nation, $film_type);
+        $stmt->execute();
+
+        // $_SESSION['message'] = ['body' => 'Thêm phim thành công', 'type' =>s 'success'];
+            
+    }
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +101,7 @@
                 <div class="add-film container my-5">
                     <h1 class="text-center">Thêm phim</h1>
                     <div class="mt-5">
-                        <form id="form-add-film" method="post" class="form-add-film" action="">
+                        <form id="form-add-film" method="post" class="form-add-film" action="" enctype="multipart/form-data">
 
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="name">Tên phim: </label>
@@ -64,14 +141,14 @@
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="imdb">IMDb: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="number" step="0.1" min="0" max="10" class="form-control form-control-lg" id="imdb" name="imdb" placeholder="Nhập link trailer" />
+                                    <input type="number" step="0.1" min="0" max="10" class="form-control form-control-lg" id="imdb" name="imdb" placeholder="Nhập điểm IMDb" />
                                 </div>
                             </div>
 
                             <div class="mb-4 row">
-                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="imdb">Năm sản xuất: </label>
+                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="year">Năm sản xuất: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="number" step="any" min="0" max="2022" class="form-control form-control-lg" id="imdb" name="imdb" placeholder="Nhập link trailer" />
+                                    <input type="number" step="any" min="0" max="2022" class="form-control form-control-lg" id="year" name="year" placeholder="Nhập năm sản xuất" />
                                 </div>
                             </div>
 
@@ -93,16 +170,27 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="film_type">Kiểu phim: </label>
                                 <div class="col-12 col-lg-6">
                                     <select name="film_type" id="film_type" class="form-control form-control-lg">
-                                        <option value="1" class="form-control form-control-lg">Phim Lẻ</option>
-                                        <option value="2" class="form-control form-control-lg">Phim Bộ</option>
+                                        <?php 
+                                            $sql_film_type = "SELECT * FROM `film-types`";
+                                            $result_film_type = $conn->query($sql_film_type);
+                                            if ($result_film_type->num_rows > 0) {
+                                                while ($row_film_type = $result_film_type->fetch_assoc()) {
+                                        ?>
+                                            <option value="<?= $row_film_type['id'] ?>" class="form-control form-control-lg">
+                                                <?= $row_film_type['name'] ?>
+                                            </option>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="mb-4 row">
-                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="imdb">Thời lượng phim: </label>
+                                <label class="form-label col-12 col-lg-2 offset-lg-2" for="duration">Thời lượng phim: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="imdb" name="imdb" placeholder="Nhập thời lượng phim (tính theo phút)" />
+                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="duration" name="duration" placeholder="Nhập thời lượng phim (tính theo phút)" />
                                 </div>
                             </div>
 
@@ -110,16 +198,19 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="nation">Quốc gia: </label>
                                 <div class="col-12 col-lg-6">
                                     <select name="nation" id="nation" class="form-control form-control-lg">
-                                        <option value="1" class="form-control form-control-lg">Mỹ</option>
-                                        <option value="2" class="form-control form-control-lg">Việt Nam</option>
-                                        <option value="3" class="form-control form-control-lg">Hàn Quốc</option>
-                                        <option value="4" class="form-control form-control-lg">Nhật Bản</option>
-                                        <option value="5" class="form-control form-control-lg">Trung Quốc</option>
-                                        <option value="6" class="form-control form-control-lg">Mỹ</option>
-                                        <option value="7" class="form-control form-control-lg">Việt Nam</option>
-                                        <option value="8" class="form-control form-control-lg">Hàn Quốc</option>
-                                        <option value="9" class="form-control form-control-lg">Nhật Bản</option>
-                                        <option value="10" class="form-control form-control-lg">Trung Quốc</option>
+                                        <?php 
+                                            $sql_nation = "SELECT * FROM `nations`";
+                                            $result_nation = $conn->query($sql_nation);
+                                            if ($result_nation->num_rows > 0) {
+                                                while ($row_nation = $result_nation->fetch_assoc()) {
+                                        ?>
+                                            <option value="<?= $row_nation['nation_id'] ?>" class="form-control form-control-lg">
+                                                <?= $row_nation['nation_name'] ?>
+                                            </option>
+                                        <?php
+                                                }
+                                            }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
@@ -147,5 +238,112 @@
 
     <!-- Link To JS -->
     <?php include('./link_js.php') ?>
+    <!-- Script to config form validate -->
+    <script>
+        // $.validator.setDefaults({
+		// 	submitHandler: function() {
+                
+		// 		alert('submitted!');
+        //         document.querySelector('#form-register').submit();
+		// 	}
+		// });
+
+        $(document).ready(() => {
+			$('#form-add-film').validate({
+				rules: {
+					name: {
+						required: true,
+						minlength: 3
+					},
+                    name2: {
+						required: true,
+						minlength: 3
+					},
+                    image_poster: {
+                        required: true,
+                    },
+                    image_banner: {
+                        required: true,
+                    },
+                    trailer: {
+                        required: true,
+                    },
+                    description: {
+                        required: true,
+                    },
+                    year: {
+                        required: true,
+                        number: true,
+                        min: 0,
+                        max: 2022
+                    },
+                    episode_number: {
+                        required: true,
+                        number: true,
+                        min: 0,
+                    },
+                    duration: {
+                        required: true,
+                        number: true,
+                        min: 0,
+                    },
+                    film_type: {
+                        required: true,
+                    },
+                    nation: {
+                        required: true,
+                    }
+				},
+				messages: {
+					name: {
+                        required: "Vui lòng nhập tên phim",
+                        minlength: "Tên phim phải có ít nhất 3 ký tự"
+                    },
+                    name2: {
+                        required: "Vui lòng nhập tên phim 2",
+                        minlength: "Tên phim 2 phải có ít nhất 3 ký tự"
+                    },
+                    image_poster: {
+                        required: "Vui lòng chọn ảnh poster",
+                    },
+                    image_banner: {
+                        required: "Vui lòng chọn ảnh banner",
+                    },
+                    trailer: {
+                        required: "Vui lòng nhập link trailer",
+                    },
+                    description: {
+                        required: "Vui lòng nhập mô tả",
+                    },
+                    year: {
+                        required: "Vui lòng nhập năm phát hành",
+                        number: "Vui lòng nhập năm phát hành là số",
+                        min: "Năm phát hành phải lớn hơn 0",
+                        max: "Năm phát hành phải nhỏ hơn 2022"
+                    },
+                    episode_number: {
+                        required: "Vui lòng nhập số tập phim",
+                        number: "Vui lòng nhập số tập phim là số",
+				    },
+                },
+				errorElement: 'div',
+				errorPlacement: function(error, element) {
+					error.addClass('invalid-feedback');
+					if (element.prop('type') === 'checkbox') {
+						error.insertAfter(element.siblings('label'));
+					} else {
+						error.insertAfter(element);
+					}
+				},
+				highlight: function(element, errorClass, validClass) {
+					$(element).addClass('is-invalid').removeClass('is-valid');
+				},
+				unhighlight: function(element, errorClass, validClass) {
+					$(element).addClass('is-valid').removeClass('is-invalid');
+				}
+
+			});
+		});
+    </script>
 </body>
 </html>

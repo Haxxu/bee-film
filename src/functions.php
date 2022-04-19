@@ -8,6 +8,14 @@ function getUrlOfImage($image) {
     return $url;
 }
 
+function getUrlOfImageFromAdmin($image) {
+    $url = "";
+    if ($image != "") {
+        $url = "../assets/images/".$image;
+    }
+    return $url;
+}
+
 function getFilmTypeName($film_type, $conn) {
     $sql = "SELECT * FROM `film-types` WHERE `id` = ?";
     $stmt = $conn->prepare($sql);
