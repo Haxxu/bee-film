@@ -18,7 +18,7 @@ if (toastMessage) {
 
 function removeGenre(id) {
     document.querySelector('.genre-id-' + id).remove();
-    document.querySelector('input[name=genre]').value = document.querySelector('input[name=genre]').value.replace(id, '');
+    document.querySelector('input[name=genre]').value = document.querySelector('input[name=genre]').value.replace(id + ',', '');
 }
 
 function addGenre() {

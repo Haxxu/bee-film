@@ -17,6 +17,8 @@
         $film_type = $_POST['film_type'];
         $duration = $_POST['duration'];
         $nation = $_POST['nation'];
+        $genre_text = $_POST['genre'];
+        $genres = explode (",", $genre_text); 
 
         if (isset($_FILES['image_poster'])) {
             if ($_FILES['image_poster']['error'] == 0) {
@@ -73,6 +75,22 @@
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('sssssdisiiii', $name, $name2, $film_poster_name, $film_banner_name, $trailer, $imdb, $year, $description, $episode_number, $duration, $nation, $film_type);
         $stmt->execute();
+
+        $sql = "SELECT max(film_id) as film_id FROM `films`";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        $film_id = $row['film_id'];
+
+
+        $sql = "INSERT INTO `film-genre` (`film_id`, `genre_id`) 
+                VALUES (?, ?)";
+        $stmt = $conn->prepare($sql);
+        for ($i = 0; $i < count($genres)-1; $i++) {
+            $stmt->bind_param('ii', $film_id, $genres[$i]);
+            $stmt->execute();
+        }
 
         // $_SESSION['message'] = ['body' => 'Thêm phim thành công', 'type' =>s 'success'];
             
