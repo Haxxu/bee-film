@@ -1,5 +1,6 @@
 <?php
     require_once('../src/db.php');
+    session_start();
 
     if (isset($_POST['btn-register'])) {
         $username = $_POST['username'];
@@ -16,13 +17,25 @@
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
+        $sql_email = "SELECT * FROM `users` WHERE `email` = ?";
+        $stmt = mysqli_prepare($conn, $sql_email);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result_email = mysqli_stmt_get_result($stmt);
+
         if (mysqli_num_rows($result) > 0) {
             echo "
                 <script>alert('Tài khoản đã tồn tại')</script>
             ";
             // echo "Tài khoản $username đã tồn tại";
             
-            // $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
+            $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
+            header('Location: ./index.php');
+            die();
+        } else if (mysqli_num_rows($result_email) > 0) {
+            $_SESSION['message'] = ['body' => 'Email đã được đăng kí', 'type' => 'danger'];
+            header('Location: ./index.php');
+            die();
         } else {
 
 
