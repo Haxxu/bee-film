@@ -1,3 +1,52 @@
 body {
     background-color: var(--bg-color);
 }
+
+/* Header */
+.header {
+    background-color: var(--bg-box-color);
+}
+
+.header a {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.header .navbar-toggler {
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.aaaa {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info {
+    position: relative;
+    margin: 0 20px;
+    display: flex;
+    font-size: 2rem;
+    color: var(--text-color);
+    min-width: 120px;
+}
+
+.user-info .user-info-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.user-info .user-info-menu ul {
+    padding-left: 0;
+}
+
+.user-info .user-info-menu a {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.user-info .user-info-menu a:hover {
+    background-color: var(--bg-color);
+}

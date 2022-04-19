@@ -8,10 +8,16 @@
     <?php include('./link_css.php') ?>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper container-fluid">
         <?php include('./header.php') ?>
 
         
+        <!-- <?php include('./sidebar_menu.php') ?> -->
+
+        
     </div>
+
+    <!-- Link To JS -->
+    <?php include('./link_js.php') ?>
 </body>
 </html>
