@@ -85,7 +85,9 @@
                     AND (f.name LIKE '%$searchTxt%' 
                         OR f.name2 LIKE '%$searchTxt%'
                         OR a.name LIKE '%$searchTxt%')
+                GROUP BY f.film_id
                 ORDER BY `updated_at` DESC";
+                ; 
         $stmt = $conn->prepare($sql);
         $list_film_title = 'KẾT QUẢ TÌM KIẾM CHO: "' . $searchTxt . '"';
         $stmt->execute();

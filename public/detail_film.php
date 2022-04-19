@@ -5,6 +5,7 @@
     require_once('../src/functions.php');
     
     if (isset($_GET['film_id'])) {
+
         $sql = "SELECT * FROM `films` WHERE `film_id` = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $_GET['film_id']);
@@ -26,6 +27,11 @@
         $film_trailer = $r['trailer'];
         $film_duration = $r['duration'];
         $film_ep_num = $r['episode_number'];
+        
+        $sql_update_view = "UPDATE `films` SET `num_view` = `num_view` + 1 WHERE `film_id` = ?";
+        $stmt = $conn->prepare($sql_update_view);
+        $stmt->bind_param('i', $film_id);
+        $stmt->execute();
 
         // Danh sách tập
         $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` DESC LIMIT 10";

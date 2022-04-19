@@ -20,6 +20,11 @@
         $film_description = $r['description'];
         $film_ep_num = $r['episode_number'];
 
+        $sql_update_view = "UPDATE `films` SET `num_view` = `num_view` + 1 WHERE `film_id` = ?";
+        $stmt = $conn->prepare($sql_update_view);
+        $stmt->bind_param('i', $film_id);
+        $stmt->execute();
+
         // Danh sách tập
         $sql_ep = "SELECT * FROM `episodes` WHERE `film_id` = ? ORDER BY `ep_order` ASC";
         $stmt_ep = $conn->prepare($sql_ep);
