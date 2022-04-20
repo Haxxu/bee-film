@@ -51,15 +51,16 @@
                         <div class="user-info-menu">
                             <ul class="user-info-menu-list">
                                 <li class="user-info-menu-item">
-                                    <a href="./info_account.php">
+                                    <a href="../info_account.php">
                                         <i class='bx bxs-user'></i>
                                         Tài khoản
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
+                                    <a href="./logout.php?logout=true">
                                         <i class='bx bx-log-out' ></i>
                                         Đăng xuất
+                                    </form>
                                     </a>
                                 </li>
                             </ul>
