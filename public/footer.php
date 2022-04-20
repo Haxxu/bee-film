@@ -7,7 +7,7 @@
                     <span>Bee</span>Film
                 </a>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid aliquam, aperiam officia quia voluptatem voluptatum iure quasi ullam modi adipisci aut enim accusantium amet similique veritatis quidem facere, ex tenetur.
+                    Bee Film là nơi cập nhật những phim hot nhất hiện nay
                 </p>
                 <div class="social-list">
                     <a href="#" class="social-item">
@@ -19,6 +19,12 @@
                     <a href="#" class="social-item">
                         <i class="bx bxl-instagram"></i>
                     </a>
+                    <a href="#" class="social-item">
+                        <i class="bx bxl-youtube"></i>
+                    </a>
+                    <a href="#" class="social-item">
+                        <i class="bx bxl-github"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -28,25 +34,27 @@
                     <div class="content">
                         <h3>BeeFilm</h3>
                         <ul class="footer-menu">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">My profile</a></li>
-                            <li><a href="#">Pricing plans</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li><a href="./index.php">Trang chủ</a></li>
+                            <li><a href="./list_film.php?film_type=1">Phim Lẻ</a></li>
+                            <li><a href="./list_film.php?film_type=2">Phim Bộ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12">
                     <div class="content">
-                        <h3>Browse</h3>
+                        <h3>Thông Tin</h3>
                         <ul class="footer-menu">
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">My profile</a></li>
-                            <li><a href="#">Pricing plans</a></li>
-                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#">Điều khoản sử dụng</a></li>
+                            <li><a href="#">Bản quyền và trách nhiệm nội dung</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="copyright">
+            <p>&#169; Copyright 2022 BeeFilm</p>
         </div>
     </div>
 </footer>

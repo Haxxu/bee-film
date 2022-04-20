@@ -167,6 +167,10 @@ body {
     background-color: var(--bg-header-color);
 }
 
+.footer .footer-menu a:hover {
+    color: var(--main-color);
+}
+
 .footer .content a, 
 .footer .content span, 
 .footer .content p {
@@ -224,6 +228,10 @@ body {
     margin-left: 20px;
 }
 
+.copyright p {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
 
 /* END FOOTER */
 
@@ -530,6 +538,8 @@ body {
     font-size: 1.6rem;
     color: #000;
 }
+
+
 
 
 /* FILM DETAIL */
