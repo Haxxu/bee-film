@@ -771,7 +771,7 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('43', '5
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '148', '1');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '149', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '150', '0');
-INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '151', '0');
+INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('44', '151', '0'); 
 
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '152', '0');
 INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '153', '0');

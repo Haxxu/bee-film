@@ -5,13 +5,41 @@
 
     if (isset($_POST['btn-add-actor']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
         $actor_name = $_POST['actor_name'];
-        
+
         $sql = "INSERT INTO `actors` (`id`, `name`) VALUES (NULL, ?);";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('s', $actor_name);
         $stmt->execute();
-        $stmt->close();
     }
+
+    else if (isset($_GET['actor_id']) && isset($_GET['film_id']) && isset($_GET['director'])) {
+        $actor_id = $_GET['actor_id'];
+        $film_id = $_GET['film_id'];
+        $is_director = $_GET['director'];
+
+        $sql = "DELETE FROM `film-actor` WHERE `film_id` = ? AND `actor_id` = ? AND `is_director` = ?;";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('iii', $film_id, $actor_id, $is_director);
+        $stmt->execute();
+        header('Location: ./manage_actor.php');
+    }
+
+    else if (isset($_GET['actor_id_delete'])) {
+        $actor_id = $_GET['actor_id_delete'];
+
+        $sql = "DELETE FROM `film-actor` WHERE `actor_id` = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $actor_id);
+        $stmt->execute();
+
+        $sql = "DELETE FROM `actors` WHERE `id` = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $actor_id);
+        $stmt->execute();
+        
+        header('Location: ./manage_actor.php');
+    }
+
     
 ?>
 <!DOCTYPE html>
@@ -107,7 +135,8 @@
                                     <td>
                                         <ul class="director-list">
                                             <?php 
-                                            $sql = "SELECT a.*, f.name as `film_name`, fa.is_director as `is_director`
+
+                                            $sql = "SELECT a.*, f.name as `film_name`, f.film_id as `film_id`, fa.is_director as `is_director`
                                                     FROM `actors` as a, `film-actor` as fa, `films` as f
                                                     WHERE a.id = fa.actor_id AND fa.film_id = f.film_id AND a.id = ?
                                                     ORDER BY `id` DESC LIMIT 20
@@ -121,11 +150,23 @@
                                             while ($row_film = $result_film->fetch_assoc()) {
                                                 if ($row_film['is_director'] == 1) {
                                             ?>
-                                                <li class="director-item">
+                                                <li class="director-item d-flex align-items-center">
                                                     <?php 
                                                         echo ('- ' . $row_film['film_name']);
-                                                        $i++; 
                                                     ?>
+                                                    <form class="delete" 
+                                                            action="./manage_actor.php?actor_id=<?= $row_film['id'] ?>&film_id=<?= $row_film['film_id'] ?>&director=1"
+                                                            method="POST" 
+                                                    >
+                                                        <input type="number" hidden name="actor_id" value="<?= $row_film['id'] ?>">
+                                                        <input type="number" hidden name="film_id" value="<?= $row_film['film_id'] ?>">
+                                                        <button type="button" 
+                                                                class="delete-film-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-film-actor"
+                                                                onclick="confirmDelete(this)"
+                                                        >
+                                                            Xóa
+                                                        </button>
+                                                    </form>
                                                 </li>
                                             <?php 
                                                 } 
@@ -136,7 +177,7 @@
                                     <td>
                                         <ul class="actor-list">
                                             <?php 
-                                                $sql = "SELECT a.*, f.name as `film_name`, fa.is_director as `is_director`
+                                                $sql = "SELECT a.*, f.name as `film_name`, f.film_id as `film_id`, fa.is_director as `is_director`
                                                         FROM `actors` as a, `film-actor` as fa, `films` as f
                                                         WHERE a.id = fa.actor_id AND fa.film_id = f.film_id AND a.id = ?
                                                         ORDER BY `id` DESC LIMIT 20
@@ -147,15 +188,26 @@
                                                 $stmt->execute();
                                                 $result_film = $stmt->get_result();
 
-                                                $i = 1;
                                                 while ($row_film = $result_film->fetch_assoc()) {
                                                     if ($row_film['is_director'] == 0) {
                                                 ?>
-                                                    <li class="actor-item">
+                                                    <li class="actor-item d-flex align-items-center">
                                                         <?php 
                                                             echo ('- ' . $row_film['film_name']);
-                                                            $i++; 
                                                         ?>
+                                                            <form class="delete" 
+                                                                    action="./manage_actor.php?actor_id=<?= $row_film['id'] ?>&film_id=<?= $row_film['film_id'] ?>&director=0"
+                                                                    method="POST" 
+                                                            >
+                                                                <input type="number" hidden name="actor_id" value="<?= $row_film['id'] ?>">
+                                                                <input type="number" hidden name="film_id" value="<?= $row_film['film_id'] ?>">
+                                                                <button type="button" 
+                                                                        class="delete-film-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-film-actor"
+                                                                        onclick="confirmDelete(this)"
+                                                                >
+                                                                    Xóa
+                                                                </button>
+                                                            </form>
                                                     </li>
                                                 <?php 
                                                     } 
@@ -171,11 +223,11 @@
                                             Xóa
                                         </a> -->
                                         <form class="delete" 
-                                                action="./delete_film.php" 
+                                                action="./manage_actor.php?actor_id_delete=<?= $row['id'] ?>"
                                                 method="POST" 
                                         >
                                             <input type="number" hidden name="actor_id" value="<?= $row['id'] ?>">
-                                            <button type="button" class="delete-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-actor"
+                                            <button type="button" class="btn-delete-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="btn-delete-actor"
                                                 onclick="confirmDelete(this)"
                                             >
                                                 Xóa
