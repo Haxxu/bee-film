@@ -21,15 +21,16 @@
         $genre_text = $_POST['genre'];
         $genres = explode (",", $genre_text); 
 
+        $sql_image = "SELECT `image` FROM `films` WHERE `film_id` = ?";
+        $stmt_image = $conn->prepare($sql_image);
+        $stmt_image->bind_param('i', $film_id);
+        $stmt_image->execute();
+        $result_image = $stmt_image->get_result();
+        $row_image = $result_image->fetch_assoc();
+        $image_old = $row_image['image'];
         if (isset($_FILES['image_poster']) && $_FILES['image_poster']['name'] != '') {
             if ($_FILES['image_poster']['error'] == 0) {
-                $sql_image = "SELECT `image` FROM `films` WHERE `film_id` = ?";
-                $stmt_image = $conn->prepare($sql_image);
-                $stmt_image->bind_param('i', $film_id);
-                $stmt_image->execute();
-                $result_image = $stmt_image->get_result();
-                $row_image = $result_image->fetch_assoc();
-                $image_old = $row_image['image'];
+                
                 unlink(getUrlOfImageFromAdmin($image_old));
                 
 
@@ -45,17 +46,20 @@
                     $film_poster_name = "";
                 }
             }
+        } else {
+            $film_poster_name = $image_old; 
         }
 
+        $sql_image = "SELECT `image_banner` FROM `films` WHERE `film_id` = ?";
+        $stmt_image = $conn->prepare($sql_image);
+        $stmt_image->bind_param('i', $_GET['film_id']);
+        $stmt_image->execute();
+        $result_image = $stmt_image->get_result();
+        $row_image = $result_image->fetch_assoc();
+        $image_old = $row_image['image_banner'];
         if (isset($_FILES['image_banner']) && $_FILES['image_banner']['name'] != '') {
             if ($_FILES['image_banner']['error'] == 0) {
-                $sql_image = "SELECT `image_banner` FROM `films` WHERE `film_id` = ?";
-                $stmt_image = $conn->prepare($sql_image);
-                $stmt_image->bind_param('i', $_GET['film_id']);
-                $stmt_image->execute();
-                $result_image = $stmt_image->get_result();
-                $row_image = $result_image->fetch_assoc();
-                $image_old = $row_image['image_banner'];
+                
                 unlink(getUrlOfImageFromAdmin($image_old));
 
 
@@ -72,6 +76,8 @@
                     $film_poster_name = "";
                 }
             }
+        } else {
+            $film_banner_name = $image_old;
         }
 
 
