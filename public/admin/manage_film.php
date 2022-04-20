@@ -88,15 +88,20 @@
                                         <?= $row['description'] ?>
                                     </td>
                                     <td class="">
-                                        <a href="./edit_film.php?film_id=<?= $row['film_id'] ?>" class="btn btn-lg btn-xs btn-primary mx-2">
+                                        <a href="./edit_film.php?film_id=<?= $row['film_id'] ?>" class="edit-film btn btn-lg btn-xs btn-primary mx-2">
                                             Sửa
                                         </a>
+                                        <!-- <a href="./delete_film.php?film_id=<?= $row['film_id'] ?>" class="btn btn-lg btn-xs btn-danger mx-2">
+                                            Xóa
+                                        </a> -->
                                         <form class="delete" 
-                                                action="" 
+                                                action="./delete_film.php" 
                                                 method="POST" 
                                         >
-                                            <input type="hidden" name="id" value="">
-                                            <button type="submit" class="btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-contact">
+                                            <input type="number" hidden name="film_id" value="<?= $row['film_id'] ?>">
+                                            <button type="button" class="delete-film btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-film"
+                                                onclick="confirmDelete(this, 'may muon xoa')"
+                                            >
                                                 Xóa
                                             </button>
                                         </form>

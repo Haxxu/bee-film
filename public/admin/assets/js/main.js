@@ -4,6 +4,10 @@ $(document).ready(function() {
         $('.user-info').toggleClass('active');
         $('.user-info .user-info-menu').toggleClass('show');
         $('.user-info .bxs-down-arrow').toggleClass('show');
+        document.querySelectorAll('.edit-film').onclick = function (e) {
+            e.preventDefault();
+            alert('hehe');
+        }
     })
 
     
@@ -35,3 +39,12 @@ function addGenre() {
         + '<button class="btn btn-danger ms-1" onclick="removeGenre(' + id + ')">Xoá</button>'
         + '</li>'
 }
+
+function confirmDelete(_this) {
+    let confirmAction = confirm("Bạn có chắc muốn xóa film này?");
+    if (confirmAction) {
+      _this.parentElement.submit();
+    } else {
+      alert("Xóa không thành công");
+    }
+  }

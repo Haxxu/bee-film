@@ -20,6 +20,7 @@
         $genre_text = $_POST['genre'];
         $genres = explode (",", $genre_text); 
 
+        // Thêm ảnh vào database
         if (isset($_FILES['image_poster'])) {
             if ($_FILES['image_poster']['error'] == 0) {
                 $film_poster_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_poster']['name'];
@@ -36,6 +37,7 @@
             }
         }
 
+        // Thêm ảnh vào database
         if (isset($_FILES['image_banner'])) {
             if ($_FILES['image_banner']['error'] == 0) {
                 $film_banner_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_banner']['name'];
@@ -54,7 +56,7 @@
         }
 
 
-
+        // Them 1 phim mơi vào database
         $sql = "INSERT INTO `films` (`film_id`,
                                      `name`, 
                                      `name2`, 
@@ -76,6 +78,7 @@
         $stmt->bind_param('sssssdisiiii', $name, $name2, $film_poster_name, $film_banner_name, $trailer, $imdb, $year, $description, $episode_number, $duration, $nation, $film_type);
         $stmt->execute();
 
+        // Chọn film vừa mới được thêm vào
         $sql = "SELECT max(film_id) as film_id FROM `films`";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -83,7 +86,7 @@
         $row = $result->fetch_assoc();
         $film_id = $row['film_id'];
 
-
+        // Thêm thể loại cho phim vừa mới được thêm vào
         $sql = "INSERT INTO `film-genre` (`film_id`, `genre_id`) 
                 VALUES (?, ?)";
         $stmt = $conn->prepare($sql);
