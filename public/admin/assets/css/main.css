@@ -178,7 +178,7 @@ input[type="radio"] {
 /* EndToast Message */
 
 /* TABLE OF MANAGE FILM */
-.manage-film .add-section a {
+/* .manage-film .add-section a {
     font-size: 2rem;
     color: var(--text-color)
 }
@@ -212,6 +212,62 @@ input[type="radio"] {
     overflow: hidden;
     object-fit: cover;
     object-position: center;
+} */
+
+
+/* fdsfsd */
+.add-section a {
+    font-size: 2rem;
+    color: var(--text-color)
 }
 
+.add-section a i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+.table {
+    width: 100%;
+    color: var(--text-color);
+}
+
+.table tr {
+}
+
+.table th {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.table td {
+    font-size: 1.6rem;
+    color: var(--text-color);
+}
+
+.table td img {
+    width: 100px;
+    height: 150px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+
+
 /* END TABLE */
+
+/* Manage Actor */
+.director-list {
+
+}
+
+.director-item {
+    font-size: 1.6rem;
+}
+
+.actor-list {
+
+}
+
+.actor-item {
+    font-size: 1.6rem;
+}

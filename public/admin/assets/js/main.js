@@ -47,4 +47,8 @@ function confirmDelete(_this) {
     } else {
       alert("Xóa không thành công");
     }
-  }
+}
+
+function toggleAddActor() {
+    document.querySelector('#form-add-actor').classList.toggle('d-none');
+}

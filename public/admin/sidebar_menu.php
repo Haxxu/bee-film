@@ -7,7 +7,10 @@
             </a>
         </li>
         <li class="sidebar-menu-item">
-            <a href="">Add episode</a>
+            <a href="./manage_actor.php">
+                <i class='bx bxs-data'></i>
+                Quản lý đạo diễn, diễn viên
+            </a>
         </li>
         <li class="sidebar-menu-item">
             <a href="">Manage film</a>
