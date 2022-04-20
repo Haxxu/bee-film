@@ -7,6 +7,7 @@
 <?php 
 
     if (isset($_POST['btn-update-film'])) {
+        $film_id = $_GET['film_id'];
         $name = $_POST['name'];
         $name2 = $_POST['name2'];
         $trailer = $_POST['trailer'];
@@ -20,8 +21,18 @@
         $genre_text = $_POST['genre'];
         $genres = explode (",", $genre_text); 
 
-        if (isset($_FILES['image_poster'])) {
+        if (isset($_FILES['image_poster']) && $_FILES['image_poster']['name'] != '') {
             if ($_FILES['image_poster']['error'] == 0) {
+                $sql_image = "SELECT `image` FROM `films` WHERE `film_id` = ?";
+                $stmt_image = $conn->prepare($sql_image);
+                $stmt_image->bind_param('i', $film_id);
+                $stmt_image->execute();
+                $result_image = $stmt_image->get_result();
+                $row_image = $result_image->fetch_assoc();
+                $image_old = $row_image['image'];
+                unlink(getUrlOfImageFromAdmin($image_old));
+                
+
                 $film_poster_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_poster']['name'];
     
                 $film_poster_name = str_replace(" ", "_", $film_poster_name);
@@ -36,8 +47,18 @@
             }
         }
 
-        if (isset($_FILES['image_banner'])) {
+        if (isset($_FILES['image_banner']) && $_FILES['image_banner']['name'] != '') {
             if ($_FILES['image_banner']['error'] == 0) {
+                $sql_image = "SELECT `image_banner` FROM `films` WHERE `film_id` = ?";
+                $stmt_image = $conn->prepare($sql_image);
+                $stmt_image->bind_param('i', $_GET['film_id']);
+                $stmt_image->execute();
+                $result_image = $stmt_image->get_result();
+                $row_image = $result_image->fetch_assoc();
+                $image_old = $row_image['image_banner'];
+                unlink(getUrlOfImageFromAdmin($image_old));
+
+
                 $film_banner_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_banner']['name'];
     
                 $film_banner_name = str_replace(" ", "_", $film_banner_name);
@@ -55,33 +76,30 @@
 
 
 
-        $sql = "INSERT INTO `films` (`film_id`,
-                                     `name`, 
-                                     `name2`, 
-                                     `image`, 
-                                     `image_banner`, 
-                                     `trailer`, 
-                                     `IMDb`, 
-                                     `year`, 
-                                     `description`, 
-                                     `episode_number`, 
-                                     `duration`, 
-                                     `num_view`, 
-                                     `nation_id`, 
-                                     `created_at`, 
-                                     `updated_at`, 
-                                     `film_type`) 
-                VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, '0', ?, now(), now(), ?);";
+        $sql = "UPDATE `films` 
+                SET     `name` = ?, 
+                        `name2` = ?, 
+                        `image` = ?, 
+                        `image_banner` = ?, 
+                        `trailer` = ?, 
+                        `IMDb` = ?, 
+                        `year` = ?, 
+                        `description` = ?, 
+                        `episode_number` = ?, 
+                        `duration` = ?, 
+                        `nation_id` = ?, 
+                        `updated_at` = NOW(), 
+                        `film_type` = ?
+                WHERE `film_id` = ?;
+        ";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssssdisiiii', $name, $name2, $film_poster_name, $film_banner_name, $trailer, $imdb, $year, $description, $episode_number, $duration, $nation, $film_type);
+        $stmt->bind_param('sssssdisiiiii', $name, $name2, $film_poster_name, $film_banner_name, $trailer, $imdb, $year, $description, $episode_number, $duration, $nation, $film_type, $film_id);
         $stmt->execute();
 
-        $sql = "SELECT max(film_id) as film_id FROM `films`";
-        $stmt = $conn->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        $film_id = $row['film_id'];
+        $sql_delete_genre = "DELETE FROM `film-genre` WHERE `film_id` = ?";
+        $stmt_delete_genre = $conn->prepare($sql_delete_genre);
+        $stmt_delete_genre->bind_param('i', $film_id);
+        $stmt_delete_genre->execute();
 
 
         $sql = "INSERT INTO `film-genre` (`film_id`, `genre_id`) 
@@ -92,8 +110,9 @@
             $stmt->execute();
         }
 
-        $_SESSION['message'] = ['body' => 'Thêm phim thành công', 'type' => 'success'];
-        header('Location: ./add_film.php');
+        $_SESSION['message'] = ['body' => 'Sửa phim thành công', 'type' => 'success'];
+
+        header('Location: ');
     } else if (isset($_GET['film_id'])) {
         $sql = "SELECT * FROM `films` WHERE `film_id` = ?";
         $stmt = $conn->prepare($sql);
@@ -141,7 +160,7 @@
             <div class="col-12 col-md-10">
                 <!-- Content -->
                 <div class="add-film container my-5">
-                    <h1 class="text-center">Thêm phim</h1>
+                    <h1 class="text-center">Sửa phim</h1>
                     <div class="mt-5">
                         <form id="form-update-film" method="post" class="form-update-film" action="" enctype="multipart/form-data">
 
@@ -284,7 +303,9 @@
 
                                                 <li class="genre-item my-1 genre-id-<?= $row_genre['genre_id'] ?>">
                                                     <?= $row_genre['genre_name'] ?>
-                                                    <button class="btn btn-danger ms-1" onclick="removeGenre(<?= $row_genre['genre_id'] ?>)">
+                                                    <button class="btn btn-danger ms-1" 
+                                                        onClick="removeGenre(<?= $row_genre['genre_id'] ?>);"
+                                                    >
                                                         Xoá
                                                     </button>
                                                 </li>
@@ -323,8 +344,8 @@
 
                             <div class="row">
                                 <div class="col-lg-5 offset-lg-4">
-                                    <button type="submit" class="btn btn-primary btn-lg" name="btn-add-film" id="btn-add-film" value="Sign up">
-                                        Thêm phim
+                                    <button type="submit" class="btn btn-primary btn-lg" name="btn-update-film" id="btn-update-film" value="Sign up">
+                                        Sửa phim
                                     </button>
                                 </div>
                             </div>
@@ -364,10 +385,10 @@
 						minlength: 3
 					},
                     image_poster: {
-                        required: true,
+                        required: false,
                     },
                     image_banner: {
-                        required: true,
+                        required: false,
                     },
                     trailer: {
                         required: true,
