@@ -88,7 +88,7 @@
                                         <?= $row['description'] ?>
                                     </td>
                                     <td class="">
-                                        <a href="#" class="btn btn-lg btn-xs btn-primary mx-2">
+                                        <a href="./edit_film.php?film_id=<?= $row['film_id'] ?>" class="btn btn-lg btn-xs btn-primary mx-2">
                                             Sửa
                                         </a>
                                         <form class="delete" 

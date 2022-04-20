@@ -92,8 +92,8 @@
             $stmt->execute();
         }
 
-        // $_SESSION['message'] = ['body' => 'Thêm phim thành công', 'type' =>s 'success'];
-            
+        $_SESSION['message'] = ['body' => 'Thêm phim thành công', 'type' => 'success'];
+        header('Location: ./add_film.php');
     }
 ?>
 
@@ -234,7 +234,7 @@
                             </div>
 
                             <div class="mb-4 row">
-                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="nation">Thể loại: </label>
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="genre">Thể loại: </label>
                                 <div class="col-12 col-lg-6">
                                     <input type="text" hidden name="genre" id="genre" class="form-control form-control-lg">
                                     <div  class="genre-box">
@@ -243,13 +243,13 @@
                                     </div>
                                     <select name="genre-add" id="genre-add" class="form-control form-control-lg">
                                         <?php 
-                                            $sql_nation = "SELECT * FROM `genres`";
-                                            $result_nation = $conn->query($sql_nation);
-                                            if ($result_nation->num_rows > 0) {
-                                                while ($row_nation = $result_nation->fetch_assoc()) {
+                                            $sql_genre = "SELECT * FROM `genres`";
+                                            $result_genre = $conn->query($sql_genre);
+                                            if ($result_genre->num_rows > 0) {
+                                                while ($row_genre = $result_genre->fetch_assoc()) {
                                         ?>
-                                            <option value="<?= $row_nation['genre_id'] ?>" class="form-control form-control-lg">
-                                                <?= $row_nation['genre_name'] ?>
+                                            <option value="<?= $row_genre['genre_id'] ?>" class="form-control form-control-lg">
+                                                <?= $row_genre['genre_name'] ?>
                                             </option>
                                         <?php
                                                 }

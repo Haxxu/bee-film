@@ -21,11 +21,17 @@ function removeGenre(id) {
     document.querySelector('input[name=genre]').value = document.querySelector('input[name=genre]').value.replace(id + ',', '');
 }
 
-function addGenre() {
+function addGenre(_id='', _name='') {
     // alert('helo');
     var sel = document.getElementById("genre-add")
     var id = sel.options[sel.selectedIndex].value
     var name = sel.options[sel.selectedIndex].text
+
+    if (_id != '' && _name != '') {
+        id = _id;
+        name = _name;
+    }
+
     document.querySelector('input[name=genre]').value += id + ','
 
     document.querySelector('.genre-list').innerHTML += 
