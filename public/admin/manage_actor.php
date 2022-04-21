@@ -60,9 +60,9 @@
                 <?php include('./sidebar_menu.php') ?>
             </div>
             <div class="col-12 col-md-10">
-                <div class="container manage-film">
+                <div class="container manage-actor">
                     <form class="d-flex my-5" method="GET" action="">
-                        <input class="form-control me-2" type="search" placeholder="Nhập tên phim" aria-label="Search" style="font-size: 2rem;" name="search-film" id="search-film">
+                        <input class="form-control me-2" type="search" placeholder="Nhập tên đạo diễn, diễn viên" aria-label="Search" style="font-size: 2rem;" name="search-actor" id="search-actor">
                         <button class="btn btn-lg btn-outline-success" type="submit">Tìm kiếm</button>
                     </form>
 
@@ -87,7 +87,7 @@
                                     </button>
                                 </div>
                             </div>
-                        </form>
+                        </form>                      
                     </div>
 
                     <table class="table table-bordered table-responsive">
@@ -108,7 +108,7 @@
                                     $search = $_GET['search-actor'];
                                     $sql = "SELECT * FROM `actors` 
                                             WHERE `name` LIKE ? 
-                                            ORDER BY `updated_at` DESC LIMIT 20
+                                            ORDER BY `id` DESC LIMIT 20
                                     ";
                                     $stmt = $conn->prepare($sql);
                                     $search = "%$search%";

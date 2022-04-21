@@ -44,6 +44,7 @@
                                     ID 
                                 </th>
                                 <th scope="col">Hình</th>
+                                <th scope="col">Cập nhật</th>
                                 <th scope="col">Tên</th>
                                 <th scope="col">Tên 2</th>
                                 <th scope="col">Mô tả</th>
@@ -78,11 +79,14 @@
                                         <img src="<?= getUrlOfImageFromAdmin($row['image']) ?>" alt="" width="100px">
                                     </td>
                                     <td>
+                                        <?= date('H:i:s d/m/Y',strtotime($row['updated_at'])); ?>
+                                    </td>
+                                    <td>
                                         <?= $row['name'] ?>
                                     </td>
                                     <td>
                                         <?= $row['name2'] ?>
-
+                                        
                                     </td>
                                     <td>
                                         <?= $row['description'] ?>
