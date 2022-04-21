@@ -219,6 +219,9 @@
                                         <a href="./edit_actor.php?actor_id=<?= $row['id'] ?>" class="edit-film btn btn-lg btn-xs btn-primary mx-2">
                                             Sửa
                                         </a>
+                                        <a href="./add_film_actor.php?actor_id=<?= $row['id'] ?>" class="add-film-actor btn btn-lg btn-xs btn-success mx-2">
+                                            Thêm phim
+                                        </a>
                                         <!-- <a href="./delete_film.php?film_id=<?= $row['film_id'] ?>" class="btn btn-lg btn-xs btn-danger mx-2">
                                             Xóa
                                         </a> -->
