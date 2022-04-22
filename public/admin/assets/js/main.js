@@ -40,8 +40,8 @@ function addGenre() {
         + '</li>'
 }
 
-function confirmDelete(_this) {
-    let confirmAction = confirm("Bạn có chắc muốn xóa film này?");
+function confirmDelete(_this, message) {
+    let confirmAction = confirm(message);
     if (confirmAction) {
       _this.parentElement.submit();
     } else {

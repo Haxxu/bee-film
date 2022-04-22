@@ -203,7 +203,7 @@
                                                                 <input type="number" hidden name="film_id" value="<?= $row_film['film_id'] ?>">
                                                                 <button type="button" 
                                                                         class="delete-film-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-film-actor"
-                                                                        onclick="confirmDelete(this)"
+                                                                        onclick="confirmDelete(this, 'Bạn muốn xóa phim này')"
                                                                 >
                                                                     Xóa
                                                                 </button>
@@ -231,7 +231,7 @@
                                         >
                                             <input type="number" hidden name="actor_id" value="<?= $row['id'] ?>">
                                             <button type="button" class="btn-delete-actor btn btn-lg btn-xs btn-danger mx-2 mt-2" name="btn-delete-actor"
-                                                onclick="confirmDelete(this)"
+                                                onclick="confirmDelete(this, 'Bạn muốn xóa người này')"
                                             >
                                                 Xóa
                                             </button>

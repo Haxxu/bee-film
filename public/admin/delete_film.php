@@ -19,7 +19,7 @@
 
 
         if (isset($_POST['film_id'])) {
-            echo "toi day roi nua  ne";
+            // echo "toi day roi nua  ne";
             $film_id = $_POST['film_id'];
 
             // Xóa diễn viên đạo diễn của phim

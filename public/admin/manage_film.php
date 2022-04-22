@@ -104,7 +104,7 @@
                                         >
                                             <input type="number" hidden name="film_id" value="<?= $row['film_id'] ?>">
                                             <button type="button" class="delete-film btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-film"
-                                                onclick="confirmDelete(this)"
+                                                onclick="confirmDelete(this, 'Bạn muốn xóa phim này?')"
                                             >
                                                 Xóa
                                             </button>

@@ -101,14 +101,14 @@
                                             Sửa
                                         </a>
                                         
-                                        <form class="delete" 
-                                                action="" 
-                                                method="POST" 
+                                        <form class="delete_ep" 
+                                                action="./delete_episode.php?film_id=<?= $film_id ?>&ep_id=<?= $row['ep_id'] ?>" 
+                                                method="GET" 
                                         >
                                             <input type="number" hidden name="film_id" value="<?= $film_id ?>">
                                             <input type="number" hidden name="ep_id" value="<?= $row['ep_id'] ?>">
-                                            <button type="button" class="delete-film btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-ep"
-                                                onclick="confirmDelete(this)"
+                                            <button type="button" class="delete-ep btn btn-lg btn-xs btn-danger mx-2 mt-2" name="delete-ep"
+                                                onclick="confirmDelete(this, 'Bạn muốn xóa tập này?')"
                                             >
                                                 Xóa
                                             </button>
