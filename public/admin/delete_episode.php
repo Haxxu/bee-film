@@ -22,18 +22,6 @@
             $film_id = $_GET['film_id'];
             $ep_id = $_GET['ep_id'];
 
-            // Xoa Anh Poster, Banner
-            $sql = "SELECT `image` as p, `image_banner` as b FROM `films` WHERE `film_id` = ?";
-            $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, "i", $film_id);
-            mysqli_stmt_execute($stmt);
-            $result = mysqli_stmt_get_result($stmt);
-            $row = mysqli_fetch_assoc($result);
-            $poster = $row['p'];
-            $banner = $row['b'];
-            unlink(getUrlOfImageFromAdmin($poster));
-            unlink(getUrlOfImageFromAdmin($banner));
-
             // Xóa video
             $sql = "SELECT `ep_video` FROM `episodes` WHERE `ep_id` = ? AND `film_id` = ?";
             $stmt = mysqli_prepare($conn, $sql);
