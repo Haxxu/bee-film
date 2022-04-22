@@ -28,11 +28,11 @@
         $result_image = $stmt_image->get_result();
         $row_image = $result_image->fetch_assoc();
         $image_old = $row_image['image'];
+
         if (isset($_FILES['image_poster']) && $_FILES['image_poster']['name'] != '') {
             if ($_FILES['image_poster']['error'] == 0) {
                 
                 unlink(getUrlOfImageFromAdmin($image_old));
-                
 
                 $film_poster_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['image_poster']['name'];
     
@@ -57,6 +57,7 @@
         $result_image = $stmt_image->get_result();
         $row_image = $result_image->fetch_assoc();
         $image_old = $row_image['image_banner'];
+
         if (isset($_FILES['image_banner']) && $_FILES['image_banner']['name'] != '') {
             if ($_FILES['image_banner']['error'] == 0) {
                 

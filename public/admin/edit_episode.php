@@ -8,12 +8,24 @@
 
     if (isset($_POST['btn-update-ep'])) {
         $film_id = $_POST['film_id'];
+        $ep_id = $_POST['ep_id'];
         $ep_name = $_POST['ep_name'];
         $ep_order = $_POST['ep_order'];
 
+        $sql_video = "SELECT * FROM `episodes` WHERE `ep_id` = ?";
+        $stmt_video = $conn->prepare($sql_video);
+        $stmt_video->bind_param('i', $ep_id);
+        $stmt_video->execute();
+        $result_video = $stmt_video->get_result();
+        $row_video = $result_video->fetch_assoc();
+        $video_path = $row_video['ep_video'];
+
         // Thêm ảnh vào database
-        if (isset($_FILES['ep_video'])) {
+        if (isset($_FILES['ep_video']) && $_FILES['ep_video']['name'] != '') {
             if ($_FILES['ep_video']['error'] == 0) {
+                
+                unlink(getUrlOfVideoFromAdmin($video_path));
+
                 $ep_video_name = time() . "_" . rand(100, 10000) . "_" . rand(1000, 1000000) . "_" . $_FILES['ep_video']['name'];
     
                 $ep_video_name = str_replace(" ", "_", $ep_video_name);
@@ -26,35 +38,54 @@
                     $ep_video_name = "";
                 }
             }
+        } else {
+            $ep_video_name = $video_path;
         }
 
-        // Them 1 tập phim mơi vào database
-        $sql = "INSERT INTO `episodes` (`ep_id`,
-                                        `ep_name`, 
-                                        `ep_video`, 
-                                        `ep_order`,
-                                        `film_id`) 
-                VALUES (null, ?, ?, ?, ?);";
+        // Cập nhật lại updated cho episode
+        $sql = "UPDATE `episodes` SET `ep_name` = ?, `ep_order` = ?, `ep_video` = ? WHERE `ep_id` = ? AND `film_id` = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param('ssii', $ep_name, $ep_video_name, $ep_order, $film_id);
+        $stmt->bind_param('sisii', $ep_name, $ep_order, $ep_video_name, $ep_id, $film_id);
         $stmt->execute();
 
         // Cập nhật lại updated cho film
-        
+
         $sql = "UPDATE `films` SET `updated_at` = now() WHERE `film_id` = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('i', $film_id);
         $stmt->execute();
 
 
-        $_SESSION['message'] = ['body' => 'Thêm tập phim thành công', 'type' => 'success'];
+        $_SESSION['message'] = ['body' => 'Sửa tập phim thành công', 'type' => 'success'];
         header('Location: ./manage_episode.php?film_id=' . $film_id);
+
     } else if (isset($_GET['film_id']) && isset($_GET['ep_id'])) {
+
         $sql = "SELECT * 
                 FROM `episodes` 
                 WHERE `ep_id` = ?
-                    AND
+                    AND `film_id` = ?
         ";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('ii', $_GET['ep_id'], $_GET['film_id']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row_ep = $result->fetch_assoc();
+
+        $ep_id = $row_ep['ep_id'];
+        $ep_name = $row_ep['ep_name'];
+        // $ep_video = $row_ep['ep_video'];
+        $ep_order = $row_ep['ep_order'];
+        $film_id = $row_ep['film_id'];
+
+        
+        $sql_film_info = "SELECT * FROM `films`
+                          WHERE `film_id` = ?";
+        $stmt_film_info = $conn->prepare($sql_film_info);
+        $stmt_film_info->bind_param('i', $_GET['film_id']);
+        $stmt_film_info->execute();
+        $result_film_info = $stmt_film_info->get_result();
+        $row_film_info = $result_film_info->fetch_assoc(); 
     }
 ?>
 
@@ -78,19 +109,13 @@
             <div class="col-12 col-md-10">
                 <!-- Content -->
                 <div class="add-ep container my-5">
-                    <h1 class="text-center">Sửa tập cho phim <?= $film_name ?></h1>
+                    <h1 class="text-center">Sửa tập cho phim <?= $row_film_info['name'] ?></h1>
                     <div class="mt-5">
                         <form id="form-edit-ep" method="post" class="form-edit-ep" action="" enctype="multipart/form-data">
-                            <input type="number" hidden name="film_id" value="<?= $_GET['film_id'] ?>">
+                            <input type="number" hidden name="film_id" value="<?= $film_id ?>">
                             <input type="number" hidden name="ep_id" value="<?= $ep_id ?>">
                             <?php 
-                                // $sql_film_info = "SELECT * FROM `films`
-                                //                     WHERE `film_id` = ?";
-                                // $stmt_film_info = $conn->prepare($sql_film_info);
-                                // $stmt_film_info->bind_param('i', $_GET['film_id']);
-                                // $stmt_film_info->execute();
-                                // $result_film_info = $stmt_film_info->get_result();
-                                // $row_film_info = $result_film_info->fetch_assoc();  
+ 
 
 
                                 // $sql_latest_ep_order = "SELECT max(ep_order) as `latestEpOrder` FROM `episodes`
@@ -112,7 +137,7 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="film_name">Tên phim: </label>
                                 <div class="col-12 col-lg-6">
                                     <input disabled type="text" class="form-control form-control-lg" id="film_name" name="film_name" 
-                                    value="<?= $film_name ?>" />
+                                    value="<?= $row_film_info['name'] ?>" />
                                 </div>
                             </div>
 
@@ -120,7 +145,7 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="film_name2">Tên phim 2: </label>
                                 <div class="col-12 col-lg-6">
                                     <input disabled type="text" class="form-control form-control-lg" id="film_name2" name="film_name2" 
-                                    value="<?= $film_name2 ?>" />
+                                    value="<?= $row_film_info['name2'] ?>" />
                                 </div>
                             </div>
 
