@@ -97,7 +97,7 @@
                                         <?= $row['duration'] ?> phút  
                                     </td>
                                     <td class="">
-                                        <a href="" class="edit-film btn btn-lg btn-xs btn-primary mx-2">
+                                        <a href="./edit_episode.php?film_id=<?= $row['film_id'] ?>&ep_id=<?= $row['ep_id'] ?>" class="edit-film btn btn-lg btn-xs btn-primary mx-2">
                                             Sửa
                                         </a>
                                         

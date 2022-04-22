@@ -6,7 +6,7 @@
 
 <?php 
 
-    if (isset($_POST['btn-add-ep'])) {
+    if (isset($_POST['btn-update-ep'])) {
         $film_id = $_POST['film_id'];
         $ep_name = $_POST['ep_name'];
         $ep_order = $_POST['ep_order'];
@@ -49,6 +49,12 @@
 
         $_SESSION['message'] = ['body' => 'Thêm tập phim thành công', 'type' => 'success'];
         header('Location: ./manage_episode.php?film_id=' . $film_id);
+    } else if (isset($_GET['film_id']) && isset($_GET['ep_id'])) {
+        $sql = "SELECT * 
+                FROM `episodes` 
+                WHERE `ep_id` = ?
+                    AND
+        ";
     }
 ?>
 
@@ -72,18 +78,20 @@
             <div class="col-12 col-md-10">
                 <!-- Content -->
                 <div class="add-ep container my-5">
-                    <h1 class="text-center">Thêm tập cho phim</h1>
+                    <h1 class="text-center">Sửa tập cho phim <?= $film_name ?></h1>
                     <div class="mt-5">
-                        <form id="form-add-ep" method="post" class="form-add-ep" action="" enctype="multipart/form-data">
+                        <form id="form-edit-ep" method="post" class="form-edit-ep" action="" enctype="multipart/form-data">
                             <input type="number" hidden name="film_id" value="<?= $_GET['film_id'] ?>">
+                            <input type="number" hidden name="ep_id" value="<?= $ep_id ?>">
                             <?php 
-                                $sql_film_info = "SELECT * FROM `films`
-                                                    WHERE `film_id` = ?";
-                                $stmt_film_info = $conn->prepare($sql_film_info);
-                                $stmt_film_info->bind_param('i', $_GET['film_id']);
-                                $stmt_film_info->execute();
-                                $result_film_info = $stmt_film_info->get_result();
-                                $row_film_info = $result_film_info->fetch_assoc();  
+                                // $sql_film_info = "SELECT * FROM `films`
+                                //                     WHERE `film_id` = ?";
+                                // $stmt_film_info = $conn->prepare($sql_film_info);
+                                // $stmt_film_info->bind_param('i', $_GET['film_id']);
+                                // $stmt_film_info->execute();
+                                // $result_film_info = $stmt_film_info->get_result();
+                                // $row_film_info = $result_film_info->fetch_assoc();  
+
 
                                 // $sql_latest_ep_order = "SELECT max(ep_order) as `latestEpOrder` FROM `episodes`
                                 //                     WHERE `film_id` = ?";
@@ -104,7 +112,7 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="film_name">Tên phim: </label>
                                 <div class="col-12 col-lg-6">
                                     <input disabled type="text" class="form-control form-control-lg" id="film_name" name="film_name" 
-                                    value="<?= $row_film_info['name'] ?>" />
+                                    value="<?= $film_name ?>" />
                                 </div>
                             </div>
 
@@ -112,21 +120,21 @@
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="film_name2">Tên phim 2: </label>
                                 <div class="col-12 col-lg-6">
                                     <input disabled type="text" class="form-control form-control-lg" id="film_name2" name="film_name2" 
-                                    value="<?= $row_film_info['name2'] ?>" />
+                                    value="<?= $film_name2 ?>" />
                                 </div>
                             </div>
 
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="ep_name">Tên tập: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control form-control-lg" id="ep_name" name="ep_name" placeholder="Nhập tên tập" />
+                                    <input type="text" class="form-control form-control-lg" id="ep_name" name="ep_name" placeholder="Nhập tên tập" value="<?= $ep_name ?>" />
                                 </div>
                             </div>
 
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="ep_order">Số thứ tự tập: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="ep_order" name="ep_order" placeholder="Nhập số thứ tự tập" />
+                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="ep_order" name="ep_order" placeholder="Nhập số thứ tự tập" value="<?= $ep_order ?>" />
                                 </div>
                             </div>
 
@@ -136,16 +144,15 @@
                                     <input type="file" accept="video/mp4,video/x-m4v,video/*" class="form-control form-control-lg" id="ep_video" name="ep_video" placeholder="" />
                                 </div>
                             </div>
-            
 
+                            
                             <div class="row">
                                 <div class="col-lg-5 offset-lg-4">
-                                    <button type="submit" class="btn btn-primary btn-lg" name="btn-add-ep" id="btn-add-ep" value="Sign up">
-                                        Thêm tập phim
+                                    <button type="submit" class="btn btn-primary btn-lg" name="btn-update-ep" id="btn-update-ep" value="Sign up">
+                                        Sửa tập phim
                                     </button>
                                 </div>
                             </div>
-
                         </form>
 
                     </div>

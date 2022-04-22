@@ -44,8 +44,8 @@
                                     ID 
                                 </th>
                                 <th scope="col">Hình</th>
-                                <th scope="col">Cập nhật</th>
                                 <th scope="col">Tên</th>
+                                <th scope="col">Cập nhật</th>
                                 <th scope="col">Trạng thái tập hiện tại</th>
                                 <th scope="col">Số lượng tập</th>
                                 <th scope="col">Thời lượng</th>
@@ -80,10 +80,10 @@
                                         <img src="<?= getUrlOfImageFromAdmin($row['image']) ?>" alt="" width="100px">
                                     </td>
                                     <td>
-                                        <?= date('H:i:s d/m/Y',strtotime($row['updated_at'])); ?>
+                                        <?= $row['name'] ?> (<?= $row['year'] ?>)
                                     </td>
                                     <td>
-                                        <?= $row['name'] ?> (<?= $row['year'] ?>)
+                                        <?= date('H:i:s d/m/Y',strtotime($row['updated_at'])); ?>
                                     </td>
                                     <td>
                                         <?php 
