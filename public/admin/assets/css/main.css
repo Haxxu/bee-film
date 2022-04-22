@@ -98,9 +98,17 @@ body {
 /* End Header */
 
 /* Sidebar menu */
-.sidebar-menu {
+.sidebar-menu.fixed {
     /* height: 100vh; */
+    position: fixed;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+    background-color: var(--bg-box-color);
+}
 
+.sidebar-menu {
+    
     background-color: var(--bg-box-color);
 }
 
