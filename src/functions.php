@@ -16,6 +16,22 @@ function getUrlOfImageFromAdmin($image) {
     return $url;
 }
 
+function getUrlOfVideo($video) {
+    $url = "";
+    if ($video != "") {
+        $url = "./assets/videos/".$video;
+    }
+    return $url;
+}
+
+function getUrlOfVideoFromAdmin($video) {
+    $url = "";
+    if ($video != "") {
+        $url = "../assets/videos/".$video;
+    }
+    return $url;
+}
+
 function getFilmTypeName($film_type, $conn) {
     $sql = "SELECT * FROM `film-types` WHERE `id` = ?";
     $stmt = $conn->prepare($sql);

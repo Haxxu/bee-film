@@ -7,13 +7,16 @@
             </a>
         </li>
         <li class="sidebar-menu-item">
+            <a href="./manage_film_episode.php">
+                <i class='bx bxs-data'></i>    
+                Quản lý tập phim
+            </a>
+        </li>
+        <li class="sidebar-menu-item">
             <a href="./manage_actor.php">
                 <i class='bx bxs-data'></i>
                 Quản lý đạo diễn, diễn viên
             </a>
-        </li>
-        <li class="sidebar-menu-item">
-            <a href="">Manage film</a>
         </li>
         <li class="sidebar-menu-item">
             <a href="">Add user</a>
