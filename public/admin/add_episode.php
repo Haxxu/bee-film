@@ -126,7 +126,7 @@
                             <div class="mb-4 row">
                                 <label class="form-label col-12 col-lg-2 offset-lg-2" for="ep_order">Số thứ tự tập: </label>
                                 <div class="col-12 col-lg-6">
-                                    <input type="number" step="any" min="<?= $latestEpOrder +1 ?>" class="form-control form-control-lg" id="ep_order" name="ep_order" placeholder="Nhập số thứ tự tập" />
+                                    <input type="number" step="any" min="0" class="form-control form-control-lg" id="ep_order" name="ep_order" placeholder="Nhập số thứ tự tập" />
                                 </div>
                             </div>
 
@@ -179,7 +179,7 @@
                     ep_order: {
                         required: true,
                         number: true,
-                        min: <?= $latestEpOrder + 1 ?>,
+                        min: 0,
 					},
                     ep_video: {
                         required: true,
@@ -193,7 +193,7 @@
                     ep_order: {
                         required: "Vui lòng nhập số thứ tự tập",
                         number: "Vui lòng nhập số thứ tự tập là số",
-                        min: "số thứ tự tập phải lớn hơn <?= $latestEpOrder ?>",
+                        min: "số thứ tự tập phải lớn hơn 0",
                     },
                     ep_video: {
                         required: "Vui lòng chọn video của tập",
