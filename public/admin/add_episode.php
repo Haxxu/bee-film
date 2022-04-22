@@ -141,7 +141,7 @@
                             <div class="row">
                                 <div class="col-lg-5 offset-lg-4">
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-add-ep" id="btn-add-ep" value="Sign up">
-                                        Thêm phim
+                                        Thêm tập phim
                                     </button>
                                 </div>
                             </div>
