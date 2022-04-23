@@ -19,6 +19,7 @@
         $actor_id = $_GET['actor_id'];
         $film_id = $_POST['film_id'];
         $role = $_POST['role'];
+        
         if ($role == 'director') {
             $role = 1;
         } else {
@@ -29,6 +30,12 @@
         $stmt_add_film_actor = $conn->prepare($sql_add_film_actor);
         $stmt_add_film_actor->bind_param('iii', $film_id, $actor_id, $role);
         $stmt_add_film_actor->execute();
+
+        // Cập nhật lại updated cho film
+        $sql = "UPDATE `films` SET `updated_at` = now() WHERE `film_id` = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('i', $film_id);
+        $stmt->execute();
 
     }
 ?>

@@ -12,6 +12,8 @@
         $stmt_edit_actor->bind_param('si', $actor_name, $actor_id);
         $stmt_edit_actor->execute();
 
+        
+
     }
 
     if (isset($_GET['actor_id'])) {
