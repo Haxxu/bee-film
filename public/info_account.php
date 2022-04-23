@@ -1,56 +1,4 @@
-<?php
-    require_once('../src/db.php');
-    session_start();
 
-    $username = $_SESSION['username'];
-    $sql = "SELECT * FROM `users` WHERE username = ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if (mysqli_num_rows($result) < 0) {
-        echo "Username không tồn tại.";
-    }
-
-    $info = mysqli_fetch_array($result);
-
-    $received_username = $info['username'];
-    $received_birthday = $info['birthday'];
-    $received_gender = $info['gender'];
-    $received_fullname = $info['fullname'];
-    $received_email = $info['email'];
-    $id = $info['user_id'];
-
-    if (isset($_POST['btn-update'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $hashPassword = password_hash($password, PASSWORD_BCRYPT);
-        $email = $_POST['email'];
-        $fullname = $_POST['fullname'];
-        $birthday = $_POST['birthday'];
-        $gender = $_POST['gender'];
-
-        $sql = "UPDATE users SET
-                    `username` = ?,
-                    `password` = ?,
-                    `email` = ?,
-                    `fullname` = ?,
-                    `birthday` = ?,
-                    `gender` = ?,
-                    `updated_at` = now()
-                WHERE user_id = '$id';
-        ";
-
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);
-        mysqli_stmt_execute($stmt);
-
-        mysqli_close($conn);   
-        $_SESSION['message'] = ['body' => 'Cập nhật thông tin thành công', 'type' => 'success']; 
-        header('Location: ' . $_SERVER['PHP_SELF']); 
-    } 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +16,59 @@
 
         <!-- Header -->
         <?php include_once('./header.php'); ?>
+        <?php
+            require_once('../src/db.php');
+            // session_start();
+
+            $username = $_SESSION['username'];
+            $sql = "SELECT * FROM `users` WHERE username = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if (mysqli_num_rows($result) < 0) {
+                echo "Username không tồn tại.";
+            }
+
+            $info = mysqli_fetch_array($result);
+
+            $received_username = $info['username'];
+            $received_birthday = $info['birthday'];
+            $received_gender = $info['gender'];
+            $received_fullname = $info['fullname'];
+            $received_email = $info['email'];
+            $id = $info['user_id'];
+
+            if (isset($_POST['btn-update'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+                $email = $_POST['email'];
+                $fullname = $_POST['fullname'];
+                $birthday = $_POST['birthday'];
+                $gender = $_POST['gender'];
+
+                $sql = "UPDATE users SET
+                            `username` = ?,
+                            `password` = ?,
+                            `email` = ?,
+                            `fullname` = ?,
+                            `birthday` = ?,
+                            `gender` = ?,
+                            `updated_at` = now()
+                        WHERE user_id = '$id';
+                ";
+
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);
+                mysqli_stmt_execute($stmt);
+
+                mysqli_close($conn);   
+                $_SESSION['message'] = ['body' => 'Cập nhật thông tin thành công', 'type' => 'success']; 
+                header('Location: ' . $_SERVER['PHP_SELF']); 
+            } 
+        ?>
 
         <!-- Content -->
         <div class="register container my-5">
@@ -113,7 +114,7 @@
                     <div class="mb-4 row">
                         <label class="form-label col-12 col-lg-2 offset-lg-2" for="birthday">Ngày sinh: </label>
                         <div class="col-12 col-lg-6">
-                            <input type="date" value="" class="form-control form-control-lg" id="birthday" name="birthday" placeholder=""  value="<?= htmlentities($received_birthday)?>"/>
+                            <input type="date" class="form-control form-control-lg" id="birthday" name="birthday" placeholder=""  value="<?= date('Y-m-d', strtotime($received_birthday)); ?>"/>
                         </div>
                     </div>
 

@@ -112,13 +112,13 @@ ALTER TABLE `rating` ADD CONSTRAINT `rating_fk1` FOREIGN KEY (`user_id`) REFEREN
 
 
 
-
 -- user-types (xong)
 INSERT INTO `user-types` (`type`, `type_name`) VALUES ('1', 'Admin');
 INSERT INTO `user-types` (`type`, `type_name`) VALUES ('2', 'Member');
 INSERT INTO `user-types` (`type`, `type_name`) VALUES ('3', 'Guest');
 
-
+-- Admin account
+INSERT INTO `users` (`user_id`, `username`, `fullname`, `password`, `email`, `birthday`, `gender`, `user_type`, `created_at`, `updated_at`) VALUES (NULL, 'admin', 'admin', '$2y$10$H8xkZhFZfwCLtyH.ZUQxSuHvWcW6RFGJGpKME/2P7UJLsFAmKx056', 'admin@gmail.com', '2001-01-01', 'male', '1', current_timestamp(), current_timestamp());
 
 
 -- film-types (xong)

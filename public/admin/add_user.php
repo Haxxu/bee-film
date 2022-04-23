@@ -1,7 +1,10 @@
 <?php
-    require_once('../src/db.php');
-    require_once('../src/functions.php');
     session_start();
+    require_once('../../src/db.php');
+    require_once('../../src/functions.php');
+?>
+
+<?php 
 
     if (isset($_POST['btn-register'])) {
         $username = $_POST['username'];
@@ -31,11 +34,11 @@
             // echo "Tài khoản $username đã tồn tại";
             
             $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
-            header('Location: ./index.php');
+            header('Location: manage_user.php');
             die();
         } else if (mysqli_num_rows($result_email) > 0) {
             $_SESSION['message'] = ['body' => 'Email đã được đăng kí', 'type' => 'danger'];
-            header('Location: ./index.php');
+            header('Location: manage_user.php');
             die();
         } else {
 
@@ -58,10 +61,11 @@
 
             mysqli_close($conn);
             $_SESSION['message'] = ['body' => 'Tài khoản đã được tạo', 'type' => 'success'];
-            header('Location: index.php');
+            header('Location: manage_user.php');
             die();
         }
-    } 
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -70,104 +74,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký thành viên</title>
-    <!-- Link to CSS -->
-    <?php include_once('./linkCSS.php'); ?>
+    <title>Admin: Add Film</title>
+    <?php include('./link_css.php') ?>
 </head>
 <body>
+    <div class="wrapper container-fluid">
+        <?php include('./header.php') ?>
 
-    <div class="wrapper">
-
-        <!-- Header -->
-        <?php include_once('./header.php'); ?>
-
-        <!-- Content -->
-        <div class="register container my-5">
-            <h1 class="text-center">Đăng ký thành viên</h1>
-            <div class="mt-5">
-                <form id="form-register" method="post" class="form-register" action="">
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="username">Tài khoản: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Nhận tài khoản" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="password">Mật khẩu: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Mật khẩu" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="confirm_password">Nhập lại mật khẩu: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="password" class="form-control form-control-lg" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="fullname">Họ tên: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="text" class="form-control form-control-lg" id="fullname" name="fullname" placeholder="Nhập họ và tên" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="email">Email: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Nhập email" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="form-label col-12 col-lg-2 offset-lg-2" for="birthday">Ngày sinh: </label>
-                        <div class="col-12 col-lg-6">
-                            <input type="date" value="" class="form-control form-control-lg" id="birthday" name="birthday" placeholder="" />
-                        </div>
-                    </div>
-
-                    <div class="mb-4 row">
-                        <label class="col-12 col-lg-2 offset-lg-2" for="">Giới tính: </label>
-                        <div class="col-12 col-lg-6">
-                            <div class="form-check-inline">
-                                <input type="radio" name="gender" id="register-gender-male" class="form-check-input" value="male" checked>
-                                <label for="register-gender-male" class="form-check-label ps-2">Nam</label>
-                            </div>
-                            <div class="form-check-inline">
-                                <input type="radio" name="gender" id="register-gender-female" class="form-check-input" value="female">
-                                <label for="register-gender-female" class="form-check-label ps-2">Nữ</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-5 offset-lg-4">
-                            <button type="submit" class="btn btn-primary btn-lg" name="btn-register" id="btn-register" value="Sign up">
-                                Đăng ký
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-
+        <div class="row">
+            <div class="col-12 col-md-2">
+                <?php include('./sidebar_menu.php') ?>
             </div>
-	    </div> 
-        <!-- End Content -->
+            <div class="col-12 col-md-10">
+                <!-- Content -->
+                <div class="add-film container my-5">
+                    <h1 class="text-center">Thêm người dùng</h1>
+                    <div class="mt-5">
+                        
+                    <form id="form-register" method="post" class="form-register" action="">
 
-        <!-- Footer -->
-        <?php include_once('./footer.php'); ?>
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="username">Tài khoản: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="text" class="form-control form-control-lg" id="username" name="username" placeholder="Nhận tài khoản" />
+                            </div>
+                        </div>
 
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="password">Mật khẩu: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Mật khẩu" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="confirm_password">Nhập lại mật khẩu: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="password" class="form-control form-control-lg" id="confirm_password" name="confirm_password" placeholder="Nhập lại mật khẩu" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="fullname">Họ tên: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="text" class="form-control form-control-lg" id="fullname" name="fullname" placeholder="Nhập họ và tên" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="email">Email: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Nhập email" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label class="form-label col-12 col-lg-2 offset-lg-2" for="birthday">Ngày sinh: </label>
+                            <div class="col-12 col-lg-6">
+                                <input type="date" value="" class="form-control form-control-lg" id="birthday" name="birthday" placeholder="" />
+                            </div>
+                        </div>
+
+                        <div class="mb-4 row">
+                            <label class="col-12 col-lg-2 offset-lg-2" for="">Giới tính: </label>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-check-inline">
+                                    <input type="radio" name="gender" id="register-gender-male" class="form-check-input" value="male" checked>
+                                    <label for="register-gender-male" class="form-check-label ps-2">Nam</label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input type="radio" name="gender" id="register-gender-female" class="form-check-input" value="female">
+                                    <label for="register-gender-female" class="form-check-label ps-2">Nữ</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-5 offset-lg-4">
+                                <button type="submit" class="btn btn-primary btn-lg" name="btn-register" id="btn-register" value="Sign up">
+                                    Đăng ký
+                                </button>
+                                <a href="./manage_user.php" class="ms-2 btn btn-primary btn-lg">
+                                    Về trang trước
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    </div>
+                </div> 
+                <!-- End Content -->
+            </div>
+        </div>
+
+        
     </div>
-    
-    
 
     <!-- Link To JS -->
-    <?php include_once('./linkJS.php'); ?>
-    <!-- Link To JQuery Validate -->
-    <script src="./assets/jquery-3.6.0/jquery.validate.js"></script>
+    <?php include('./link_js.php') ?>
     <!-- Script to config form validate -->
     <script>
         // $.validator.setDefaults({
@@ -241,6 +246,5 @@
 			});
 		});
     </script>
-
 </body>
-</html> 
+</html>

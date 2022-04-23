@@ -19,11 +19,11 @@
             </a>
         </li>
         <li class="sidebar-menu-item">
-            <a href="">Add user</a>
-        </li>
-        <li class="sidebar-menu-item">
-            <a href="">Manage user</a>
-        </li>
+            <a href="./manage_user.php">
+                <i class='bx bxs-user'></i>
+                Quản lý người dùng
+            </a>
+        </li> 
     </ul>
 </div>
 
@@ -48,10 +48,10 @@
             </a>
         </li>
         <li class="sidebar-menu-item">
-            <a href="">Add user</a>
-        </li>
-        <li class="sidebar-menu-item">
-            <a href="">Manage user</a>
-        </li>
+            <a href="./manage_user.php">
+                <i class='bx bxs-user'></i>
+                Quản lý người dùng
+            </a>
+        </li>   
     </ul>
 </div>
