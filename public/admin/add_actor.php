@@ -134,6 +134,9 @@
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-add-film" id="btn-add-film" value="Sign up">
                                         Thêm phim
                                     </button>
+                                    <a href="./manage_film.php" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
                         </form>

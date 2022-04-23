@@ -174,8 +174,11 @@
                             <div class="row">
                                 <div class="col-lg-5 offset-lg-4">
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-update-ep" id="btn-update-ep" value="Sign up">
-                                        Sửa tập phim
+                                        Cập nhật
                                     </button>
+                                    <a href="./manage_episode.php?film_id=<?= $film_id ?>" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
                         </form>

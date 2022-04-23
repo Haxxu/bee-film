@@ -100,6 +100,9 @@
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-add-film-actor" id="btn-add-film-actor" value="Sign up">
                                         Thêm phim
                                     </button>
+                                    <a href="./manage_actor.php" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
 

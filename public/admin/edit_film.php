@@ -352,8 +352,11 @@
                             <div class="row">
                                 <div class="col-lg-5 offset-lg-4">
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-update-film" id="btn-update-film" value="Sign up">
-                                        Sửa phim
+                                        Cập nhật
                                     </button>
+                                    <a href="./manage_film.php" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
 

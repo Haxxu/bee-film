@@ -48,7 +48,7 @@
             </div>
             <div class="col-12 col-md-10">
                 <div class="container manage-actor">
-                    <div class="add-section my-3">
+                    <div class="my-3">
                         <h1 class="text-center my-5">Cập nhật tên đạo diễn, diễn viên </h1>
                         <form id="form-edit-actor" method="post" class="form-edit-actor my-4" action="">
                             <div class="mb-4 row">
@@ -65,6 +65,9 @@
                                     >
                                         Cập nhật 
                                     </button>
+                                    <a href="./manage_actor.php" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
                         </form>                      
