@@ -6,6 +6,7 @@
 <?php
 
     require_once('../src/db.php');
+    require_once('../src/functions.php');
     
     if (isset($_POST['btn-login'])) {
         $username = $_POST['username'];
@@ -49,7 +50,7 @@
                 // $_SESSION['password'] = $password;
 
                 // Phân quyền
-                if ($dbarray['user_type'] == 1) {
+                if ($dbarray['user_type'] == $admin_type) {
                     // Admin
                     header('Location: admin/index.php');
                 } else {

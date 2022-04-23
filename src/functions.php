@@ -1,5 +1,8 @@
 <?php
 
+$admin_type = 1;
+$member_type = 2;
+
 function getUrlOfImage($image) {
     $url = "";
     if ($image != "") {
