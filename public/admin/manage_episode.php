@@ -36,6 +36,10 @@
                             <i class='bx bx-plus' ></i>
                             Thêm tập
                         </a>
+                        <a href="./manage_film_episode.php" class="ms-3 btn btn-lg btn-outline-primary">
+                            <i class='bx bx-undo'></i>
+                            Về trang trước
+                        </a>
                     </div>
 
                     <table class="table table-bordered table-responsive">

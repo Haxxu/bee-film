@@ -143,6 +143,9 @@
                                     <button type="submit" class="btn btn-primary btn-lg" name="btn-add-ep" id="btn-add-ep" value="Sign up">
                                         Thêm tập phim
                                     </button>
+                                    <a href="./manage_episode.php?film_id=<?= $row_film_info['film_id']?>" class="ms-2 btn btn-primary btn-lg">
+                                        Về trang trước
+                                    </a>
                                 </div>
                             </div>
 
