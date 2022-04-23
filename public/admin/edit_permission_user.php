@@ -7,12 +7,13 @@
         $user_id = $_POST['user_id'];
         $user_type = $_POST['user-type'];
 
-        $sql_edit_user = "UPDATE `users` SET (`user_type`, `updated_at`) = (?, now()) WHERE `user_id` = ?";
+        $sql_edit_user = "UPDATE `users` SET `user_type` = ?, 
+                                             `updated_at` = now() 
+                          WHERE `user_id` = ?;
+        ";
         $stmt_edit_user = $conn->prepare($sql_edit_user);
-        $stmt_edit_user->bind_param('si', $user_type, $user_id);
+        $stmt_edit_user->bind_param('ii', $user_type, $user_id);
         $stmt_edit_user->execute();
-
-        
 
     }
 
