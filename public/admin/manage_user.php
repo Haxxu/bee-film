@@ -24,9 +24,9 @@
                 <?php include('./sidebar_menu.php') ?>
             </div>
             <div class="col-12 col-md-10">
-                <div class="container manage-film">
+                <div class="container manage-user">
                     <form class="d-flex my-5" method="GET" action="">
-                        <input class="form-control me-2" type="search" placeholder="Nhập tên phim" aria-label="Search" style="font-size: 2rem;" name="search-film" id="search-film">
+                        <input class="form-control me-2" type="search" placeholder="Nhập username, email người dùng" aria-label="Search" style="font-size: 2rem;" name="search-user" id="search-user">
                         <button class="btn btn-lg btn-outline-success" type="submit">Tìm kiếm</button>
                     </form>
 
@@ -51,10 +51,10 @@
                         </thead>
                         <tbody>
                             <?php
-                                if (isset($_GET['search-film'])) {
-                                    $search = $_GET['search-film'];
-                                    $sql = "SELECT * FROM `films` 
-                                            WHERE `name` LIKE ? OR `name2` LIKE ?
+                                if (isset($_GET['search-user'])) {
+                                    $search = $_GET['search-user'];
+                                    $sql = "SELECT * FROM `users` 
+                                            WHERE `username` LIKE ? OR `email` LIKE ?
                                             ORDER BY `updated_at` DESC LIMIT 20
                                     ";
                                     $stmt = $conn->prepare($sql);

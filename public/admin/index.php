@@ -20,7 +20,7 @@
             </div>
             <div class="col-12 col-md-10" style="font-size: 2rem; color: #fff;">
                 <div class="text-center my-5" style="margin: auto">
-                    <img src="./assets/images/welcome_admin.png" alt="welcome admin" class="rounded mx-auto d-block">
+                    <img src="./assets/images/welcome_admin_2.png" alt="welcome admin" class="rounded mx-auto d-block">
                     <h1 class="my-3">Welcome Admin</h1>
                     <p style="font-size: 2rem; color: var(--text-color);">
                         You have all right in this system, such as Post film, edit film, add episode, edit episode and add, edit, delete user,...

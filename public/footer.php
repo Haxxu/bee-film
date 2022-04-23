@@ -1,5 +1,5 @@
 <footer class="footer container-fluid">
-    <div class="row">
+    <div class="row pt-3">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="content">
                 <a href="#" class="logo">
@@ -22,7 +22,7 @@
                     <a href="#" class="social-item">
                         <i class="bx bxl-youtube"></i>
                     </a>
-                    <a href="#" class="social-item">
+                    <a href="https://github.com/Haxxu" class="social-item">
                         <i class="bx bxl-github"></i>
                     </a>
                 </div>

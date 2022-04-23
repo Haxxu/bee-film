@@ -1,6 +1,12 @@
 <div class="sidebar-menu fixed d-none d-lg-block">
     <ul class="sidebar-menu-list">
         <li class="sidebar-menu-item">
+            <a href="./index.php">
+                <i class='bx bxs-dashboard'></i>
+                Dashboard
+            </a>
+        </li>
+        <li class="sidebar-menu-item">
             <a href="./manage_film.php">
                 <i class='bx bx-movie-play'></i>
                 Quản lý phim
@@ -29,6 +35,12 @@
 
 <div class="sidebar-menu d-block d-lg-none">
     <ul class="sidebar-menu-list">
+        <li class="sidebar-menu-item">
+            <a href="./index.php">
+                <i class='bx bxs-dashboard'></i>
+                Dashboard
+            </a>
+        </li>
         <li class="sidebar-menu-item">
             <a href="./manage_film.php">
                 <i class='bx bx-movie-play'></i>
