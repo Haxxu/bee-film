@@ -20,6 +20,7 @@
         $film_description = $r['description'];
         $film_ep_num = $r['episode_number'];
 
+        // Cập nhật view
         $sql_update_view = "UPDATE `films` SET `num_view` = `num_view` + 1 WHERE `film_id` = ?";
         $stmt = $conn->prepare($sql_update_view);
         $stmt->bind_param('i', $film_id);
