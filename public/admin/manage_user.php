@@ -55,7 +55,7 @@
                                     $search = $_GET['search-user'];
                                     $sql = "SELECT * FROM `users` 
                                             WHERE `username` LIKE ? OR `email` LIKE ?
-                                            ORDER BY `updated_at` DESC LIMIT 20
+                                            ORDER BY `updated_at` DESC LIMIT 40
                                     ";
                                     $stmt = $conn->prepare($sql);
                                     $search = "%$search%";
@@ -64,7 +64,7 @@
                                     $result = $stmt->get_result();
                                         
                                 } else {
-                                    $sql = "SELECT * FROM `users` ORDER BY `updated_at` DESC LIMIT 20";
+                                    $sql = "SELECT * FROM `users` ORDER BY `updated_at` DESC LIMIT 40";
                                     $result = mysqli_query($conn, $sql);
                                 }
 

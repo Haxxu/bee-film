@@ -108,7 +108,7 @@
                                     $search = $_GET['search-actor'];
                                     $sql = "SELECT * FROM `actors` 
                                             WHERE `name` LIKE ? 
-                                            ORDER BY `id` DESC LIMIT 20
+                                            ORDER BY `id` DESC LIMIT 40
                                     ";
                                     $stmt = $conn->prepare($sql);
                                     $search = "%$search%";
@@ -117,7 +117,7 @@
                                     $result = $stmt->get_result();
                                         
                                 } else {
-                                    $sql = "SELECT * FROM `actors` ORDER BY `id` DESC LIMIT 20";
+                                    $sql = "SELECT * FROM `actors` ORDER BY `id` DESC LIMIT 40";
                                     
                                     $result = mysqli_query($conn, $sql);
                                 }
@@ -139,7 +139,7 @@
                                             $sql = "SELECT a.*, f.name as `film_name`, f.film_id as `film_id`, fa.is_director as `is_director`
                                                     FROM `actors` as a, `film-actor` as fa, `films` as f
                                                     WHERE a.id = fa.actor_id AND fa.film_id = f.film_id AND a.id = ?
-                                                    ORDER BY `id` DESC LIMIT 20
+                                                    ORDER BY `id` DESC LIMIT 40
                                             ";
                                             
                                             $stmt = $conn->prepare($sql);
@@ -180,7 +180,7 @@
                                                 $sql = "SELECT a.*, f.name as `film_name`, f.film_id as `film_id`, fa.is_director as `is_director`
                                                         FROM `actors` as a, `film-actor` as fa, `films` as f
                                                         WHERE a.id = fa.actor_id AND fa.film_id = f.film_id AND a.id = ?
-                                                        ORDER BY `id` DESC LIMIT 20
+                                                        ORDER BY `id` DESC LIMIT 40
                                                 ";
                                                 
                                                 $stmt = $conn->prepare($sql);

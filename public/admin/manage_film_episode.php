@@ -58,7 +58,7 @@
                                     $search = $_GET['search-film'];
                                     $sql = "SELECT * FROM `films` 
                                             WHERE `name` LIKE ? OR `name2` LIKE ?
-                                            ORDER BY `updated_at` DESC LIMIT 20
+                                            ORDER BY `updated_at` DESC LIMIT 40
                                     ";
                                     $stmt = $conn->prepare($sql);
                                     $search = "%$search%";
@@ -67,7 +67,7 @@
                                     $result = $stmt->get_result();
                                         
                                 } else {
-                                    $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 20";
+                                    $sql = "SELECT * FROM `films` ORDER BY `updated_at` DESC LIMIT 40";
                                     $result = mysqli_query($conn, $sql);
                                 }
 
