@@ -1,68 +1,89 @@
 <?php
     require_once('../src/db.php');
     require_once('../src/functions.php');
+    require '../vendor/autoload.php';
+
     session_start();
+    
+    use Gregwar\Captcha\CaptchaBuilder;
+    use Gregwar\Captcha\PhraseBuilder;
+
+
+    $builder = new CaptchaBuilder;
+    $builder->build();
 
     if (isset($_POST['btn-register'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $hashPassword = password_hash($password, PASSWORD_BCRYPT);
-        $email = $_POST['email'];
-        $fullname = $_POST['fullname'];
-        $birthday = $_POST['birthday'];
-        $gender = $_POST['gender'];
-
-        $sql = "SELECT * FROM `users` WHERE username = ?";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "s", $username);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        $sql_email = "SELECT * FROM `users` WHERE `email` = ?";
-        $stmt = mysqli_prepare($conn, $sql_email);
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result_email = mysqli_stmt_get_result($stmt);
-
-        if (mysqli_num_rows($result) > 0) {
-            echo "
-                <script>alert('Tài khoản đã tồn tại')</script>
-            ";
-            // echo "Tài khoản $username đã tồn tại";
-            
-            $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
-            header('Location: ./index.php');
-            die();
-        } else if (mysqli_num_rows($result_email) > 0) {
-            $_SESSION['message'] = ['body' => 'Email đã được đăng kí', 'type' => 'danger'];
-            header('Location: ./index.php');
-            die();
-        } else {
-
-
-            $sql = "INSERT INTO `users`(
-                                        `username`, 
-                                        `password`, 
-                                        `email`, 
-                                        `fullname`, 
-                                        `birthday`, 
-                                        `gender`, 
-                                        `user_type`,
-                                        `created_at`,
-                                        `updated_at`) 
-                                VALUES (?, ?, ?, ?, ?, ?, $member_type, now(), now())";
-
+        if (isset($_SESSION['phrase']) && PhraseBuilder::comparePhrases($_POST['captcha'], $_SESSION['phrase'])) {
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $hashPassword = password_hash($password, PASSWORD_BCRYPT);
+            $email = $_POST['email'];
+            $fullname = $_POST['fullname'];
+            $birthday = $_POST['birthday'];
+            $gender = $_POST['gender'];
+    
+            $sql = "SELECT * FROM `users` WHERE username = ?";
             $stmt = mysqli_prepare($conn, $sql);
-            mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);
+            mysqli_stmt_bind_param($stmt, "s", $username);
             mysqli_stmt_execute($stmt);
-
-            mysqli_close($conn);
-            $_SESSION['message'] = ['body' => 'Tài khoản đã được tạo', 'type' => 'success'];
-            header('Location: index.php');
+            $result = mysqli_stmt_get_result($stmt);
+    
+            $sql_email = "SELECT * FROM `users` WHERE `email` = ?";
+            $stmt = mysqli_prepare($conn, $sql_email);
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $result_email = mysqli_stmt_get_result($stmt);
+    
+            if (mysqli_num_rows($result) > 0) {
+                echo "
+                    <script>alert('Tài khoản đã tồn tại')</script>
+                ";
+                // echo "Tài khoản $username đã tồn tại";
+                
+                $_SESSION['message'] = ['body' => 'Tài khoản đã tồn tại', 'type' => 'danger'];
+                header('Location: ./index.php');
+                die();
+            } else if (mysqli_num_rows($result_email) > 0) {
+                $_SESSION['message'] = ['body' => 'Email đã được đăng kí', 'type' => 'danger'];
+                header('Location: ./index.php');
+                die();
+            } else {
+    
+    
+                $sql = "INSERT INTO `users`(
+                                            `username`, 
+                                            `password`, 
+                                            `email`, 
+                                            `fullname`, 
+                                            `birthday`, 
+                                            `gender`, 
+                                            `user_type`,
+                                            `created_at`,
+                                            `updated_at`) 
+                                    VALUES (?, ?, ?, ?, ?, ?, $member_type, now(), now())";
+    
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashPassword, $email, $fullname, $birthday, $gender);
+                mysqli_stmt_execute($stmt);
+    
+                mysqli_close($conn);
+                $_SESSION['message'] = ['body' => 'Tài khoản đã được tạo', 'type' => 'success'];
+                header('Location: index.php');
+                die();
+            }
+        } else {
+            $_SESSION['message'] = ['body' => 'Captcha không đúng', 'type' => 'danger'];
+            header('Location: register.php');
             die();
         }
+
+
     } 
+
+    $_SESSION['phrase'] = $builder->getPhrase();
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -130,7 +151,9 @@
                     </div>
 
                     <div class="mb-4 row">
-                        <label class="col-12 col-lg-2 offset-lg-2" for="">Giới tính: </label>
+                        <label class="col-12 col-lg-2 offset-lg-2" for="">
+                            Giới tính:
+                         </label>
                         <div class="col-12 col-lg-6">
                             <div class="form-check-inline">
                                 <input type="radio" name="gender" id="register-gender-male" class="form-check-input" value="male" checked>
@@ -140,6 +163,16 @@
                                 <input type="radio" name="gender" id="register-gender-female" class="form-check-input" value="female">
                                 <label for="register-gender-female" class="form-check-label ps-2">Nữ</label>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 row">
+                        <label class="form-label col-12 col-lg-2 offset-lg-2 d-flex align-items-center" for="captcha">
+                            Captcha: 
+                        </label>
+                        <div class="col-12 col-lg-6">
+                            <img src="<?= $builder->inline() ?>" alt="">
+                            <input type="text" value="" class="mt-2 form-control form-control-lg" id="captcha" name="captcha" placeholder="Nhập các ký từ trong hình trên" />
                         </div>
                     </div>
 
