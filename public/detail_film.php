@@ -157,7 +157,7 @@
                 <!-- Film Info -->
                 <div class="film-detail-box container">
                     <!-- Rating -->
-                    <div class="film-detail-title">
+                    <!-- <div class="film-detail-title">
                         Đánh giá phim
                     </div>
                     <div class="film-rating">
@@ -176,7 +176,7 @@
                         <div class="film-rating-score">
                             <span>8.5 / 100 lượt</span>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- End Rating -->
                     <!-- Detail text -->
                     <div class="film-detail-text row">

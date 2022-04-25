@@ -51,6 +51,7 @@
                         </thead>
                         <tbody>
                             <?php
+                                // Tìm kiếm user
                                 if (isset($_GET['search-user'])) {
                                     $search = $_GET['search-user'];
                                     $sql = "SELECT * FROM `users` 

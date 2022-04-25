@@ -117,7 +117,7 @@
                 <!-- End Film Episode List -->
                 <div class="film-detail-box">
                     <!-- Rating -->
-                    <div class="film-detail-title px-3">
+                    <!-- <div class="film-detail-title px-3">
                         Đánh giá phim
                     </div>
                     <div class="film-rating px-3">
@@ -137,7 +137,7 @@
                             <span>8.5 / 100 lượt</span>
                         </div>
                     </div>
-                    <hr>
+                    <hr> -->
                     <!-- End Rating -->
                     <!-- Film Description -->
                     <div class="film-description">
