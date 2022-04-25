@@ -6,6 +6,8 @@ password: admin123
 
 */
 
+
+
 CREATE TABLE `films` (
 	`film_id` INT(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(150) NOT NULL,
@@ -91,11 +93,11 @@ CREATE TABLE `user-types` (
 	PRIMARY KEY (`type`)
 );
 
-CREATE TABLE `rating` (
-	`film_id` INT(20) NOT NULL,
-	`user_id` INT(20) NOT NULL,
-	`score` INT(2) NOT NULL
-);
+-- CREATE TABLE `rating` (
+-- 	`film_id` INT(20) NOT NULL,
+-- 	`user_id` INT(20) NOT NULL,
+-- 	`score` INT(2) NOT NULL
+-- );
 
 
 ALTER TABLE `films` ADD CONSTRAINT `films_fk0` FOREIGN KEY (`nation_id`) REFERENCES `nations`(`nation_id`);
@@ -114,9 +116,9 @@ ALTER TABLE `film-actor` ADD CONSTRAINT `film-actor_fk1` FOREIGN KEY (`actor_id`
 
 ALTER TABLE `users` ADD CONSTRAINT `users_fk0` FOREIGN KEY (`user_type`) REFERENCES `user-types`(`type`);
 
-ALTER TABLE `rating` ADD CONSTRAINT `rating_fk0` FOREIGN KEY (`film_id`) REFERENCES `films`(`film_id`);
+-- ALTER TABLE `rating` ADD CONSTRAINT `rating_fk0` FOREIGN KEY (`film_id`) REFERENCES `films`(`film_id`);
 
-ALTER TABLE `rating` ADD CONSTRAINT `rating_fk1` FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`);
+-- ALTER TABLE `rating` ADD CONSTRAINT `rating_fk1` FOREIGN KEY (`user_id`) REFERENCES `users`(`user_id`);
 
 
 
