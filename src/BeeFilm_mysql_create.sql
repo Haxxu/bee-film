@@ -1,6 +1,6 @@
 /*
 
-Tài khoản admin mặc đinh là 
+Tài khoản đăng nhập vào quản trị admin mặc đinh là 
 username: admin
 password: admin123
 
