@@ -1,0 +1,6 @@
+Tài khoản đăng nhập vào quản trị admin mặc đinh là 
+username: admin
+password: admin123
+
+File sql cơ sở dữ liệu nằm trong thư mực src/
+Phần thông tin đăng nhập cho database nằm trong thư mục src/db.php
