@@ -13,6 +13,7 @@
     $builder->build();
 
     if (isset($_POST['btn-register'])) {
+
         if (isset($_SESSION['phrase']) && PhraseBuilder::comparePhrases($_POST['captcha'], $_SESSION['phrase'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -71,9 +72,10 @@
                 header('Location: index.php');
                 die();
             }
+
         } else {
             $_SESSION['message'] = ['body' => 'Captcha không đúng', 'type' => 'danger'];
-            header('Location: register.php');
+            header('Location: index.php');
             die();
         }
 
@@ -212,6 +214,7 @@
 		// });
 
         $(document).ready(() => {
+
 			$('#form-register').validate({
 				rules: {
 					username: {
@@ -235,6 +238,10 @@
                     birthday: {
                         required: true,
                         date: true
+                    },
+                    captcha: {
+                        require: true,
+                        equalTo: '<?= $_SESSION['phrase'] ?>'
                     }
 				},
 				messages: {
@@ -254,7 +261,11 @@
 						equalTo: 'Mật khẩu không trùng khớp với mật khẩu đã nhập'
 					},
 					email: 'Hộp thư điện tử không hợp lệ',
-                    birthday: 'Ngày sinh không hợp lệ'
+                    birthday: 'Ngày sinh không hợp lệ',
+                    captcha: {
+						required: 'Bạn chưa nhập mã xác thực',
+						equalTo: 'Mã xác thực không hợp lệ'
+					},
 				},
 				errorElement: 'div',
 				errorPlacement: function(error, element) {
@@ -272,6 +283,18 @@
 					$(element).addClass('is-valid').removeClass('is-invalid');
 				}
 			});
+
+            $('form#form-register').submit(function(){
+            var isvalidate=$("form#form-register").valid();
+                if (!isvalidate) {
+                    e.preventDefault();
+                    alert("invalid");
+                } else {
+                    e.preventDefault();
+                    //Do AJAX
+                }
+            });
+
 		});
     </script>
 

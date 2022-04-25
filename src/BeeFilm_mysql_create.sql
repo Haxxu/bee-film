@@ -1,3 +1,11 @@
+/*
+
+Tài khoản admin mặc đinh là 
+username: admin
+password: admin123
+
+*/
+
 CREATE TABLE `films` (
 	`film_id` INT(20) NOT NULL AUTO_INCREMENT,
 	`name` varchar(150) NOT NULL,
@@ -779,6 +787,7 @@ INSERT INTO `film-actor` (`film_id`, `actor_id`, `is_director`) VALUES ('45', '1
 
 -- episodes
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('1', 'Full', 'film_test.mp4', '1', '41');
+
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('2', 'Tập 1', 'film_test.mp4', '1', '45');
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('3', 'Tập 2', 'film_test.mp4', '2', '45');
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('4', 'Tập 3', 'film_test.mp4', '3', '45');
@@ -787,6 +796,145 @@ INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) V
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('7', 'Tập 6', 'film_test.mp4', '6', '45');
 INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('8', 'Tập 7', 'film_test.mp4', '7', '45');
 
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('9', 'Tập 1', 'film_test.mp4', '1', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('10', 'Tập 2', 'film_test.mp4', '2', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('11', 'Tập 3', 'film_test.mp4', '3', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('12', 'Tập 4', 'film_test.mp4', '4', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('13', 'Tập 5', 'film_test.mp4', '5', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('14', 'Tập 6', 'film_test.mp4', '6', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('15', 'Tập 7', 'film_test.mp4', '7', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('16', 'Tập 8', 'film_test.mp4', '8', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('17', 'Tập 9', 'film_test.mp4', '9', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('18', 'Tập 10', 'film_test.mp4', '10', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('19', 'Tập 11', 'film_test.mp4', '11', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('20', 'Tập 12', 'film_test.mp4', '12', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('21', 'Tập 13', 'film_test.mp4', '13', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('22', 'Tập 14', 'film_test.mp4', '14', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('23', 'Tập 15', 'film_test.mp4', '15', '44');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('24', 'Tập 16', 'film_test.mp4', '16', '44');
+
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('25', 'Full', 'film_test.mp4', '1', '2');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('26', 'Full', 'film_test.mp4', '1', '3');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('27', 'Tập 1', 'film_test.mp4', '1', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('28', 'Tập 2', 'film_test.mp4', '2', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('29', 'Tập 3', 'film_test.mp4', '3', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('30', 'Tập 4', 'film_test.mp4', '4', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('31', 'Tập 5', 'film_test.mp4', '5', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('32', 'Tập 6', 'film_test.mp4', '6', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('33', 'Tập 7', 'film_test.mp4', '7', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('34', 'Tập 8', 'film_test.mp4', '8', '1');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('35', 'Tập 9', 'film_test.mp4', '9', '1');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('36', 'Full', 'film_test.mp4', '1', '8');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('37', 'Full', 'film_test.mp4', '1', '10');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('38', 'Full', 'film_test.mp4', '1', '11');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('39', 'Full', 'film_test.mp4', '1', '12');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('40', 'Full', 'film_test.mp4', '1', '38');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('41', 'Full', 'film_test.mp4', '1', '31');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('42', 'Full', 'film_test.mp4', '1', '30');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('43', 'Full', 'film_test.mp4', '1', '29');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('44', 'Full', 'film_test.mp4', '1', '28');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('45', 'Full', 'film_test.mp4', '1', '25');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('46', 'Tập 1 ', 'film_test.mp4', '1', '24');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('47', 'Tập 1', 'film_test.mp4', '1', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('48', 'Tập 2', 'film_test.mp4', '2', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('49', 'Tập 3', 'film_test.mp4', '3', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('50', 'Tập 4', 'film_test.mp4', '4', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('51', 'Tập 5', 'film_test.mp4', '5', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('52', 'Tập 6', 'film_test.mp4', '6', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('53', 'Tập 7', 'film_test.mp4', '7', '27');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('54', 'Tập 8', 'film_test.mp4', '8', '27');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('55', 'Tập 1', 'film_test.mp4', '1', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('56', 'Tập 2', 'film_test.mp4', '2', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('57', 'Tập 3', 'film_test.mp4', '3', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('58', 'Tập 4', 'film_test.mp4', '4', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('59', 'Tập 5', 'film_test.mp4', '5', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('60', 'Tập 6', 'film_test.mp4', '6', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('61', 'Tập 7', 'film_test.mp4', '7', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('62', 'Tập 8', 'film_test.mp4', '8', '26');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('63', 'Tập 9', 'film_test.mp4', '9', '26');
+
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('64', 'Tập 1', 'film_test.mp4', '1', '23');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('65', 'Tập 2', 'film_test.mp4', '2', '23');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('66', 'Tập 3', 'film_test.mp4', '3', '23');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('67', 'Tập 4', 'film_test.mp4', '4', '23');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('68', 'Tập 5', 'film_test.mp4', '5', '23');
+
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('69', 'Tập 1', 'film_test.mp4', '1', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('70', 'Tập 2', 'film_test.mp4', '2', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('71', 'Tập 3', 'film_test.mp4', '3', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('72', 'Tập 4', 'film_test.mp4', '4', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('73', 'Tập 5', 'film_test.mp4', '5', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('74', 'Tập 6', 'film_test.mp4', '6', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('75', 'Tập 7', 'film_test.mp4', '7', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('76', 'Tập 8', 'film_test.mp4', '8', '22');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('77', 'Tập 9', 'film_test.mp4', '9', '22');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('78', 'Full', 'film_test.mp4', '1', '19');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('79', 'Full', 'film_test.mp4', '1', '14');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('80', 'Full', 'film_test.mp4', '1', '12');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('81', 'Full', 'film_test.mp4', '1', '11');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('82', 'Full', 'film_test.mp4', '1', '10');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('83', 'Full', 'film_test.mp4', '1', '8');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('84', 'Tập 1', 'film_test.mp4', '1', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('85', 'Tập 2', 'film_test.mp4', '2', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('86', 'Tập 3', 'film_test.mp4', '3', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('87', 'Tập 4', 'film_test.mp4', '4', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('88', 'Tập 5', 'film_test.mp4', '5', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('89', 'Tập 6', 'film_test.mp4', '6', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('90', 'Tập 7', 'film_test.mp4', '7', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('91', 'Tập 8', 'film_test.mp4', '8', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('92', 'Tập 9', 'film_test.mp4', '9', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('93', 'Tập 10', 'film_test.mp4', '10', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('94', 'Tập 11', 'film_test.mp4', '11', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('95', 'Tập 12', 'film_test.mp4', '12', '43');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('96', 'Tập 13', 'film_test.mp4', '13', '43');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('97', 'Tập 1', 'film_test.mp4', '1', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('98', 'Tập 2', 'film_test.mp4', '2', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('99', 'Tập 3', 'film_test.mp4', '3', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('100', 'Tập 4', 'film_test.mp4', '4', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('101', 'Tập 5', 'film_test.mp4', '5', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('102', 'Tập 6', 'film_test.mp4', '6', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('103', 'Tập 7', 'film_test.mp4', '7', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('104', 'Tập 8', 'film_test.mp4', '8', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('105', 'Tập 9', 'film_test.mp4', '9', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('106', 'Tập 10', 'film_test.mp4', '10', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('107', 'Tập 11', 'film_test.mp4', '11', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('108', 'Tập 12', 'film_test.mp4', '12', '42');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('109', 'Tập 13', 'film_test.mp4', '13', '42');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('110', 'Tập 1', 'film_test.mp4', '1', '40');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('111', 'Tập 2', 'film_test.mp4', '2', '40');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('112', 'Tập 3', 'film_test.mp4', '3', '40');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('113', 'Tập 4', 'film_test.mp4', '4', '40');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('114', 'Tập 5', 'film_test.mp4', '5', '40');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('115', 'Tập 6', 'film_test.mp4', '6', '40');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('116', 'Tập 1', 'film_test.mp4', '1', '36');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('117', 'Tập 2', 'film_test.mp4', '2', '36');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('118', 'Tập 1', 'film_test.mp4', '1', '35');
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('119', 'Tập 2', 'film_test.mp4', '2', '35');
+
+INSERT INTO `episodes` (`ep_id`, `ep_name`, `ep_video`, `ep_order`, `film_id`) VALUES ('120', 'Tập 2', 'film_test.mp4', '2', '24');
 
 -- users
 
