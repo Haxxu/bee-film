@@ -60,7 +60,7 @@
 
 
 
-            header('Location: ./index.php');
+            header('Location: ./manage_film.php');
             die();
         } else {
             // echo "ki vay";
