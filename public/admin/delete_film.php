@@ -47,6 +47,16 @@
             unlink(getUrlOfImageFromAdmin($banner));
 
             // Xóa tập phim
+            $sql = "SELECT * FROM `episodes` WHERE `film_id` = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "i", $film_id);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            while ($row = mysqli_fetch_assoc($result)) {
+                $ep_id = $row['ep_id'];
+                $ep_video_url = $row['ep_video'];
+                unlink(getUrlOfVideoFromAdmin($ep_video_url));
+            }
             $sql = "DELETE FROM `episodes` WHERE `film_id` = ?";
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "i", $film_id);
