@@ -46,6 +46,13 @@
             unlink(getUrlOfImageFromAdmin($poster));
             unlink(getUrlOfImageFromAdmin($banner));
 
+            // Xóa tập phim
+            $sql = "DELETE FROM `episodes` WHERE `film_id` = ?";
+            $stmt = mysqli_prepare($conn, $sql);
+            mysqli_stmt_bind_param($stmt, "i", $film_id);
+            mysqli_stmt_execute($stmt);
+
+            // Xóa phim
             $sql = "DELETE FROM `films` WHERE `film_id` = ?";
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "i", $film_id);
